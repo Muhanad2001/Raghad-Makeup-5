@@ -2,275 +2,607 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>رغد ميكب | Raghad Makeup</title>
 
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@600&display=swap');
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-*{box-sizing:border-box}
-body{
-margin:0;background:#fffafa;color:#251b1d;
-font-family:Cairo,Arial,sans-serif
-}
 :root{
---rose:#8e4b59;
---pink:#f7e8eb;
---gold:#b48a57;
---dark:#281b1e
+  --rose:#8e4b59;
+  --rose-dark:#6f3542;
+  --pink:#f8e9ec;
+  --pink2:#fff7f8;
+  --gold:#b48a57;
+  --text:#291d20;
+  --white:#fff;
 }
-.container{width:min(1120px,92%);margin:auto}
-a{text-decoration:none;color:inherit}
+
+body{
+  font-family:
+  "Cairo",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Arial,
+  sans-serif;
+  background:#fffafa;
+  color:var(--text);
+  min-height:100vh;
+}
+
+button,
+input,
+select,
+textarea{
+  font-family:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-position:sticky;top:0;z-index:10;
-background:rgba(255,250,250,.95);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #f0dfe2
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,250,250,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #efdfe2;
 }
+
 .nav{
-height:76px;display:flex;align-items:center;
-justify-content:space-between;gap:10px
-}
-.logo{height:60px;width:auto;object-fit:contain}
-.navlinks{display:flex;gap:25px;font-weight:700}
-.navlinks a:hover{color:var(--rose)}
-
-.admin-actions{
-display:flex;gap:7px;align-items:center
-}
-.admin-login,.admin-bookings{
-border:1px solid #e5cdd1;
-background:#fff;color:var(--rose);
-cursor:pointer;font-family:inherit;font-weight:700
-}
-.admin-login{border-radius:999px;padding:7px 11px;font-size:12px}
-.admin-bookings{
-width:32px;height:32px;border-radius:50%
+  width:min(1150px,94%);
+  height:78px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
 }
 
-.hero{padding:42px 0 30px}
-.hero-card{
-background:linear-gradient(135deg,#fff,#f7e7e9);
-border:1px solid #efdde0;
-border-radius:30px;
-padding:36px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-align-items:center;
-box-shadow:0 18px 55px rgba(92,48,57,.08)
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
 }
+
+.logo{
+  width:145px;
+  height:62px;
+  object-fit:contain;
+  display:block;
+}
+
+/* إذا لم تظهر الصورة يظهر اسم البراند */
+.logo-fallback{
+  display:none;
+  align-items:center;
+  gap:6px;
+  color:var(--rose);
+  font-size:23px;
+  font-weight:800;
+}
+
+.logo-fallback span{
+  font-size:28px;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.login-btn,
+.bookings-btn{
+  border:1px solid #e6cdd2;
+  background:#fff;
+  color:var(--rose);
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:700;
+  font-size:12px;
+}
+
+.bookings-btn{
+  width:38px;
+  height:38px;
+  padding:0;
+  border-radius:50%;
+  font-size:16px;
+}
+
+.login-btn:hover,
+.bookings-btn:hover{
+  background:var(--pink);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  width:min(1150px,94%);
+  margin:24px auto 0;
+  background:
+    linear-gradient(135deg,#fff,#fff3f5);
+  border:1px solid #efdfe2;
+  border-radius:28px;
+  padding:40px 25px;
+  text-align:center;
+}
+
 .hero h1{
-font-size:clamp(38px,6vw,68px);
-margin:0 0 10px;
-color:var(--rose);
-font-family:"Playfair Display",serif
-}
-.hero p{font-size:19px;color:#665457}
-.hero-img{width:100%;max-height:360px;object-fit:contain}
-
-.btn{
-display:inline-block;
-background:var(--rose);
-color:#fff;
-padding:13px 24px;
-border-radius:999px;
-font-weight:700;
-border:0;
-cursor:pointer;
-font-family:inherit
-}
-.btn.light{
-background:#fff;
-color:var(--rose);
-border:1px solid #e7cfd3
+  color:var(--rose);
+  font-size:38px;
+  margin-bottom:8px;
 }
 
-.section{padding:50px 0}
-.section-title{text-align:center;margin-bottom:28px}
-.section-title h2{font-size:31px;margin:0;color:var(--dark)}
-.section-title p{color:#806e71;margin:6px 0}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
+.hero h2{
+  font-family:Georgia,serif;
+  color:var(--gold);
+  font-size:20px;
+  margin-bottom:15px;
 }
+
+.hero p{
+  color:#705d61;
+  line-height:2;
+  max-width:650px;
+  margin:auto;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.container{
+  width:min(1150px,94%);
+  margin:30px auto;
+}
+
+.section{
+  margin-bottom:35px;
+}
+
+.section-title{
+  text-align:center;
+  color:var(--rose);
+  font-size:25px;
+  margin-bottom:20px;
+}
+
+.section-title span{
+  color:var(--gold);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
 .card{
-background:#fff;
-border:1px solid #efdfe2;
-border-radius:22px;
-padding:22px;
-box-shadow:0 10px 35px rgba(70,35,40,.06)
+  background:#fff;
+  border:1px solid #efdfe2;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 8px 30px rgba(100,50,60,.06);
+  transition:.2s;
 }
-.card h3{margin:0 0 8px;color:var(--rose)}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(100,50,60,.1);
+}
+
+.card h3{
+  color:var(--rose);
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.card p{
+  color:#77666a;
+  line-height:1.9;
+  font-size:14px;
+}
+
 .price{
-font-size:25px;
-font-weight:800;
-margin:8px 0;
-color:var(--dark)
+  color:var(--gold);
+  font-size:21px;
+  font-weight:800;
+  margin-top:10px;
 }
-.note{font-size:13px;color:#806e71}
 
-.rules{
-background:#fff;
-border:1px solid #efdfe2;
-border-radius:24px;
-padding:25px
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  background:var(--pink);
+  color:var(--rose);
+  padding:4px 9px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
 }
-.rules li{margin:10px 0}
 
-.booking-form{
-background:#fff;
-border:1px solid #efdfe2;
-border-radius:26px;
-padding:28px;
-box-shadow:0 12px 40px rgba(70,35,40,.06)
+/* =========================
+   TERMS
+========================= */
+
+.terms{
+  background:#fff;
+  border:1px solid #efdfe2;
+  border-radius:22px;
+  padding:22px;
 }
+
+.terms h3{
+  color:var(--rose);
+  margin-bottom:12px;
+}
+
+.terms ul{
+  list-style:none;
+}
+
+.terms li{
+  padding:9px 0;
+  border-bottom:1px dashed #ead7da;
+  line-height:1.8;
+}
+
+.terms li:last-child{
+  border-bottom:0;
+}
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking-box{
+  background:#fff;
+  border:1px solid #efdfe2;
+  border-radius:26px;
+  padding:25px;
+  box-shadow:0 10px 40px rgba(100,50,60,.07);
+}
+
 .form-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px
-}
-.field{margin:10px 0}
-.field label{
-display:block;
-font-size:13px;
-margin-bottom:6px
-}
-.field input,
-.field select,
-.field textarea{
-width:100%;
-padding:12px;
-border:1px solid #e6cfd3;
-border-radius:12px;
-font-family:inherit;
-background:#fff
-}
-.field textarea{resize:vertical}
-
-.pay-box{
-background:#fff7f8;
-border:1px dashed #c9a2a8;
-border-radius:16px;
-padding:16px;
-margin:18px 0
-}
-.pay-box h3{color:var(--rose);margin-top:0}
-
-.receipt-preview img{
-display:block;
-max-width:220px;
-max-height:260px;
-margin-top:10px;
-border-radius:14px;
-border:1px solid #ead5d8
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
 }
 
-.contact{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:20px
+.field{
+  margin-bottom:5px;
 }
-.info{
-background:var(--dark);
-color:#fff;
-border-radius:24px;
-padding:28px
-}
-.info h3{color:#f7dfe3}
-.info .btn{margin-top:8px}
 
-footer{
-text-align:center;
-padding:30px;
-color:#806e71;
-border-top:1px solid #f0dfe2;
-margin-top:30px
+.field.full{
+  grid-column:1/-1;
 }
+
+label{
+  display:block;
+  color:var(--rose);
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid #e6cdd2;
+  background:#fffafa;
+  border-radius:13px;
+  padding:12px 13px;
+  outline:none;
+  color:var(--text);
+  font-size:14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--rose);
+  box-shadow:0 0 0 3px rgba(142,75,89,.08);
+}
+
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+/* =========================
+   DEPOSIT
+========================= */
+
+.deposit{
+  margin-top:20px;
+  padding:20px;
+  border:2px dashed #d9b9bf;
+  border-radius:20px;
+  background:#fff7f8;
+  text-align:center;
+}
+
+.deposit h3{
+  color:var(--rose);
+  margin-bottom:10px;
+}
+
+.deposit p{
+  margin:7px 0;
+}
+
+.deposit strong{
+  color:var(--rose);
+  font-size:19px;
+}
+
+.upload{
+  margin-top:15px;
+}
+
+.upload input{
+  background:#fff;
+}
+
+.preview{
+  display:none;
+  max-width:260px;
+  max-height:300px;
+  margin:15px auto 0;
+  border-radius:14px;
+  border:1px solid #e4cdd1;
+  object-fit:contain;
+}
+
+.submit-btn{
+  width:100%;
+  border:0;
+  background:var(--rose);
+  color:#fff;
+  border-radius:999px;
+  padding:15px;
+  margin-top:20px;
+  font-size:16px;
+  font-weight:800;
+}
+
+.submit-btn:hover{
+  background:var(--rose-dark);
+}
+
+.submit-btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+/* =========================
+   HAIR / WHATSAPP
+========================= */
+
+.contact-box{
+  text-align:center;
+  background:#281b1e;
+  color:#fff;
+  border-radius:24px;
+  padding:25px;
+}
+
+.contact-box h3{
+  margin-bottom:8px;
+}
+
+.contact-box p{
+  color:#e9dfe1;
+  margin-bottom:15px;
+}
+
+.whatsapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:#25d366;
+  color:#fff;
+  border-radius:999px;
+  padding:11px 22px;
+  font-weight:800;
+}
+
+/* =========================
+   ADMIN
+========================= */
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(25,14,16,.58);
-z-index:50;
-padding:18px;
-align-items:center;
-justify-content:center
+  position:fixed;
+  inset:0;
+  background:rgba(20,10,12,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  z-index:1000;
 }
-.modal.show{display:flex}
-.modalbox{
-width:min(520px,100%);
-background:#fffafa;
-border-radius:24px;
-padding:25px;
-position:relative
+
+.modal.show{
+  display:flex;
 }
+
+.modal-box{
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#fffafa;
+  border-radius:25px;
+  padding:24px;
+  position:relative;
+}
+
 .close{
-position:absolute;
-left:18px;
-top:10px;
-border:0;
-background:none;
-font-size:28px;
-cursor:pointer
+  position:absolute;
+  left:15px;
+  top:10px;
+  border:0;
+  background:none;
+  font-size:27px;
+  color:var(--rose);
 }
 
-.admin-box{
-width:min(900px,100%);
-max-height:90vh;
-overflow:auto;
-background:#fffafa;
-border-radius:24px;
-padding:25px;
-position:relative
+.login-form{
+  max-width:350px;
+  margin:30px auto 10px;
 }
 
-.admin-panel{
-display:none;
-position:fixed;
-inset:0;
-z-index:60;
-background:rgba(25,14,16,.65);
-padding:18px;
-align-items:center;
-justify-content:center
-}
-.admin-panel.show{display:flex}
-
-.booking-table{
-width:100%;
-border-collapse:collapse;
-font-size:13px;
-margin-top:15px
-}
-.booking-table th,
-.booking-table td{
-border-bottom:1px solid #ead9dc;
-padding:10px;
-text-align:right;
-vertical-align:top
-}
-.booking-table th{
-color:var(--rose);
-background:#fff4f5
+.login-form h2{
+  color:var(--rose);
+  text-align:center;
+  margin-bottom:20px;
 }
 
-.small{font-size:12px;color:#77666a}
+.admin-btn{
+  width:100%;
+  border:0;
+  background:var(--rose);
+  color:#fff;
+  border-radius:12px;
+  padding:12px;
+  margin-top:5px;
+  font-weight:800;
+}
+
+.error{
+  color:#b3261e;
+  text-align:center;
+  margin-top:10px;
+  display:none;
+}
+
+.booking-list{
+  overflow:auto;
+  margin-top:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:700px;
+}
+
+th,
+td{
+  padding:10px;
+  border-bottom:1px solid #ead9dc;
+  text-align:right;
+  vertical-align:top;
+  font-size:12px;
+}
+
+th{
+  color:var(--rose);
+  background:#fff0f2;
+}
+
+/* =========================
+   ALERT
+========================= */
+
+.alert{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translateX(-50%);
+  z-index:2000;
+  min-width:280px;
+  max-width:90%;
+  background:#281b1e;
+  color:#fff;
+  border-radius:15px;
+  padding:14px 18px;
+  text-align:center;
+  display:none;
+}
+
+.alert.show{
+  display:block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  margin-top:40px;
+  padding:25px;
+  text-align:center;
+  color:#806e71;
+  border-top:1px solid #efdfe2;
+  font-size:12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:800px){
-.navlinks{display:none}
-.hero-card{grid-template-columns:1fr;text-align:center;padding:25px}
-.hero-img{max-height:260px}
-.grid{grid-template-columns:1fr}
-.contact{grid-template-columns:1fr}
-.form-grid{grid-template-columns:1fr}
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .hero h1{
+    font-size:29px;
+  }
+
+  .hero{
+    padding:30px 18px;
+  }
+
+  .nav{
+    height:70px;
+  }
+
+  .logo{
+    width:120px;
+    height:55px;
+  }
+
+  .login-btn{
+    font-size:11px;
+    padding:7px 10px;
+  }
 }
 </style>
 </head>
@@ -278,97 +610,102 @@ background:#fff4f5
 <body>
 
 <header>
-<div class="container nav">
+  <div class="nav">
 
-<img class="logo" src="logo.png" alt="رغد ميكب">
+    <div class="brand">
+      <!-- ضع ملف الشعار باسم logo.png داخل public -->
+      <img
+        id="siteLogo"
+        class="logo"
+        src="logo.png"
+        alt="رغد ميكب"
+        onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex';"
+      >
 
-<div class="navlinks">
-<a href="#services">الخدمات</a>
-<a href="#bridal">العرايس</a>
-<a href="#graduation">التخرج</a>
-<a href="#rules">الشروط</a>
-<a href="#booking">الحجز</a>
-</div>
+      <div id="logoFallback" class="logo-fallback">
+        <span>رغد</span>
+        <small>MAKEUP</small>
+      </div>
+    </div>
 
-<div class="admin-actions">
-<button class="admin-login" onclick="openAdmin()">🔐 تسجيل دخول</button>
-<button class="admin-bookings" onclick="openAdmin()">📋</button>
-</div>
+    <div class="actions">
+      <button class="login-btn" onclick="openLogin()">
+        🔐 تسجيل دخول
+      </button>
 
-</div>
+      <button class="bookings-btn" onclick="openBookings()">
+        📋
+      </button>
+    </div>
+
+  </div>
 </header>
 
-<main>
-
 <section class="hero">
-<div class="container">
-<div class="hero-card">
-
-<div>
-<h1>رغد ميكب</h1>
-<p>إطلالتك أجمل مع لمسة من الفخامة والجمال ✨</p>
-<a href="#booking" class="btn">احجزي موعدك الآن 💗</a>
-</div>
-
-<div>
-<img class="hero-img" src="logo.png" alt="Raghad Makeup">
-</div>
-
-</div>
-</div>
+  <h1>رغد ميكب ✨</h1>
+  <h2>Raghad Makeup</h2>
+  <p>
+    حجوزات الميكب للحضور والعرايس والتخرج
+    بإطلالة أنيقة ومميزة تناسب مناسبتك.
+  </p>
 </section>
 
-<section class="section" id="services">
-<div class="container">
+<main class="container">
 
-<div class="section-title">
-<h2>ميكب حضور ✨</h2>
-<p>اختاري الإطلالة المناسبة لك</p>
-</div>
+<!-- =========================
+     SERVICES
+========================= -->
 
-<div class="grid">
+<section class="section">
+
+<h2 class="section-title">
+  ميكب حضور ✨
+</h2>
+
+<div class="services">
 
 <div class="card">
 <h3>الهادي (العادي)</h3>
-<p>إطلالة ناعمة وبسيطة</p>
+<p>ميكب هادي وأنيق بدون رموش.</p>
 <div class="price">15 ر.ع</div>
-<div class="note">بدون رموش</div>
+<span class="badge">بدون رموش</span>
 </div>
 
 <div class="card">
 <h3>الميكب الناعم</h3>
-<p>إطلالة ناعمة ومرتبة</p>
+<p>إطلالة ناعمة ومميزة للمناسبات.</p>
 <div class="price">18 ر.ع</div>
-<div class="note">مع أو بدون رموش</div>
+<span class="badge">مع / بدون رموش</span>
 </div>
 
 <div class="card">
 <h3>السبيشل الثقيل</h3>
-<p>إطلالة فخمة ومميزة</p>
+<p>إطلالة قوية وفخمة للمناسبات.</p>
 <div class="price">20 ر.ع</div>
-<div class="note">مع أو بدون رموش</div>
+<span class="badge">مع / بدون رموش</span>
 </div>
 
-</div>
-
-<div class="card" style="margin-top:18px;text-align:center">
-<h3>العدسات 💗</h3>
+<div class="card">
+<h3>العدسات 👁️</h3>
+<p>عدسات مع العلبة.</p>
 <div class="price">4 ر.ع</div>
-<div class="note">مع الحافظة</div>
+<span class="badge">مع العلبة</span>
 </div>
 
 </div>
 </section>
 
-<section class="section" id="bridal">
-<div class="container">
+<!-- =========================
+     BRIDES
+========================= -->
 
-<div class="section-title">
-<h2>ميكب العرايس 👰🏻‍♀️</h2>
-<p>لأجمل تفاصيل يومك</p>
-</div>
+<section class="section">
 
-<div class="grid">
+<h2 class="section-title">
+  ميكب العرايس 👰🏻‍♀️
+</h2>
+
+<div class="services">
 
 <div class="card">
 <h3>عقد القران</h3>
@@ -376,7 +713,7 @@ background:#fff4f5
 </div>
 
 <div class="card">
-<h3>ملكة (خطوبة 💍)</h3>
+<h3>ملكة (خطوبة) 💍</h3>
 <div class="price">40 ر.ع</div>
 </div>
 
@@ -386,7 +723,7 @@ background:#fff4f5
 </div>
 
 <div class="card">
-<h3>ميكب عروس (صباحية / مسائية)</h3>
+<h3>ميكب عروس صباحية / مسائية</h3>
 <div class="price">25 ر.ع</div>
 </div>
 
@@ -396,56 +733,68 @@ background:#fff4f5
 </div>
 
 </div>
-</div>
 </section>
 
-<section class="section" id="graduation">
-<div class="container">
+<!-- =========================
+     GRADUATION
+========================= -->
 
-<div class="section-title">
-<h2>ميكب تخرج 👩🏻‍🎓</h2>
-<p>إطلالة تليق بيوم تخرجك</p>
-</div>
+<section class="section">
 
-<div class="card" style="max-width:420px;margin:auto;text-align:center">
+<h2 class="section-title">
+  ميكب تخرج 👩🏻‍🎓
+</h2>
+
+<div class="card">
 <h3>ميكب تخرج</h3>
+<p>إطلالة مناسبة لحفل التخرج.</p>
 <div class="price">18 ر.ع</div>
-<div class="note">مع رموش أو بدون</div>
+<span class="badge">مع / بدون رموش</span>
 </div>
 
-</div>
 </section>
 
-<section class="section" id="rules">
-<div class="container">
+<!-- =========================
+     TERMS
+========================= -->
 
-<div class="section-title">
-<h2>الشروط والقوانين</h2>
-</div>
+<section class="section">
 
-<div class="rules">
+<div class="terms">
+
+<h3>شروط الحجز 📋</h3>
+
 <ul>
-<li>ممنوع اصطحاب الأطفال لغير الرضع ❌</li>
-<li>الأسعار ثابتة ✅</li>
-<li>التأخير أكثر من 15 دقيقة يلغي الحجز ✋🏻</li>
-<li>ممنوع الصبر بتاتاً ❌</li>
-<li>ممنوع التجمع في غرفة الميكب ❌</li>
-<li>الحجز يثبت بعربون 5 ر.ع 💵</li>
+
+<li>👶 لا يوجد أطفال باستثناء الرضع.</li>
+
+<li>💰 الأسعار ثابتة.</li>
+
+<li>⏰ التأخير أكثر من 15 دقيقة يلغي الحجز.</li>
+
+<li>❌ ممنوع الصبر بتاتاً.</li>
+
+<li>🚫 يمنع التزاحم داخل غرفة الميكب.</li>
+
+<li>💵 يتم تأكيد الحجز بدفع عربون 5 ر.ع.</li>
+
 </ul>
-</div>
 
 </div>
+
 </section>
+
+<!-- =========================
+     BOOKING FORM
+========================= -->
 
 <section class="section" id="booking">
-<div class="container">
 
-<div class="section-title">
-<h2>تأكيد الحجز 💗</h2>
-<p>أدخلي بياناتك واختاري الخدمة والتاريخ والوقت</p>
-</div>
+<h2 class="section-title">
+  حجز موعد 💄
+</h2>
 
-<div class="booking-form">
+<div class="booking-box">
 
 <form id="bookingForm">
 
@@ -453,464 +802,990 @@ background:#fff4f5
 
 <div class="field">
 <label>الاسم الكامل *</label>
-<input id="name" required>
+<input
+  id="fullName"
+  type="text"
+  placeholder="اكتب الاسم الكامل"
+  required
+>
 </div>
 
 <div class="field">
-<label>رقم التواصل *</label>
-<input id="phone" type="tel" required placeholder="9XXXXXXXX">
+<label>رقم الهاتف *</label>
+<input
+  id="phone"
+  type="tel"
+  placeholder="مثال: 9xxxxxxx"
+  required
+>
 </div>
 
 <div class="field">
-<label>اختيار الخدمة *</label>
+<label>الخدمة *</label>
 
 <select id="service" required>
-<option value="">اختاري الخدمة</option>
-<option>الهادي (العادي) - 15 ر.ع</option>
-<option>الميكب الناعم - 18 ر.ع</option>
-<option>السبيشل الثقيل - 20 ر.ع</option>
-<option>عقد القران - 20 ر.ع</option>
-<option>ملكة (خطوبة) - 40 ر.ع</option>
-<option>عروس (زفه) - 80 ر.ع</option>
-<option>ميكب عروس (صباحية / مسائية) - 25 ر.ع</option>
-<option>ميكب عروس حفل حناء - 25 ر.ع</option>
-<option>ميكب تخرج - 18 ر.ع</option>
-<option>عدسات - 4 ر.ع</option>
+
+<option value="">اختر الخدمة</option>
+
+<optgroup label="ميكب حضور">
+<option value="الهادي (العادي) - 15 ر.ع">
+الهادي (العادي) - 15 ر.ع
+</option>
+
+<option value="الميكب الناعم - 18 ر.ع">
+الميكب الناعم - 18 ر.ع
+</option>
+
+<option value="السبيشل الثقيل - 20 ر.ع">
+السبيشل الثقيل - 20 ر.ع
+</option>
+
+<option value="العدسات - 4 ر.ع">
+العدسات - 4 ر.ع
+</option>
+</optgroup>
+
+<optgroup label="ميكب العرايس">
+<option value="عقد القران - 20 ر.ع">
+عقد القران - 20 ر.ع
+</option>
+
+<option value="ملكة (خطوبة) - 40 ر.ع">
+ملكة (خطوبة) - 40 ر.ع
+</option>
+
+<option value="عروس (زفه) - 80 ر.ع">
+عروس (زفه) - 80 ر.ع
+</option>
+
+<option value="ميكب عروس صباحية / مسائية - 25 ر.ع">
+ميكب عروس صباحية / مسائية - 25 ر.ع
+</option>
+
+<option value="ميكب عروس حفل حناء - 25 ر.ع">
+ميكب عروس حفل حناء - 25 ر.ع
+</option>
+</optgroup>
+
+<optgroup label="ميكب تخرج">
+<option value="ميكب تخرج - 18 ر.ع">
+ميكب تخرج - 18 ر.ع
+</option>
+</optgroup>
+
 </select>
+</div>
+
+<div class="field">
+<label>عدد الأشخاص *</label>
+
+<select id="people" required>
+
+<option value="">اختر العدد</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+
+</select>
+</div>
+
+<div class="field">
+<label>التاريخ *</label>
+
+<input
+  id="bookingDate"
+  type="date"
+  required
+>
 
 </div>
 
 <div class="field">
-<label>تاريخ الحجز *</label>
-<input id="date" type="date" required>
-</div>
+<label>الوقت *</label>
 
-<div class="field">
-<label>وقت الحجز *</label>
-<input id="time" type="time" required>
-</div>
-
-<div class="field">
-<label>عدد الأشخاص</label>
-<input id="people" type="number" min="1" value="1">
-</div>
+<input
+  id="bookingTime"
+  type="time"
+  required
+>
 
 </div>
 
-<div class="field">
+<div class="field full">
 <label>ملاحظات إضافية</label>
-<textarea id="notes" rows="4"></textarea>
+
+<textarea
+  id="notes"
+  placeholder="أي ملاحظات أو طلبات إضافية..."
+></textarea>
+
 </div>
 
-<div class="field">
-<label>إرفاق صورة إيصال التحويل *</label>
-<input id="receipt" type="file" accept="image/*" required>
-<div id="receiptPreview"></div>
-<p class="small">يجب إرفاق صورة واضحة للإيصال.</p>
 </div>
 
-<div class="pay-box">
-<h3>تثبيت الحجز</h3>
-<p>العربون المطلوب: <strong>5 ر.ع</strong></p>
-<p>رقم التحويل: <strong>79345991</strong></p>
+<!-- =========================
+     DEPOSIT
+========================= -->
+
+<div class="deposit">
+
+<h3>العربون المطلوب: 5 ر.ع</h3>
+
+<p>
+رقم التحويل:
+</p>
+
+<strong>79345991</strong>
+
+<p style="margin-top:12px">
+يجب رفع صورة إيصال التحويل لتأكيد الحجز.
+</p>
+
+<div class="upload">
+
+<label for="receipt">
+📷 صورة إيصال التحويل *
+</label>
+
+<input
+  id="receipt"
+  type="file"
+  accept="image/*"
+  required
+>
+
+<img
+  id="receiptPreview"
+  class="preview"
+  alt="معاينة الإيصال"
+>
+
 </div>
 
-<button class="btn" style="width:100%" type="submit">
-إرسال طلب الحجز 💗
+</div>
+
+<button
+  id="submitBtn"
+  class="submit-btn"
+  type="submit"
+>
+  إرسال الحجز
 </button>
 
 </form>
+
 </div>
 
-<div class="contact">
+</section>
 
-<div class="info">
-<h3>استفسارات عن الشعر 💇🏻‍♀️</h3>
-<p>للاستفسار عن خدمات الشعر:</p>
-<a class="btn light" href="tel:94888701">
-الاستفسارات عن الشعر
-</a>
-<p class="small">94888701</p>
-</div>
+<!-- =========================
+     HAIR
+========================= -->
 
-<div class="info">
-<h3>تنبيه</h3>
+<section class="section">
+
+<div class="contact-box">
+
+<h3>الاستفسارات عن الشعر 💇🏻‍♀️</h3>
+
 <p>
-التأخير أكثر من 15 دقيقة يلغي الحجز،
-والحجز يثبت بعد دفع العربون.
+للاستفسار عن خدمات الشعر يرجى التواصل مباشرة.
 </p>
-</div>
+
+<a
+  class="whatsapp"
+  href="https://wa.me/96894888701"
+  target="_blank"
+>
+  💬 استفسار عن الشعر
+</a>
 
 </div>
 
-</div>
 </section>
 
 </main>
 
 <footer>
-رغد ميكب © 2026
+© 2026 رغد ميكب — جميع الحقوق محفوظة
 </footer>
 
-<div class="modal" id="adminModal">
-<div class="admin-box">
+<!-- =========================
+     LOGIN MODAL
+========================= -->
 
-<button class="close" onclick="closeAdmin()">×</button>
+<div id="loginModal" class="modal">
 
-<div id="loginView">
+<div class="modal-box">
 
-<h2 style="color:#8e4b59">تسجيل دخول الإدارة 🔐</h2>
-
-<form id="adminForm">
-
-<div class="field">
-<label>اسم المستخدم</label>
-<input id="adminUser" required>
-</div>
-
-<div class="field">
-<label>كلمة المرور</label>
-<input id="adminPass" type="password" required>
-</div>
-
-<button class="btn" type="submit">دخول</button>
-
-</form>
-</div>
-
-<div id="bookingsView" style="display:none">
-
-<h2 style="color:#8e4b59">الحجوزات 📋</h2>
-
-<button class="btn light" onclick="logout()">
-تسجيل خروج
+<button
+  class="close"
+  onclick="closeLogin()"
+>
+×
 </button>
 
-<div id="bookingList"></div>
+<form
+  id="loginForm"
+  class="login-form"
+>
+
+<h2>تسجيل دخول الإدارة 🔐</h2>
+
+<label>اسم المستخدم</label>
+
+<input
+  id="adminUser"
+  type="text"
+  required
+>
+
+<label>كلمة المرور</label>
+
+<input
+  id="adminPassword"
+  type="password"
+  required
+>
+
+<button
+  class="admin-btn"
+  type="submit"
+>
+  دخول
+</button>
+
+<div id="loginError" class="error">
+اسم المستخدم أو كلمة المرور غير صحيحة.
+</div>
+
+</form>
 
 </div>
+</div>
+
+<!-- =========================
+     BOOKINGS MODAL
+========================= -->
+
+<div id="bookingsModal" class="modal">
+
+<div class="modal-box">
+
+<button
+  class="close"
+  onclick="closeBookings()"
+>
+×
+</button>
+
+<h2 style="color:#8e4b59">
+الحجوزات 📋
+</h2>
+
+<div id="bookingsContent">
+جارٍ تحميل الحجوزات...
+</div>
 
 </div>
 </div>
+
+<div id="alert" class="alert"></div>
 
 <script>
-
-/* ==============================
-   SUPABASE
-============================== */
+/* =====================================================
+   SUPABASE SETTINGS
+===================================================== */
 
 const SUPABASE_URL =
-"https://ezbimmtscfmmmbzroph.supabase.co";
+"ضع-رابط-مشروع-Supabase-هنا";
 
 const SUPABASE_ANON_KEY =
-"sb_publishable_yvMOXjtPdh8sZ4JivimsTg_piRTGRNA";
+"ضع-Publishable-Key-هنا";
 
-const supabaseClient =
-window.supabase.createClient(
-SUPABASE_URL,
-SUPABASE_ANON_KEY
-);
+/*
+  لا تضع Secret Key هنا.
+*/
 
+let supabaseClient = null;
 
-/* ==============================
-   معاينة الإيصال
-============================== */
+if(
+  SUPABASE_URL &&
+  SUPABASE_ANON_KEY &&
+  !SUPABASE_URL.includes("ضع-") &&
+  !SUPABASE_ANON_KEY.includes("ضع-")
+){
+  supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
+    );
+}
 
-document.getElementById("receipt")
+/* =====================================================
+   ALERT
+===================================================== */
+
+function showAlert(message){
+
+  const el =
+    document.getElementById("alert");
+
+  el.textContent = message;
+  el.classList.add("show");
+
+  setTimeout(()=>{
+    el.classList.remove("show");
+  },3500);
+}
+
+/* =====================================================
+   DATE
+===================================================== */
+
+const dateInput =
+document.getElementById("bookingDate");
+
+const today =
+new Date().toISOString().split("T")[0];
+
+dateInput.min = today;
+
+/* =====================================================
+   RECEIPT PREVIEW
+===================================================== */
+
+document
+.getElementById("receipt")
 .addEventListener("change",function(){
 
-const file=this.files[0];
-const preview=document.getElementById("receiptPreview");
+  const file = this.files[0];
 
-preview.innerHTML="";
+  const preview =
+  document.getElementById("receiptPreview");
 
-if(file){
+  if(!file){
+    preview.style.display="none";
+    preview.src="";
+    return;
+  }
 
-const img=document.createElement("img");
-img.src=URL.createObjectURL(file);
-img.style.maxWidth="220px";
-img.style.maxHeight="260px";
-img.style.borderRadius="14px";
+  if(!file.type.startsWith("image/")){
+    showAlert("يرجى اختيار صورة للإيصال.");
+    this.value="";
+    return;
+  }
 
-preview.appendChild(img);
+  const reader =
+  new FileReader();
 
-}
+  reader.onload=function(e){
+    preview.src=e.target.result;
+    preview.style.display="block";
+  };
 
-});
-
-
-/* ==============================
-   إرسال الحجز
-============================== */
-
-document.getElementById("bookingForm")
-.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-const receiptFile=
-document.getElementById("receipt").files[0];
-
-if(!receiptFile){
-
-alert("يرجى إرفاق صورة الإيصال");
-return;
-
-}
-
-const booking={
-name:document.getElementById("name").value.trim(),
-phone:document.getElementById("phone").value.trim(),
-service:document.getElementById("service").value,
-date:document.getElementById("date").value,
-time:document.getElementById("time").value,
-people:Number(document.getElementById("people").value||1),
-notes:document.getElementById("notes").value.trim()
-};
-
-const button=
-this.querySelector("button[type=submit]");
-
-button.disabled=true;
-button.textContent="جاري إرسال الحجز...";
-
-try{
-
-const safeName=
-receiptFile.name
-.replace(/[^a-zA-Z0-9._-]/g,"_");
-
-const path=
-`receipts/${Date.now()}-${safeName}`;
-
-const upload=
-await supabaseClient.storage
-.from("receipts")
-.upload(
-path,
-receiptFile,
-{
-upsert:false,
-contentType:receiptFile.type
-}
-);
-
-if(upload.error)
-throw upload.error;
-
-const publicUrl=
-supabaseClient.storage
-.from("receipts")
-.getPublicUrl(path)
-.data.publicUrl;
-
-const {error}=
-await supabaseClient
-.from("bookings")
-.insert({
-
-name:booking.name,
-phone:booking.phone,
-service:booking.service,
-date:booking.date,
-time:booking.time,
-people:booking.people,
-notes:booking.notes,
-receipt_url:publicUrl,
-receipt_name:receiptFile.name
+  reader.readAsDataURL(file);
 
 });
 
-if(error)
-throw error;
+/* =====================================================
+   LOGIN
+===================================================== */
 
-alert("تم إرسال الحجز بنجاح 💗");
+function openLogin(){
 
-this.reset();
-document.getElementById("receiptPreview").innerHTML="";
-
-}catch(error){
-
-console.error(error);
-
-alert(
-"تعذر حفظ الحجز. تأكد من إعداد Supabase والسياسات."
-);
-
-}finally{
-
-button.disabled=false;
-button.textContent="إرسال طلب الحجز 💗";
+  document
+  .getElementById("loginModal")
+  .classList.add("show");
 
 }
+
+function closeLogin(){
+
+  document
+  .getElementById("loginModal")
+  .classList.remove("show");
+
+}
+
+document
+.getElementById("loginForm")
+.addEventListener("submit",function(e){
+
+  e.preventDefault();
+
+  const user =
+  document.getElementById("adminUser").value.trim();
+
+  const pass =
+  document.getElementById("adminPassword").value;
+
+  if(user==="admin" && pass==="12345"){
+
+    sessionStorage.setItem(
+      "raghad_admin",
+      "true"
+    );
+
+    closeLogin();
+
+    showAlert("تم تسجيل الدخول بنجاح ✅");
+
+    openBookings();
+
+  }else{
+
+    document
+    .getElementById("loginError")
+    .style.display="block";
+
+  }
 
 });
 
+/* =====================================================
+   OPEN BOOKINGS
+===================================================== */
 
-/* ==============================
-   الإدارة
-============================== */
+async function openBookings(){
 
-function openAdmin(){
+  if(
+    sessionStorage.getItem("raghad_admin")!=="true"
+  ){
 
-document.getElementById("adminModal")
-.classList.add("show");
+    openLogin();
+    return;
 
-}
+  }
 
-function closeAdmin(){
+  document
+  .getElementById("bookingsModal")
+  .classList.add("show");
 
-document.getElementById("adminModal")
-.classList.remove("show");
-
-}
-
-document.getElementById("adminForm")
-.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-const user=
-document.getElementById("adminUser").value;
-
-const pass=
-document.getElementById("adminPass").value;
-
-if(user==="admin" && pass==="12345"){
-
-document.getElementById("loginView")
-.style.display="none";
-
-document.getElementById("bookingsView")
-.style.display="block";
-
-await loadBookings();
-
-}else{
-
-alert("اسم المستخدم أو كلمة المرور غير صحيحة");
+  await loadBookings();
 
 }
 
-});
+function closeBookings(){
 
+  document
+  .getElementById("bookingsModal")
+  .classList.remove("show");
+
+}
+
+/* =====================================================
+   LOAD BOOKINGS
+===================================================== */
 
 async function loadBookings(){
 
-const list=
-document.getElementById("bookingList");
+  const box =
+  document.getElementById("bookingsContent");
 
-list.innerHTML=
-"<p>جاري تحميل الحجوزات...</p>";
+  box.innerHTML="جارٍ تحميل الحجوزات...";
 
-const {data,error}=
-await supabaseClient
-.from("bookings")
-.select("*")
-.order("created_at",{ascending:false});
+  if(!supabaseClient){
 
-if(error){
+    box.innerHTML=`
+      <div class="empty">
+        لم يتم إعداد Supabase بعد.
+      </div>
+    `;
 
-console.error(error);
+    return;
 
-list.innerHTML=
-"<p>تعذر تحميل الحجوزات.</p>";
+  }
 
-return;
+  const {data,error} =
+  await supabaseClient
+  .from("bookings")
+  .select("*")
+  .order("created_at",{ascending:false});
+
+  if(error){
+
+    box.innerHTML=`
+      <div class="empty">
+        تعذر تحميل الحجوزات.<br>
+        ${escapeHtml(error.message)}
+      </div>
+    `;
+
+    return;
+
+  }
+
+  if(!data || data.length===0){
+
+    box.innerHTML=`
+      <div class="empty">
+        لا توجد حجوزات حتى الآن.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  let html=`
+    <div class="booking-list">
+    <table>
+
+    <thead>
+    <tr>
+      <th>الاسم</th>
+      <th>الهاتف</th>
+      <th>الخدمة</th>
+      <th>التاريخ</th>
+      <th>الوقت</th>
+      <th>الأشخاص</th>
+      <th>الإيصال</th>
+    </tr>
+    </thead>
+
+    <tbody>
+  `;
+
+  for(const booking of data){
+
+    html+=`
+      <tr>
+
+      <td>
+      ${escapeHtml(booking.name || "")}
+      </td>
+
+      <td>
+      ${escapeHtml(booking.phone || "")}
+      </td>
+
+      <td>
+      ${escapeHtml(booking.service || "")}
+      </td>
+
+      <td>
+      ${escapeHtml(booking.date || "")}
+      </td>
+
+      <td>
+      ${escapeHtml(booking.time || "")}
+      </td>
+
+      <td>
+      ${escapeHtml(String(booking.people || ""))}
+      </td>
+
+      <td>
+      ${
+        booking.receipt_url
+        ?
+        `<a
+          href="${booking.receipt_url}"
+          target="_blank"
+          style="color:#8e4b59;font-weight:800"
+        >عرض الإيصال</a>`
+        :
+        "لا يوجد"
+      }
+      </td>
+
+      </tr>
+    `;
+
+  }
+
+  html+=`
+    </tbody>
+    </table>
+    </div>
+  `;
+
+  box.innerHTML=html;
+}
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHtml(value){
+
+  return String(value)
+  .replaceAll("&","&amp;")
+  .replaceAll("<","&lt;")
+  .replaceAll(">","&gt;")
+  .replaceAll('"',"&quot;")
+  .replaceAll("'","&#039;");
 
 }
 
-if(!data || data.length===0){
+/* =====================================================
+   BOOKING SUBMIT
+===================================================== */
 
-list.innerHTML=
-"<div style='padding:20px;text-align:center'>لا توجد حجوزات حالياً.</div>";
+document
+.getElementById("bookingForm")
+.addEventListener("submit",async function(e){
 
-return;
+  e.preventDefault();
 
-}
+  const submitBtn =
+  document.getElementById("submitBtn");
 
-let html=`
-<table class="booking-table">
+  if(!supabaseClient){
 
-<tr>
-<th>الاسم</th>
-<th>الهاتف</th>
-<th>الخدمة</th>
-<th>التاريخ</th>
-<th>الوقت</th>
-<th>الأشخاص</th>
-<th>الإيصال</th>
-</tr>
-`;
+    showAlert(
+      "تعذر حفظ الحجز. تأكد من إعداد Supabase."
+    );
 
-data.forEach(b=>{
+    return;
 
-html+=`
+  }
 
-<tr>
+  const receiptInput =
+  document.getElementById("receipt");
 
-<td>${escapeHtml(b.name||"")}</td>
+  const receiptFile =
+  receiptInput.files[0];
 
-<td>${escapeHtml(b.phone||"")}</td>
+  if(!receiptFile){
 
-<td>${escapeHtml(b.service||"")}</td>
+    showAlert(
+      "يجب رفع صورة إيصال العربون."
+    );
 
-<td>${escapeHtml(b.date||"")}</td>
+    return;
 
-<td>${escapeHtml(b.time||"")}</td>
+  }
 
-<td>${b.people||1}</td>
+  submitBtn.disabled=true;
+  submitBtn.textContent="جاري إرسال الحجز...";
 
-<td>
-${
-b.receipt_url
-?
-`<a class="btn" target="_blank"
-href="${b.receipt_url}">
-عرض الإيصال
-</a>`
-:
-"—"
-}
-</td>
+  try{
 
-</tr>
+    const name =
+    document.getElementById("fullName").value.trim();
 
-`;
+    const phone =
+    document.getElementById("phone").value.trim();
+
+    const service =
+    document.getElementById("service").value;
+
+    const date =
+    document.getElementById("bookingDate").value;
+
+    const time =
+    document.getElementById("bookingTime").value;
+
+    const people =
+    document.getElementById("people").value;
+
+    const notes =
+    document.getElementById("notes").value.trim();
+
+    const safeName =
+    name
+    .replace(/[^a-zA-Z0-9\u0600-\u06FF_-]/g,"_")
+    .slice(0,40);
+
+    const ext =
+    receiptFile.name
+    .split(".")
+    .pop()
+    .toLowerCase();
+
+    const filePath =
+    `${Date.now()}_${safeName}.${ext}`;
+
+    /* رفع الإيصال */
+
+    const upload =
+    await supabaseClient
+    .storage
+    .from("receipts")
+    .upload(
+      filePath,
+      receiptFile,
+      {
+        cacheControl:"3600",
+        upsert:false
+      }
+    );
+
+    if(upload.error){
+
+      throw upload.error;
+
+    }
+
+    /* رابط الإيصال */
+
+    const publicUrl =
+    supabaseClient
+    .storage
+    .from("receipts")
+    .getPublicUrl(filePath)
+    .data
+    .publicUrl;
+
+    /* حفظ الحجز */
+
+    const insert =
+    await supabaseClient
+    .from("bookings")
+    .insert({
+      name:name,
+      phone:phone,
+      service:service,
+      date:date,
+      time:time,
+      people:Number(people),
+      notes:notes,
+      receipt_url:publicUrl,
+      receipt_name:receiptFile.name
+    });
+
+    if(insert.error){
+
+      /*
+        إذا فشل حفظ الحجز بعد رفع الصورة
+        نحاول حذف الصورة حتى لا تبقى ملفات غير مرتبطة.
+      */
+
+      await supabaseClient
+      .storage
+      .from("receipts")
+      .remove([filePath]);
+
+      throw insert.error;
+
+    }
+
+    showAlert(
+      "تم إرسال الحجز بنجاح ✅"
+    );
+
+    this.reset();
+
+    document
+    .getElementById("receiptPreview")
+    .style.display="none";
+
+    document
+    .getElementById("receiptPreview")
+    .src="";
+
+    /*
+      فتح واتساب
+    */
+
+    const whatsappMessage =
+    `مرحباً، تم إرسال حجز جديد في رغد ميكب.
+الاسم: ${name}
+الخدمة: ${service}
+التاريخ: ${date}
+الوقت: ${time}
+عدد الأشخاص: ${people}`;
+
+    const whatsappUrl =
+    "https://wa.me/96879345991?text="
+    +
+    encodeURIComponent(whatsappMessage);
+
+    setTimeout(()=>{
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
+    },1000);
+
+  }catch(error){
+
+    console.error(error);
+
+    showAlert(
+      "تعذر حفظ الحجز: "
+      +
+      (error.message || "خطأ غير معروف")
+    );
+
+  }finally{
+
+    submitBtn.disabled=false;
+    submitBtn.textContent="إرسال الحجز";
+
+  }
 
 });
 
-html+="</table>";
+/* =====================================================
+   CLOSE MODALS WHEN CLICKING OUTSIDE
+===================================================== */
 
-list.innerHTML=html;
+document
+.getElementById("loginModal")
+.addEventListener("click",function(e){
+
+  if(e.target===this){
+    closeLogin();
+  }
+
+});
+
+document
+.getElementById("bookingsModal")
+.addEventListener("click",function(e){
+
+  if(e.target===this){
+    closeBookings();
+  }
+
+});
+
+</script>
+
+</body>
+</html><!-- =====================================================
+     نهاية الجزء الثاني
+===================================================== -->
+
+<!--
+  ملاحظة:
+  الجزء الأول يحتوي على كل الوظائف الأساسية:
+  - Supabase
+  - Storage
+  - bookings
+  - رفع الإيصال
+  - تسجيل الدخول
+  - الحجوزات
+  - الشعار الاحتياطي
+-->
+
+<script>
+/* =====================================================
+   حماية بسيطة لزر الحجوزات
+===================================================== */
+
+function logoutAdmin(){
+
+  sessionStorage.removeItem("raghad_admin");
+
+  closeBookings();
+
+  showAlert("تم تسجيل الخروج بنجاح.");
 
 }
 
+/* =====================================================
+   تحسين عرض الشعار
+===================================================== */
 
-function escapeHtml(text){
+window.addEventListener("load",function(){
 
-return String(text)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
+  const logo =
+  document.getElementById("siteLogo");
 
-}
+  const fallback =
+  document.getElementById("logoFallback");
 
+  if(logo){
 
-function logout(){
+    logo.addEventListener("error",function(){
 
-document.getElementById("loginView")
-.style.display="block";
+      logo.style.display="none";
 
-document.getElementById("bookingsView")
-.style.display="none";
+      if(fallback){
+        fallback.style.display="flex";
+      }
 
-document.getElementById("adminUser").value="";
-document.getElementById("adminPass").value="";
+    });
 
-}
+  }
+
+});
+
+/* =====================================================
+   منع اختيار تاريخ قديم
+===================================================== */
+
+document
+.getElementById("bookingDate")
+.addEventListener("change",function(){
+
+  const selected =
+  new Date(this.value);
+
+  const todayDate =
+  new Date();
+
+  todayDate.setHours(0,0,0,0);
+
+  if(selected < todayDate){
+
+    showAlert(
+      "لا يمكن اختيار تاريخ سابق."
+    );
+
+    this.value="";
+
+  }
+
+});
+
+/* =====================================================
+   تنظيف رقم الهاتف
+===================================================== */
+
+document
+.getElementById("phone")
+.addEventListener("input",function(){
+
+  this.value =
+  this.value.replace(/[^\d+]/g,"");
+
+});
+
+/* =====================================================
+   منع الإرسال المكرر
+===================================================== */
+
+let submittingBooking=false;
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(){
+
+  if(submittingBooking){
+
+    return;
+
+  }
+
+  submittingBooking=true;
+
+  setTimeout(()=>{
+
+    submittingBooking=false;
+
+  },5000);
+
+});
+
+/* =====================================================
+   إغلاق الرسالة
+===================================================== */
+
+document
+.getElementById("alert")
+.addEventListener("click",function(){
+
+  this.classList.remove("show");
+
+});
 
 </script>
 
