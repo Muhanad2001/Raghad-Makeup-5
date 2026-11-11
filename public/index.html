@@ -3,488 +3,384 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>رغد ميكب | Raghad Makeup</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
-
-:root{
-  --rose:#8e4b59;
-  --pink:#f7e8eb;
-  --gold:#b48a57;
-  --dark:#34262a;
-  --white:#fff;
-  --soft:#fff8f9;
-  --shadow:0 12px 35px rgba(75,35,45,.12);
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
-
-*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Cairo,sans-serif;
-  background:linear-gradient(135deg,#fff,#fff7f8);
-  color:var(--dark);
+font-family:Arial,Tahoma,sans-serif;
+background:#fff8f9;
+color:#3d292e;
 }
 
-a{text-decoration:none;color:inherit}
-
-.container{
-  width:min(1100px,92%);
-  margin:auto;
-}
-
-/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #f1dfe3;
+background:white;
+padding:15px 20px;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 2px 15px #00000012;
 }
 
 .nav{
-  min-height:75px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+max-width:1000px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-  color:var(--rose);
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .logo img{
-  width:48px;
-  height:48px;
-  object-fit:contain;
+width:55px;
+height:55px;
+object-fit:contain;
+border-radius:10px;
 }
 
-.logo span{
-  font-family:"Playfair Display",serif;
-  font-size:21px;
+.logo-text{
+font-weight:bold;
+color:#8e4b59;
+font-size:20px;
 }
 
-.nav-actions{
-  display:flex;
-  gap:8px;
+.buttons{
+display:flex;
+gap:8px;
 }
 
-.btn{
-  border:0;
-  border-radius:14px;
-  padding:11px 16px;
-  font-family:inherit;
-  font-weight:700;
-  cursor:pointer;
+button,
+.button{
+border:0;
+padding:11px 15px;
+border-radius:12px;
+font-weight:bold;
+font-family:inherit;
+cursor:pointer;
 }
 
-.btn-light{
-  background:var(--pink);
-  color:var(--rose);
+.login{
+background:#f7e8eb;
+color:#8e4b59;
 }
 
-.btn-main{
-  background:var(--rose);
-  color:#fff;
-  box-shadow:0 8px 20px rgba(142,75,89,.22);
+.booking-btn{
+background:#8e4b59;
+color:white;
 }
 
-/* HERO */
 .hero{
-  min-height:520px;
-  display:flex;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero:before,
-.hero:after{
-  content:"";
-  position:absolute;
-  border-radius:50%;
-  background:#f8e5e9;
-  opacity:.65;
-}
-
-.hero:before{
-  width:350px;
-  height:350px;
-  top:-180px;
-  right:-130px;
-}
-
-.hero:after{
-  width:260px;
-  height:260px;
-  bottom:-150px;
-  left:-100px;
-}
-
-.hero-content{
-  width:100%;
-  position:relative;
-  z-index:2;
-}
-
-.badge{
-  display:inline-block;
-  background:var(--pink);
-  color:var(--rose);
-  padding:8px 18px;
-  border-radius:50px;
-  font-size:13px;
-  font-weight:800;
-  margin-bottom:20px;
+text-align:center;
+padding:80px 20px;
+background:
+linear-gradient(#fff8f9dd,#fff8f9dd),
+url("logo.jpg") center/contain no-repeat;
 }
 
 .hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(42px,9vw,78px);
-  color:var(--rose);
-  margin-bottom:10px;
+font-size:50px;
+color:#8e4b59;
+margin-bottom:10px;
 }
 
 .hero h2{
-  font-size:clamp(20px,4vw,30px);
-  margin-bottom:15px;
+font-size:24px;
+margin-bottom:15px;
 }
 
 .hero p{
-  max-width:650px;
-  margin:auto;
-  color:#76676b;
-  line-height:2;
+max-width:650px;
+margin:auto;
+line-height:2;
+color:#75666a;
 }
 
 .hero-buttons{
-  margin-top:25px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-/* SECTIONS */
-section{
-  padding:70px 0;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.section-title h2{
-  color:var(--rose);
-  font-size:30px;
-}
-
-.section-title p{
-  color:#8a777c;
-  margin-top:7px;
-}
-
-/* SERVICES */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.card{
-  background:#fff;
-  border:1px solid #f0dfe2;
-  border-radius:24px;
-  padding:25px;
-  box-shadow:var(--shadow);
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.card h3{
-  color:var(--rose);
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#76676b;
-  line-height:1.9;
-  font-size:14px;
-}
-
-.price{
-  margin-top:17px;
-  color:var(--gold);
-  font-size:22px;
-  font-weight:800;
-}
-
-.price small{
-  font-size:12px;
-  color:#8d7a7e;
-}
-
-/* TERMS */
-.terms{
-  background:var(--pink);
-}
-
-.terms-box{
-  max-width:800px;
-  margin:auto;
-  background:#fff;
-  border-radius:25px;
-  padding:28px;
-  box-shadow:var(--shadow);
-}
-
-.terms-box li{
-  list-style:none;
-  padding:10px 0;
-  border-bottom:1px solid #f2e5e7;
-}
-
-.terms-box li:last-child{
-  border:0;
-}
-
-.terms-box li:before{
-  content:"✓";
-  color:var(--rose);
-  font-weight:900;
-  margin-left:9px;
-}
-
-/* BOOKING */
-.booking{
-  background:#fff;
-}
-
-.booking-box{
-  max-width:850px;
-  margin:auto;
-  background:var(--soft);
-  border:1px solid #f1dfe3;
-  border-radius:28px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:17px;
-}
-
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.field.full{
-  grid-column:1/-1;
-}
-
-label{
-  font-weight:700;
-  font-size:14px;
-}
-
-input,select,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid #e8d4d8;
-  border-radius:12px;
-  background:#fff;
-  font-family:inherit;
-  outline:none;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:var(--rose);
-}
-
-textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-.payment{
-  background:#fff0f2;
-  border:1px dashed var(--rose);
-  padding:18px;
-  border-radius:15px;
-  margin:20px 0;
-  line-height:2;
-}
-
-.payment strong{
-  color:var(--rose);
-}
-
-.receipt-preview{
-  max-width:220px;
-  max-height:220px;
-  border-radius:12px;
-  margin-top:10px;
-  display:none;
-}
-
-.submit{
-  width:100%;
-  padding:15px;
-  font-size:16px;
-  border:0;
-  border-radius:15px;
-  background:#25D366;
-  color:#fff;
-  font-family:inherit;
-  font-weight:800;
-  cursor:pointer;
-}
-
-.submit:hover{
-  filter:brightness(.95);
-}
-
-/* FOOTER */
-footer{
-  background:#34262a;
-  color:#fff;
-  text-align:center;
-  padding:35px 20px;
-}
-
-footer h3{
-  color:#f6d9df;
-  margin-bottom:8px;
-}
-
-footer p{
-  color:#d5c5c8;
-  margin:6px 0;
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .whatsapp{
-  display:inline-block;
-  margin-top:15px;
-  background:#25D366;
-  color:white;
-  padding:11px 20px;
-  border-radius:12px;
-  font-weight:800;
+background:#25d366;
+color:white;
 }
 
-/* ADMIN */
+section{
+padding:60px 20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h2{
+color:#8e4b59;
+font-size:30px;
+}
+
+.title p{
+color:#877579;
+margin-top:8px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:22px;
+border:1px solid #f0dce1;
+box-shadow:0 10px 30px #6d394410;
+}
+
+.card h3{
+color:#8e4b59;
+margin-bottom:12px;
+}
+
+.card p{
+line-height:2;
+color:#75666a;
+font-size:14px;
+}
+
+.price{
+color:#b48a57;
+font-size:22px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.terms{
+background:#f7e8eb;
+}
+
+.terms-box{
+background:white;
+padding:25px;
+border-radius:20px;
+max-width:800px;
+margin:auto;
+}
+
+.terms-box p{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.booking-section{
+background:white;
+}
+
+.form{
+max-width:850px;
+margin:auto;
+background:#fff8f9;
+padding:25px;
+border-radius:25px;
+border:1px solid #efdde1;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.field{
+margin-bottom:15px;
+}
+
+.field.full{
+grid-column:1/-1;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:13px;
+border:1px solid #e5d1d6;
+border-radius:10px;
+font-family:inherit;
+background:white;
+}
+
+textarea{
+height:100px;
+resize:vertical;
+}
+
+.payment{
+background:#fff0f2;
+border:1px dashed #8e4b59;
+padding:18px;
+border-radius:15px;
+line-height:2;
+margin:15px 0;
+}
+
+.payment strong{
+color:#8e4b59;
+}
+
+.preview{
+display:none;
+max-width:200px;
+margin-top:10px;
+border-radius:12px;
+}
+
+.send{
+width:100%;
+background:#25d366;
+color:white;
+font-size:17px;
+padding:15px;
+}
+
+.hair{
+text-align:center;
+}
+
+.hair a{
+display:inline-block;
+margin-top:15px;
+background:#8e4b59;
+color:white;
+padding:12px 20px;
+border-radius:12px;
+}
+
+footer{
+background:#34262a;
+color:white;
+text-align:center;
+padding:35px 20px;
+}
+
+footer h2{
+color:#f5d9df;
+margin-bottom:10px;
+}
+
+footer p{
+color:#d6c5c9;
+margin:7px;
+}
+
+footer a{
+display:inline-block;
+margin-top:12px;
+background:#25d366;
+color:white;
+padding:11px 20px;
+border-radius:12px;
+}
+
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  z-index:500;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+display:none;
+position:fixed;
+inset:0;
+background:#0009;
+z-index:100;
+align-items:center;
+justify-content:center;
+padding:20px;
 }
 
-.modal.active{
-  display:flex;
+.modal.show{
+display:flex;
 }
 
 .modal-box{
-  width:min(700px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:25px;
-  padding:25px;
-  position:relative;
+background:white;
+width:min(500px,100%);
+padding:25px;
+border-radius:20px;
+position:relative;
 }
 
 .close{
-  position:absolute;
-  left:18px;
-  top:15px;
-  border:0;
-  background:#f6e8ea;
-  color:var(--rose);
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  cursor:pointer;
+position:absolute;
+left:15px;
+top:15px;
+background:#f7e8eb;
+color:#8e4b59;
+width:35px;
+height:35px;
+border-radius:50%;
 }
 
-.admin-row{
-  display:grid;
-  grid-template-columns:1fr 130px;
-  gap:10px;
-  align-items:center;
-  margin:10px 0;
+.admin-price{
+display:flex;
+gap:10px;
+margin:10px 0;
+align-items:center;
 }
 
-.admin-row input{
-  text-align:center;
+.admin-price input{
+width:120px;
 }
 
-/* RESPONSIVE */
-@media(max-width:800px){
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
+@media(max-width:700px){
 
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .field.full{
-    grid-column:auto;
-  }
+.cards{
+grid-template-columns:1fr;
 }
 
-@media(max-width:550px){
-  .nav{
-    min-height:65px;
-  }
+.form-grid{
+grid-template-columns:1fr;
+}
 
-  .logo span{
-    font-size:17px;
-  }
+.field.full{
+grid-column:auto;
+}
 
-  .logo img{
-    width:40px;
-    height:40px;
-  }
+.hero h1{
+font-size:40px;
+}
 
-  .nav-actions .btn{
-    padding:8px 10px;
-    font-size:11px;
-  }
+.logo-text{
+font-size:16px;
+}
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+.buttons button{
+padding:8px 10px;
+font-size:11px;
+}
 
-  section{
-    padding:50px 0;
-  }
-
-  .booking-box{
-    padding:20px;
-  }
 }
 </style>
 </head>
@@ -492,74 +388,124 @@ footer p{
 <body>
 
 <header>
-<div class="container nav">
 
-<a href="#" class="logo">
-<img src="logo.png" alt="Raghad Makeup">
-<span>رغد ميكب</span>
-</a>
+<div class="nav">
 
-<div class="nav-actions">
-<button class="btn btn-light" onclick="openLogin()">🔐 تسجيل دخول</button>
-<button class="btn btn-main" onclick="scrollBooking()">📋 الحجوزات</button>
+<div class="logo">
+
+<img
+src="logo.jpg"
+alt="Raghad Makeup"
+onerror="this.style.display='none'"
+>
+
+<div class="logo-text">
+رغد ميكب
 </div>
 
 </div>
+
+<div class="buttons">
+
+<button
+class="login"
+onclick="openLogin()">
+🔐 تسجيل دخول
+</button>
+
+<button
+class="booking-btn"
+onclick="goBooking()">
+📋 الحجوزات
+</button>
+
+</div>
+
+</div>
+
 </header>
 
-<main>
 
 <section class="hero">
-<div class="container hero-content">
 
-<span class="badge">✨ RAGHAD MAKEUP ✨</span>
+<div class="container">
 
-<h1>رغد ميكب</h1>
+<h1>Raghad</h1>
 
-<h2>جمالك يبدأ من هنا</h2>
+<h2>رغد ميكب 💄</h2>
 
 <p>
-خدمات ميكب احترافية للحضور والعرايس والتخرج
-بلمسة أنثوية راقية تناسب مناسبتك.
+جمالك يبدأ من هنا ✨
+<br>
+ميكب احترافي للحضور والعرايس والتخرج
+بلمسة أنثوية راقية.
 </p>
 
 <div class="hero-buttons">
-<button class="btn btn-main" onclick="scrollBooking()">احجزي موعدك الآن 💄</button>
 
-<a class="btn btn-light"
+<button
+class="booking-btn"
+onclick="goBooking()">
+احجزي موعدك الآن 💄
+</button>
+
+<a
+class="button whatsapp"
 href="https://wa.me/96879345991"
 target="_blank">
-تواصل واتساب 💬
+💬 تواصل واتساب
 </a>
+
 </div>
 
 </div>
+
 </section>
 
-<!-- SERVICES -->
+
 <section>
+
 <div class="container">
 
-<div class="section-title">
+<div class="title">
+
 <h2>خدماتنا 💄</h2>
-<p>اختاري الخدمة المناسبة لك</p>
+
+<p>
+اختاري الخدمة المناسبة لك
+</p>
+
 </div>
 
-<div class="grid">
+
+<div class="cards">
 
 <div class="card">
-<h3>ميكب حضور ✨</h3>
+
+<h3>
+ميكب حضور ✨
+</h3>
+
 <p>
 الهادي (العادي) — بدون رموش<br>
 الميكب الناعم — مع أو بدون رموش<br>
 السبيشل الثقيل — مع أو بدون رموش<br>
-العدسات مع العلبة
+العدسات — مع العلبة
 </p>
-<div class="price">من 15 ريال</div>
+
+<div class="price">
+من 15 ريال
 </div>
 
+</div>
+
+
 <div class="card">
-<h3>ميكب العرايس 👰🏻‍♀️</h3>
+
+<h3>
+ميكب العرايس 👰🏻‍♀️
+</h3>
+
 <p>
 عقد القران<br>
 ملكة (خطوبة 💍)<br>
@@ -567,48 +513,69 @@ target="_blank">
 صباحية / مسائية<br>
 حفل حناء
 </p>
-<div class="price">من 20 ريال</div>
+
+<div class="price">
+من 20 ريال
 </div>
 
+</div>
+
+
 <div class="card">
-<h3>ميكب تخرج 👩🏻‍🎓</h3>
+
+<h3>
+ميكب تخرج 👩🏻‍🎓
+</h3>
+
 <p>
 ميكب تخرج احترافي<br>
 مع أو بدون رموش
 </p>
-<div class="price">18 ريال</div>
+
+<div class="price">
+18 ريال
 </div>
 
 </div>
+
 </div>
+
+</div>
+
 </section>
 
-<!-- PRICE LIST -->
-<section style="background:#fffaf9">
+
+<section>
+
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 <h2>قائمة الأسعار 💰</h2>
 </div>
 
-<div class="grid">
+<div class="cards">
 
 <div class="card">
+
 <h3>ميكب حضور</h3>
+
 <p>الهادي (العادي)</p>
 <div class="price">15 ريال</div>
 
-<p style="margin-top:15px">الميكب الناعم</p>
+<p>الميكب الناعم</p>
 <div class="price">18 ريال</div>
 
-<p style="margin-top:15px">السبيشل الثقيل</p>
+<p>السبيشل الثقيل</p>
 <div class="price">20 ريال</div>
 
-<p style="margin-top:15px">العدسات</p>
+<p>العدسات</p>
 <div class="price">4 ريال</div>
+
 </div>
 
+
 <div class="card">
+
 <h3>ميكب العرايس</h3>
 
 <p>عقد القران</p>
@@ -625,414 +592,577 @@ target="_blank">
 
 <p>حفل حناء</p>
 <div class="price">25 ريال</div>
+
 </div>
+
 
 <div class="card">
+
 <h3>ميكب تخرج 👩🏻‍🎓</h3>
+
 <p>
-ميكب تخرج<br>
 مع أو بدون رموش
 </p>
-<div class="price">18 ريال</div>
+
+<div class="price">
+18 ريال
 </div>
 
 </div>
+
 </div>
+
+</div>
+
 </section>
 
-<!-- TERMS -->
+
 <section class="terms">
+
 <div class="container">
 
-<div class="section-title">
+<div class="title">
 <h2>شروط الحجز 📌</h2>
 </div>
 
 <div class="terms-box">
-<ul>
-<li>ممنوع الأطفال إلا الرضع.</li>
-<li>الأسعار ثابتة.</li>
-<li>التأخير أكثر من 15 دقيقة يلغي الحجز.</li>
-<li>ممنوع الصبر بتاتاً ❌</li>
-<li>ممنوع الازدحام داخل غرفة الميكب.</li>
-<li>تأكيد الحجز يكون بدفع عربون 5 ريالات عمانية.</li>
-<li>يجب إرفاق صورة إيصال التحويل مع الحجز.</li>
-</ul>
+
+<p>✓ ممنوع الأطفال إلا الرضع.</p>
+
+<p>✓ الأسعار ثابتة.</p>
+
+<p>✓ التأخير أكثر من 15 دقيقة يلغي الحجز.</p>
+
+<p>✓ ممنوع الصبر بتاتاً ❌</p>
+
+<p>✓ ممنوع الازدحام داخل غرفة الميكب.</p>
+
+<p>✓ تأكيد الحجز بدفع عربون 5 ريالات عمانية.</p>
+
+<p>✓ يجب إرفاق صورة إيصال التحويل.</p>
+
 </div>
 
 </div>
+
 </section>
 
-<!-- BOOKING -->
-<section class="booking" id="booking">
+
+<section
+class="booking-section"
+id="booking">
+
 <div class="container">
 
-<div class="section-title">
-<h2>حجز موعد 📋</h2>
-<p>املئي البيانات ثم أرسلي الحجز عبر واتساب</p>
+<div class="title">
+
+<h2>
+حجز موعد 📋
+</h2>
+
+<p>
+املئي البيانات ثم أرسلي الحجز عبر واتساب
+</p>
+
 </div>
 
-<div class="booking-box">
 
-<form id="bookingForm">
+<form
+class="form"
+id="bookingForm">
+
 
 <div class="form-grid">
 
-<div class="field">
-<label>الاسم الكامل *</label>
-<input id="name" required placeholder="اكتبي اسمك">
-</div>
 
 <div class="field">
-<label>رقم الهاتف *</label>
-<input id="phone" type="tel" required placeholder="مثال: 9xxxxxxx">
+
+<label>
+الاسم الكامل *
+</label>
+
+<input
+id="name"
+required
+placeholder="اكتبي اسمك">
+
 </div>
+
+
+<div class="field">
+
+<label>
+رقم الهاتف *
+</label>
+
+<input
+id="phone"
+type="tel"
+required
+placeholder="9xxxxxxx">
+
+</div>
+
 
 <div class="field full">
-<label>نوع الخدمة *</label>
 
-<select id="service" required>
-<option value="">اختاري الخدمة</option>
+<label>
+نوع الخدمة *
+</label>
 
-<option data-price="15" value="الهادي (العادي)">
+<select
+id="service"
+required>
+
+<option value="">
+اختاري الخدمة
+</option>
+
+<option value="الهادي (العادي)" data-price="15">
 الهادي (العادي) — 15 ريال
 </option>
 
-<option data-price="18" value="الميكب الناعم">
+<option value="الميكب الناعم" data-price="18">
 الميكب الناعم — 18 ريال
 </option>
 
-<option data-price="20" value="السبيشل الثقيل">
+<option value="السبيشل الثقيل" data-price="20">
 السبيشل الثقيل — 20 ريال
 </option>
 
-<option data-price="4" value="العدسات">
+<option value="العدسات" data-price="4">
 العدسات — 4 ريال
 </option>
 
-<option data-price="20" value="عقد القران">
+<option value="عقد القران" data-price="20">
 عقد القران — 20 ريال
 </option>
 
-<option data-price="40" value="ملكة (خطوبة)">
-ملكة (خطوبة) — 40 ريال
+<option value="ملكة (خطوبة)" data-price="40">
+ملكة (خطوبة 💍) — 40 ريال
 </option>
 
-<option data-price="80" value="عروس (زفه)">
+<option value="عروس (زفه)" data-price="80">
 عروس (زفه) — 80 ريال
 </option>
 
-<option data-price="25" value="ميكب عروس صباحية / مسائية">
+<option value="ميكب عروس صباحية / مسائية" data-price="25">
 ميكب عروس صباحية / مسائية — 25 ريال
 </option>
 
-<option data-price="25" value="ميكب عروس حفل حناء">
+<option value="ميكب عروس حفل حناء" data-price="25">
 ميكب عروس حفل حناء — 25 ريال
 </option>
 
-<option data-price="18" value="ميكب تخرج">
+<option value="ميكب تخرج" data-price="18">
 ميكب تخرج — 18 ريال
 </option>
 
 </select>
+
 </div>
 
-<div class="field">
-<label>التاريخ *</label>
-<input id="date" type="date" required>
-</div>
 
 <div class="field">
-<label>الوقت *</label>
-<input id="time" type="time" required>
+
+<label>
+التاريخ *
+</label>
+
+<input
+id="date"
+type="date"
+required>
+
 </div>
 
+
 <div class="field">
-<label>عدد الأشخاص *</label>
-<input id="people" type="number" min="1" value="1" required>
+
+<label>
+الوقت *
+</label>
+
+<input
+id="time"
+type="time"
+required>
+
 </div>
+
+
+<div class="field">
+
+<label>
+عدد الأشخاص *
+</label>
+
+<input
+id="people"
+type="number"
+min="1"
+value="1"
+required>
+
+</div>
+
 
 <div class="field full">
-<label>ملاحظات إضافية</label>
-<textarea id="notes" placeholder="أي ملاحظات أو طلبات خاصة..."></textarea>
+
+<label>
+ملاحظات إضافية
+</label>
+
+<textarea
+id="notes"
+placeholder="أي ملاحظات...">
+</textarea>
+
 </div>
 
+
 <div class="field full">
-<label>صورة إيصال التحويل *</label>
+
+<label>
+صورة إيصال التحويل *
+</label>
 
 <input
 id="receipt"
 type="file"
 accept="image/*"
-required
->
+required>
 
 <img
-id="receiptPreview"
-class="receipt-preview"
-alt="صورة الإيصال"
->
+id="preview"
+class="preview">
 
 </div>
 
 </div>
+
 
 <div class="payment">
 
-<strong>💳 العربون: 5 ريالات عمانية</strong><br>
-
-رقم التحويل:
-<strong>79345991</strong>
+💳 <strong>العربون: 5 ريالات عمانية</strong>
 
 <br>
 
-بعد التحويل، ارفقي صورة الإيصال أعلاه ثم اضغطي
-<strong>إرسال الحجز عبر واتساب 💬</strong>.
+رقم التحويل:
+
+<strong>
+79345991
+</strong>
+
+<br>
+
+بعد التحويل، أرفقي صورة الإيصال ثم اضغطي
+<strong>
+إرسال الحجز عبر واتساب
+</strong>.
 
 </div>
 
-<button class="submit" type="submit">
+
+<button
+class="send"
+type="submit">
+
 إرسال الحجز عبر واتساب 💬
+
 </button>
 
 </form>
 
 </div>
-</div>
+
 </section>
 
-<!-- HAIR -->
+
 <section>
-<div class="container">
 
-<div class="section-title">
-<h2>استفسارات الشعر 💇🏻‍♀️</h2>
-<p>للاستفسارات والتنسيق</p>
+<div class="container hair">
 
-<a
-class="btn btn-main"
-href="tel:94888701"
-style="display:inline-block;margin-top:15px">
+<div class="title">
+
+<h2>
+استفسارات الشعر 💇🏻‍♀️
+</h2>
+
+<p>
+للاستفسارات والتنسيق
+</p>
+
+<a href="tel:94888701">
 📞 94888701
 </a>
 
 </div>
 
 </div>
+
 </section>
 
-</main>
 
 <footer>
 
-<h3>رغد ميكب</h3>
+<h2>
+رغد ميكب
+</h2>
 
-<p>جمالك... لمستنا ✨</p>
+<p>
+جمالك... لمستنا ✨
+</p>
 
-<p>للحجز والاستفسار</p>
+<p>
+للحجز والاستفسار
+</p>
 
 <a
-class="whatsapp"
 href="https://wa.me/96879345991"
 target="_blank">
-💬 واتساب
+💬 واتساب 79345991
 </a>
 
 </footer>
 
-<!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
+
+<!-- LOGIN -->
+
+<div
+class="modal"
+id="loginModal">
 
 <div class="modal-box">
 
-<button class="close" onclick="closeLogin()">×</button>
+<button
+class="close"
+onclick="closeLogin()">
+×
+</button>
 
-<h2 style="color:var(--rose);margin-bottom:20px">
+<h2 style="color:#8e4b59;margin-bottom:20px">
 🔐 تسجيل الدخول
 </h2>
 
-<div class="field">
-<label>اسم المستخدم</label>
-<input id="username" value="admin">
-</div>
+<label>
+اسم المستخدم
+</label>
 
-<div class="field" style="margin-top:15px">
-<label>كلمة المرور</label>
-<input id="password" type="password">
-</div>
+<input
+id="username"
+value="admin">
+
+<br><br>
+
+<label>
+كلمة المرور
+</label>
+
+<input
+id="password"
+type="password">
 
 <button
-class="btn btn-main"
+class="booking-btn"
 style="width:100%;margin-top:20px"
 onclick="login()">
+
 دخول
+
 </button>
 
-<p id="loginError"
-style="color:#b33;margin-top:10px;display:none">
+<p
+id="loginError"
+style="display:none;color:red;margin-top:10px">
+
 بيانات الدخول غير صحيحة
+
 </p>
 
 </div>
+
 </div>
 
+
 <!-- ADMIN -->
-<div class="modal" id="adminModal">
+
+<div
+class="modal"
+id="adminModal">
 
 <div class="modal-box">
 
-<button class="close" onclick="closeAdmin()">×</button>
+<button
+class="close"
+onclick="closeAdmin()">
+×
+</button>
 
-<h2 style="color:var(--rose);margin-bottom:20px">
+<h2 style="color:#8e4b59;margin-bottom:20px">
 💰 إدارة الأسعار
 </h2>
 
 <div id="priceEditor"></div>
 
 <button
-class="btn btn-main"
-style="width:100%;margin-top:15px"
+class="booking-btn"
+style="width:100%;margin-top:20px"
 onclick="savePrices()">
+
 حفظ الأسعار
+
 </button>
 
-<div style="margin-top:20px;padding:15px;background:#fff0f2;border-radius:15px">
-<strong>ملاحظة:</strong>
-الحجوزات الأساسية تصل إلى واتساب مباشرة.
 </div>
 
 </div>
-</div>
+
 
 <script>
 
-/* =========================
-   SETTINGS
-========================= */
-
+/* رقم الواتساب */
 const WHATSAPP = "96879345991";
-const DEPOSIT = "79345991";
 
-const defaultPrices = {
-  "الهادي (العادي)":15,
-  "الميكب الناعم":18,
-  "السبيشل الثقيل":20,
-  "العدسات":4,
-  "عقد القران":20,
-  "ملكة (خطوبة)":40,
-  "عروس (زفه)":80,
-  "ميكب عروس صباحية / مسائية":25,
-  "ميكب عروس حفل حناء":25,
-  "ميكب تخرج":18
-};
-
-let prices =
-JSON.parse(localStorage.getItem("raghadPrices") || "null")
-|| defaultPrices;
+/* رقم التحويل */
+const TRANSFER = "79345991";
 
 
-/* =========================
-   SCROLL
-========================= */
+function goBooking(){
 
-function scrollBooking(){
-  document.getElementById("booking")
-    .scrollIntoView({behavior:"smooth"});
+document
+.getElementById("booking")
+.scrollIntoView({
+behavior:"smooth"
+});
+
 }
 
 
-/* =========================
-   RECEIPT PREVIEW
-========================= */
+/* معاينة الإيصال */
 
-document.getElementById("receipt")
+document
+.getElementById("receipt")
 .addEventListener("change",function(){
 
-  const file=this.files[0];
+const file=this.files[0];
 
-  if(!file)return;
+if(!file){
+return;
+}
 
-  if(file.size > 8*1024*1024){
+if(file.size > 8*1024*1024){
 
-    alert("حجم صورة الإيصال يجب ألا يتجاوز 8MB.");
+alert("حجم صورة الإيصال يجب ألا يتجاوز 8MB");
 
-    this.value="";
-    return;
-  }
+this.value="";
 
-  const reader=new FileReader();
+return;
 
-  reader.onload=function(e){
+}
 
-    const img=document.getElementById("receiptPreview");
+const reader=new FileReader();
 
-    img.src=e.target.result;
-    img.style.display="block";
-  };
+reader.onload=function(e){
 
-  reader.readAsDataURL(file);
+const img=document.getElementById("preview");
+
+img.src=e.target.result;
+
+img.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
 });
 
 
-/* =========================
-   BOOKING
-========================= */
+/* إرسال الحجز */
 
-document.getElementById("bookingForm")
+document
+.getElementById("bookingForm")
 .addEventListener("submit",async function(e){
 
-  e.preventDefault();
-
-  const name=
-  document.getElementById("name").value.trim();
-
-  const phone=
-  document.getElementById("phone").value.trim();
-
-  const service=
-  document.getElementById("service").value;
-
-  const date=
-  document.getElementById("date").value;
-
-  const time=
-  document.getElementById("time").value;
-
-  const people=
-  document.getElementById("people").value;
-
-  const notes=
-  document.getElementById("notes").value.trim();
-
-  const receipt=
-  document.getElementById("receipt").files[0];
+e.preventDefault();
 
 
-  if(!name || !phone || !service ||
-     !date || !time || !receipt){
-
-    alert("يرجى تعبئة جميع البيانات المطلوبة وإرفاق إيصال التحويل.");
-    return;
-  }
+const name=
+document.getElementById("name")
+.value.trim();
 
 
-  const selected=
-  document.querySelector(
-    "#service option:checked"
-  );
-
-  const price=
-  selected.dataset.price;
+const phone=
+document.getElementById("phone")
+.value.trim();
 
 
-  const formattedDate=
-  new Date(date+"T00:00:00")
-  .toLocaleDateString("ar-OM");
+const service=
+document.getElementById("service")
+.value;
 
 
-  const message =
+const date=
+document.getElementById("date")
+.value;
 
-`💄 طلب حجز - رغد ميكب
+
+const time=
+document.getElementById("time")
+.value;
+
+
+const people=
+document.getElementById("people")
+.value;
+
+
+const notes=
+document.getElementById("notes")
+.value.trim();
+
+
+const receipt=
+document.getElementById("receipt")
+.files[0];
+
+
+if(
+!name ||
+!phone ||
+!service ||
+!date ||
+!time ||
+!receipt
+){
+
+alert(
+"يرجى تعبئة جميع البيانات وإرفاق صورة إيصال التحويل."
+);
+
+return;
+
+}
+
+
+const option=
+document.querySelector(
+"#service option:checked"
+);
+
+
+const price=
+option.dataset.price;
+
+
+const formattedDate=
+new Date(date+"T00:00:00")
+.toLocaleDateString("ar-OM");
+
+
+const message=`
+
+💄 طلب حجز - رغد ميكب
 
 👤 الاسم:
 ${name}
@@ -1062,219 +1192,275 @@ ${notes || "لا توجد"}
 5 ريالات عمانية
 
 🏦 رقم التحويل:
-${DEPOSIT}
+${TRANSFER}
 
-📎 تم إرفاق صورة إيصال التحويل.
+📎 تم إرفاق إيصال التحويل.
 
-أرجو تأكيد الحجز.`;
-
-  const whatsappURL =
-  "https://wa.me/"+WHATSAPP+
-  "?text="+encodeURIComponent(message);
+أرجو تأكيد الحجز.
+`;
 
 
-  /*
-   * نحاول مشاركة الصورة والرسالة مع واتساب
-   * إذا كان الجهاز يدعم مشاركة الملفات.
-   */
+/*
+فتح واتساب مباشرة على الرقم:
++968 79345991
+*/
 
-  try{
-
-    if(
-      navigator.share &&
-      navigator.canShare &&
-      navigator.canShare({
-        files:[receipt]
-      })
-    ){
-
-      await navigator.share({
-        title:"حجز رغد ميكب",
-        text:message,
-        files:[receipt]
-      });
-
-      return;
-    }
-
-  }catch(error){
-
-    /*
-     * المستخدم قد يلغي نافذة المشاركة.
-     * لا نعتبر ذلك خطأ.
-     */
-
-    if(error.name==="AbortError"){
-      return;
-    }
-  }
+const whatsappURL=
+"https://wa.me/"
++WHATSAPP
++"?text="
++encodeURIComponent(message);
 
 
-  /*
-   * الطريقة الاحتياطية:
-   * فتح واتساب بالرسالة.
-   */
+/*
+إذا كان الجهاز يدعم مشاركة الملفات،
+نحاول مشاركة الإيصال مع الرسالة.
+*/
 
-  window.open(whatsappURL,"_blank");
+try{
 
-  alert(
-    "تم تجهيز رسالة الحجز. إذا لم تظهر صورة الإيصال في واتساب، أرفقيها يدويًا قبل الإرسال."
-  );
+if(
+navigator.share &&
+navigator.canShare &&
+navigator.canShare({
+files:[receipt]
+})
+){
+
+await navigator.share({
+
+title:"حجز رغد ميكب",
+
+text:message,
+
+files:[receipt]
+
+});
+
+return;
+
+}
+
+}catch(error){
+
+if(error.name==="AbortError"){
+return;
+}
+
+}
+
+
+/*
+إذا لم يدعم الجهاز مشاركة الملف،
+يفتح واتساب مباشرة.
+*/
+
+window.location.href=
+whatsappURL;
 
 });
 
 
-/* =========================
-   LOGIN
-========================= */
+/* LOGIN */
 
 function openLogin(){
-  document.getElementById("loginModal")
-  .classList.add("active");
+
+document
+.getElementById("loginModal")
+.classList.add("show");
+
 }
 
+
 function closeLogin(){
-  document.getElementById("loginModal")
-  .classList.remove("active");
+
+document
+.getElementById("loginModal")
+.classList.remove("show");
+
 }
+
 
 function login(){
 
-  const user=
-  document.getElementById("username").value;
+const user=
+document.getElementById("username")
+.value;
 
-  const pass=
-  document.getElementById("password").value;
+const pass=
+document.getElementById("password")
+.value;
 
-  if(user==="admin" && pass==="12345"){
 
-    closeLogin();
+if(
+user==="admin" &&
+pass==="12345"
+){
 
-    openAdmin();
+closeLogin();
 
-  }else{
+openAdmin();
 
-    document.getElementById("loginError")
-      .style.display="block";
-  }
+}else{
+
+document
+.getElementById("loginError")
+.style.display="block";
+
+}
+
 }
 
 
-/* =========================
-   ADMIN PRICES
-========================= */
+/* ADMIN */
+
+const defaultPrices={
+
+"الهادي (العادي)":15,
+"الميكب الناعم":18,
+"السبيشل الثقيل":20,
+"العدسات":4,
+"عقد القران":20,
+"ملكة (خطوبة)":40,
+"عروس (زفه)":80,
+"ميكب عروس صباحية / مسائية":25,
+"ميكب عروس حفل حناء":25,
+"ميكب تخرج":18
+
+};
+
+
+let prices=
+JSON.parse(
+localStorage.getItem("raghadPrices")
+||
+"null"
+)
+||
+defaultPrices;
+
 
 function openAdmin(){
 
-  const editor=
-  document.getElementById("priceEditor");
+const editor=
+document.getElementById("priceEditor");
 
-  editor.innerHTML="";
+editor.innerHTML="";
 
-  Object.keys(prices)
-  .forEach(service=>{
 
-    const row=
-    document.createElement("div");
+Object.keys(prices)
+.forEach(function(service){
 
-    row.className="admin-row";
+const row=
+document.createElement("div");
 
-    row.innerHTML=`
+row.className="admin-price";
 
-      <label>${service}</label>
+row.innerHTML=`
 
-      <input
-        type="number"
-        min="0"
-        step="1"
-        value="${prices[service]}"
-        data-service="${service}"
-      >
+<label style="flex:1">
+${service}
+</label>
 
-    `;
+<input
+type="number"
+min="0"
+value="${prices[service]}"
+data-service="${service}">
 
-    editor.appendChild(row);
-  });
+`;
 
-  document.getElementById("adminModal")
-    .classList.add("active");
+editor.appendChild(row);
+
+});
+
+
+document
+.getElementById("adminModal")
+.classList.add("show");
+
 }
+
 
 function closeAdmin(){
 
-  document.getElementById("adminModal")
-    .classList.remove("active");
+document
+.getElementById("adminModal")
+.classList.remove("show");
+
 }
+
 
 function savePrices(){
 
-  document
-  .querySelectorAll("#priceEditor input")
-  .forEach(input=>{
+document
+.querySelectorAll(
+"#priceEditor input"
+)
+.forEach(function(input){
 
-    const service=
-    input.dataset.service;
+prices[
+input.dataset.service
+]=Number(input.value);
 
-    prices[service]=
-    Number(input.value);
+});
 
-  });
 
-  localStorage.setItem(
-    "raghadPrices",
-    JSON.stringify(prices)
-  );
+localStorage.setItem(
+"raghadPrices",
+JSON.stringify(prices)
+);
 
-  updateServicePrices();
 
-  alert("تم حفظ الأسعار بنجاح ✅");
+updatePrices();
 
-  closeAdmin();
+alert("تم حفظ الأسعار بنجاح ✅");
+
+closeAdmin();
+
 }
 
 
-/* =========================
-   UPDATE PRICES
-========================= */
+function updatePrices(){
 
-function updateServicePrices(){
+document
+.querySelectorAll(
+"#service option[data-price]"
+)
+.forEach(function(option){
 
-  document
-  .querySelectorAll("#service option[data-price]")
-  .forEach(option=>{
+const service=
+option.value;
 
-    const service=
-    option.value;
+if(prices[service]!==undefined){
 
-    if(prices[service] !== undefined){
+option.dataset.price=
+prices[service];
 
-      option.dataset.price=
-      prices[service];
+option.textContent=
+service+
+" — "+
+prices[service]+
+" ريال";
 
-      option.textContent=
-      service+" — "+
-      prices[service]+
-      " ريال";
-
-    }
-
-  });
 }
 
-updateServicePrices();
+});
+
+}
 
 
-/* =========================
-   MIN DATE
-========================= */
+updatePrices();
 
-const today=
+
+/* منع اختيار تاريخ قديم */
+
+document
+.getElementById("date")
+.min=
 new Date()
 .toISOString()
 .split("T")[0];
-
-document.getElementById("date")
-.min=today;
 
 </script>
 
