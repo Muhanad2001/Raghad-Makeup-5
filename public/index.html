@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>رغد ميكب | Raghad Makeup</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -15,9 +14,9 @@
 
 body{
   margin:0;
-  font-family:Arial,Tahoma,sans-serif;
-  background:linear-gradient(180deg,#fff,#fff5f7);
-  color:#4a2630;
+  font-family:Arial,"Tahoma",sans-serif;
+  background:#fff8fa;
+  color:#542d39;
 }
 
 button,input,select,textarea{
@@ -25,32 +24,31 @@ button,input,select,textarea{
 }
 
 .header{
-  background:#fff;
-  padding:25px 20px 18px;
+  background:white;
+  padding:22px 25px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  border-bottom:1px solid #f1e1e5;
+  border-bottom:1px solid #f1dfe5;
   position:sticky;
   top:0;
   z-index:10;
 }
 
-.brand{
-  text-align:center;
+.logo{
+  text-align:right;
 }
 
-.brand-title{
-  color:#964c60;
-  font-size:32px;
+.logo-ar{
+  font-size:30px;
   font-weight:bold;
+  color:#914c61;
 }
 
-.brand-sub{
+.logo-en{
+  font-size:17px;
   color:#777;
-  font-size:18px;
-  margin-top:3px;
   direction:ltr;
 }
 
@@ -61,110 +59,137 @@ button,input,select,textarea{
 
 .btn{
   border:0;
-  border-radius:22px;
+  border-radius:25px;
   padding:13px 22px;
-  font-size:16px;
+  font-size:17px;
   cursor:pointer;
 }
 
-.btn-main{
-  background:#984e63;
+.btn-bookings{
+  background:#914c61;
   color:white;
 }
 
-.btn-soft{
-  background:#f8e7eb;
-  color:#6d3647;
+.btn-login{
+  background:#f7e8ed;
+  color:#914c61;
 }
 
 .container{
   max-width:850px;
   margin:auto;
-  padding:30px 18px 70px;
+  padding:35px 18px 70px;
 }
 
-.page-title{
+.title{
   text-align:center;
-  color:#934d61;
   font-size:42px;
-  margin:15px 0 30px;
+  color:#914c61;
+  margin:20px 0 35px;
+}
+
+.alert{
+  display:none;
+  padding:17px;
+  border-radius:18px;
+  margin-bottom:25px;
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.alert.show{
+  display:block;
+}
+
+.alert.error{
+  background:#fff0f2;
+  color:#a51f2d;
+}
+
+.alert.success{
+  background:#effaf1;
+  color:#26723b;
 }
 
 .card{
-  background:#fff;
-  border-radius:30px;
-  padding:24px;
+  background:white;
+  border-radius:28px;
+  padding:25px;
   margin-bottom:25px;
-  box-shadow:0 8px 30px rgba(130,70,90,.08);
+  box-shadow:0 8px 30px rgba(120,70,90,.08);
 }
 
 .card h2{
-  color:#934d61;
-  margin-top:0;
+  color:#914c61;
   font-size:28px;
+  margin-top:0;
 }
 
 .service{
+  border:2px solid #f0d7df;
+  background:#fffafd;
+  border-radius:20px;
+  padding:17px;
+  margin:12px 0;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border:2px solid #ecd3da;
-  background:#fff8fa;
-  border-radius:20px;
-  padding:17px;
-  margin:13px 0;
-  font-size:17px;
+  gap:10px;
+}
+
+.service-name{
+  font-size:18px;
+  font-weight:bold;
 }
 
 .price{
-  color:#934d61;
+  color:#914c61;
   font-weight:bold;
   white-space:nowrap;
-}
-
-.form-group{
-  margin-bottom:20px;
 }
 
 label{
   display:block;
   font-weight:bold;
-  font-size:17px;
-  margin-bottom:8px;
+  font-size:18px;
+  margin:18px 0 8px;
 }
 
 input,select,textarea{
   width:100%;
-  padding:16px;
-  border:2px solid #e8ccd4;
+  border:2px solid #ead0d9;
   border-radius:18px;
-  background:#fff;
-  font-size:16px;
+  padding:15px;
+  font-size:17px;
   outline:none;
+  background:#fff;
 }
 
 input:focus,select:focus,textarea:focus{
-  border-color:#a8586e;
+  border-color:#914c61;
 }
 
 textarea{
-  min-height:110px;
+  min-height:100px;
   resize:vertical;
 }
 
-.required{
-  color:#b10000;
-}
-
-.receipt-box{
-  border:2px dashed #c98b9c;
+.file-box{
+  border:2px dashed #d9aebb;
   border-radius:20px;
   padding:20px;
   text-align:center;
-  background:#fff8fa;
+  background:#fffafd;
+  margin-top:8px;
 }
 
-.receipt-preview{
+.file-box input{
+  border:0;
+  padding:5px;
+}
+
+.preview{
   display:none;
   max-width:100%;
   max-height:300px;
@@ -174,12 +199,13 @@ textarea{
 
 .submit{
   width:100%;
+  margin-top:25px;
   border:0;
-  background:#964e63;
-  color:#fff;
-  padding:18px;
-  border-radius:20px;
-  font-size:19px;
+  border-radius:22px;
+  padding:17px;
+  background:#914c61;
+  color:white;
+  font-size:20px;
   font-weight:bold;
   cursor:pointer;
 }
@@ -189,36 +215,15 @@ textarea{
   cursor:not-allowed;
 }
 
-.alert{
-  display:none;
-  background:#fff0f2;
-  color:#a32121;
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:25px;
-  text-align:center;
-  font-size:17px;
-  font-weight:bold;
-}
-
-.alert.show{
-  display:block;
-}
-
 .terms{
   line-height:2;
   font-size:16px;
 }
 
-.whatsapp{
-  display:block;
-  text-decoration:none;
+.phone{
   text-align:center;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:18px;
-  margin-top:15px;
+  margin-top:20px;
+  color:#914c61;
   font-weight:bold;
 }
 
@@ -228,87 +233,71 @@ textarea{
   inset:0;
   background:rgba(0,0,0,.55);
   z-index:100;
-  padding:20px;
+  padding:25px;
   overflow:auto;
 }
 
 .modal.show{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:block;
 }
 
 .modal-box{
+  max-width:600px;
+  margin:50px auto;
   background:white;
-  width:100%;
-  max-width:650px;
   border-radius:25px;
   padding:25px;
-  max-height:90vh;
-  overflow:auto;
 }
 
 .close{
   float:left;
   border:0;
-  background:#f5e4e8;
-  border-radius:50%;
+  background:#f5e7eb;
+  color:#914c61;
   width:40px;
   height:40px;
+  border-radius:50%;
   font-size:20px;
-  cursor:pointer;
 }
 
-.booking-item{
-  border:1px solid #ead4da;
+.booking{
+  border:1px solid #ead0d9;
   border-radius:18px;
-  padding:16px;
+  padding:15px;
   margin:12px 0;
-  background:#fff9fa;
-}
-
-.login-input{
-  margin-bottom:12px;
+  background:#fffafd;
 }
 
 .small{
   color:#777;
-  font-size:13px;
-}
-
-.loading{
-  text-align:center;
-  padding:20px;
+  font-size:14px;
+  line-height:1.8;
 }
 
 @media(max-width:600px){
   .header{
-    padding:20px 12px;
+    padding:18px 12px;
   }
 
-  .brand-title{
+  .logo-ar{
     font-size:25px;
   }
 
-  .brand-sub{
+  .logo-en{
     font-size:14px;
   }
 
   .btn{
     padding:11px 14px;
-    font-size:14px;
+    font-size:15px;
   }
 
-  .page-title{
+  .title{
     font-size:34px;
   }
 
   .card{
     padding:18px;
-  }
-
-  .service{
-    font-size:15px;
   }
 }
 </style>
@@ -318,313 +307,226 @@ textarea{
 
 <header class="header">
 
-  <div class="header-buttons">
-    <button class="btn btn-main" onclick="openBookings()">
-      📋 الحجوزات
-    </button>
-
-    <button class="btn btn-soft" onclick="openLogin()">
-      🔐 تسجيل دخول
-    </button>
+  <div class="logo">
+    <div class="logo-ar">رغد ميكب</div>
+    <div class="logo-en">Raghad Makeup</div>
   </div>
 
-  <div class="brand">
-    <div class="brand-title">رغد ميكب</div>
-    <div class="brand-sub">Raghad Makeup</div>
+  <div class="header-buttons">
+    <button class="btn btn-login" onclick="openLogin()">
+      🔐 تسجيل دخول
+    </button>
+
+    <button class="btn btn-bookings" onclick="openBookings()">
+      📋 الحجوزات
+    </button>
   </div>
 
 </header>
 
-
 <main class="container">
 
-<h1 class="page-title">
-📅 حجز موعد
-</h1>
+<h1 class="title">حجز موعد 📅</h1>
 
 <div id="alert" class="alert"></div>
 
-
-<section class="card">
+<div class="card">
 
 <h2>ميكب حضور ✨</h2>
 
 <div class="service">
-<span>الهادي (العادي) - بدون رموش</span>
-<span class="price">15 ر.ع</span>
+  <span class="service-name">الهادي (العادي) - بدون رموش</span>
+  <span class="price">15 ر.ع</span>
 </div>
 
 <div class="service">
-<span>الميكب الناعم - مع/بدون رموش</span>
-<span class="price">18 ر.ع</span>
+  <span class="service-name">الميكب الناعم - مع/بدون رموش</span>
+  <span class="price">18 ر.ع</span>
 </div>
 
 <div class="service">
-<span>السبيشل الثقيل - مع/بدون رموش</span>
-<span class="price">20 ر.ع</span>
+  <span class="service-name">السبيشل الثقيل - مع/بدون رموش</span>
+  <span class="price">20 ر.ع</span>
 </div>
 
 <div class="service">
-<span>العدسات - مع العلبة</span>
-<span class="price">4 ر.ع</span>
+  <span class="service-name">العدسات - مع العلبة</span>
+  <span class="price">4 ر.ع</span>
 </div>
 
-</section>
+</div>
 
-
-<section class="card">
+<div class="card">
 
 <h2>ميكب العرائس 👰🏻‍♀️</h2>
 
 <div class="service">
-<span>عقد القران</span>
-<span class="price">20 ر.ع</span>
+  <span class="service-name">عقد القران</span>
+  <span class="price">20 ر.ع</span>
 </div>
 
 <div class="service">
-<span>ملكة (خطوبة 💍)</span>
-<span class="price">40 ر.ع</span>
+  <span class="service-name">ملكة (خطوبة 💍)</span>
+  <span class="price">40 ر.ع</span>
 </div>
 
 <div class="service">
-<span>عروس (زفه)</span>
-<span class="price">80 ر.ع</span>
+  <span class="service-name">عروس (زفه)</span>
+  <span class="price">80 ر.ع</span>
 </div>
 
 <div class="service">
-<span>ميكب عروس (صباحية / مسائية)</span>
-<span class="price">25 ر.ع</span>
+  <span class="service-name">ميكب عروس (صباحية / مسائية)</span>
+  <span class="price">25 ر.ع</span>
 </div>
 
 <div class="service">
-<span>ميكب عروس حفل حناء</span>
-<span class="price">25 ر.ع</span>
+  <span class="service-name">ميكب عروس حفل حناء</span>
+  <span class="price">25 ر.ع</span>
 </div>
 
-</section>
+</div>
 
-
-<section class="card">
+<div class="card">
 
 <h2>ميكب تخرج 👩🏻‍🎓</h2>
 
 <div class="service">
-<span>ميكب تخرج - مع/بدون رموش</span>
-<span class="price">18 ر.ع</span>
+  <span class="service-name">ميكب تخرج - مع/بدون رموش</span>
+  <span class="price">18 ر.ع</span>
 </div>
 
-</section>
+</div>
 
+<div class="card">
 
-<section class="card">
-
-<h2>الحجز</h2>
+<h2>بيانات الحجز 📝</h2>
 
 <form id="bookingForm">
 
-<div class="form-group">
-<label>
-الاسم الكامل <span class="required">*</span>
-</label>
+<label>الاسم الكامل *</label>
+<input id="name" required placeholder="اكتب الاسم الكامل">
 
-<input
-id="name"
-type="text"
-required
-placeholder="اكتب الاسم الكامل">
-</div>
+<label>رقم الهاتف *</label>
+<input id="phone" required type="tel" placeholder="مثال: 99XXXXXX">
 
-
-<div class="form-group">
-<label>
-رقم الهاتف <span class="required">*</span>
-</label>
-
-<input
-id="phone"
-type="tel"
-required
-placeholder="مثال: 99653342">
-</div>
-
-
-<div class="form-group">
-<label>
-الخدمة <span class="required">*</span>
-</label>
+<label>الخدمة *</label>
 
 <select id="service" required>
-
 <option value="">اختر الخدمة</option>
 
-<option value="الهادي (العادي) - بدون رموش - 15 ر.ع">
-الهادي (العادي) - بدون رموش - 15 ر.ع
+<option value="الهادي (العادي) - بدون رموش | 15 ر.ع">
+الهادي (العادي) - بدون رموش | 15 ر.ع
 </option>
 
-<option value="الميكب الناعم - مع/بدون رموش - 18 ر.ع">
-الميكب الناعم - مع/بدون رموش - 18 ر.ع
+<option value="الميكب الناعم - مع/بدون رموش | 18 ر.ع">
+الميكب الناعم - مع/بدون رموش | 18 ر.ع
 </option>
 
-<option value="السبيشل الثقيل - مع/بدون رموش - 20 ر.ع">
-السبيشل الثقيل - مع/بدون رموش - 20 ر.ع
+<option value="السبيشل الثقيل - مع/بدون رموش | 20 ر.ع">
+السبيشل الثقيل - مع/بدون رموش | 20 ر.ع
 </option>
 
-<option value="العدسات - مع العلبة - 4 ر.ع">
-العدسات - مع العلبة - 4 ر.ع
+<option value="العدسات - مع العلبة | 4 ر.ع">
+العدسات - مع العلبة | 4 ر.ع
 </option>
 
-<option value="عقد القران - 20 ر.ع">
-عقد القران - 20 ر.ع
+<option value="عقد القران | 20 ر.ع">
+عقد القران | 20 ر.ع
 </option>
 
-<option value="ملكة (خطوبة) - 40 ر.ع">
-ملكة (خطوبة) - 40 ر.ع
+<option value="ملكة (خطوبة) | 40 ر.ع">
+ملكة (خطوبة) | 40 ر.ع
 </option>
 
-<option value="عروس (زفه) - 80 ر.ع">
-عروس (زفه) - 80 ر.ع
+<option value="عروس (زفه) | 80 ر.ع">
+عروس (زفه) | 80 ر.ع
 </option>
 
-<option value="ميكب عروس (صباحية / مسائية) - 25 ر.ع">
-ميكب عروس (صباحية / مسائية) - 25 ر.ع
+<option value="ميكب عروس (صباحية / مسائية) | 25 ر.ع">
+ميكب عروس (صباحية / مسائية) | 25 ر.ع
 </option>
 
-<option value="ميكب عروس حفل حناء - 25 ر.ع">
-ميكب عروس حفل حناء - 25 ر.ع
+<option value="ميكب عروس حفل حناء | 25 ر.ع">
+ميكب عروس حفل حناء | 25 ر.ع
 </option>
 
-<option value="ميكب تخرج - مع/بدون رموش - 18 ر.ع">
-ميكب تخرج - مع/بدون رموش - 18 ر.ع
+<option value="ميكب تخرج | 18 ر.ع">
+ميكب تخرج | 18 ر.ع
 </option>
 
 </select>
-</div>
 
+<label>التاريخ *</label>
+<input id="date" type="date" required>
 
-<div class="form-group">
-<label>
-التاريخ <span class="required">*</span>
-</label>
+<label>الوقت *</label>
+<input id="time" type="time" required>
 
-<input
-id="date"
-type="date"
-required>
-</div>
+<label>عدد الأشخاص *</label>
+<input id="people" type="number" min="1" value="1" required>
 
+<label>ملاحظات إضافية</label>
+<textarea id="notes" placeholder="أي ملاحظات إضافية..."></textarea>
 
-<div class="form-group">
-<label>
-الوقت <span class="required">*</span>
-</label>
+<label>إيصال العربون 5 ر.ع *</label>
+
+<div class="file-box">
 
 <input
-id="time"
-type="time"
-required>
+  id="receipt"
+  type="file"
+  accept="image/png,image/jpeg,image/jpg,image/webp"
+  required
+>
+
+<div class="small">
+يجب رفع صورة إيصال التحويل
 </div>
 
-
-<div class="form-group">
-<label>
-عدد الأشخاص <span class="required">*</span>
-</label>
-
-<input
-id="people"
-type="number"
-min="1"
-value="1"
-required>
-</div>
-
-
-<div class="form-group">
-<label>
-ملاحظات
-</label>
-
-<textarea
-id="notes"
-placeholder="أي ملاحظات إضافية..."></textarea>
-</div>
-
-
-<div class="form-group">
-
-<label>
-إيصال العربون 5 ر.ع
-<span class="required">*</span>
-</label>
-
-<div class="receipt-box">
-
-<input
-id="receipt"
-type="file"
-accept="image/*"
-required>
-
-<p>
-📷 ارفع صورة إيصال تحويل العربون
-</p>
-
-<img
-id="receiptPreview"
-class="receipt-preview">
+<img id="receiptPreview" class="preview">
 
 </div>
 
-</div>
-
-
-<button
-id="submitBtn"
-class="submit"
-type="submit">
-
+<button id="submitBtn" class="submit" type="submit">
 تأكيد الحجز
-
 </button>
 
 </form>
 
-</section>
+<div class="phone">
+العربون: 5 ر.ع
+<br>
+رقم التحويل: 79345991
+<br><br>
 
-
-<section class="card">
-
-<h2>شروط الحجز</h2>
-
-<div class="terms">
-
-<p>💰 تأكيد الحجز يكون بعد دفع عربون 5 ر.ع.</p>
-
-<p>⏰ التأخير أكثر من 15 دقيقة يلغي الحجز.</p>
-
-<p>❌ ممنوع الصبر بتاتاً.</p>
-
-<p>👶 ممنوع الأطفال إلا الرضع.</p>
-
-<p>💵 الأسعار ثابتة.</p>
-
-<p>🚫 يمنع الازدحام داخل غرفة المكياج.</p>
-
-<p>💇🏻‍♀️ للاستفسارات عن الشعر اضغط الزر أدناه.</p>
+الاستفسارات عن الشعر:
+<a href="tel:94888701">94888701</a>
+</div>
 
 </div>
 
-<a
-class="whatsapp"
-href="tel:94888701">
+<div class="card terms">
 
-💇🏻‍♀️ الاستفسارات عن الشعر
-</a>
+<h2>شروط الحجز 📌</h2>
 
-</section>
+<div>
+❌ ممنوع الصبر بتاتاً.
+<br>
+⏰ التأخير أكثر من 15 دقيقة يلغي الحجز.
+<br>
+💰 الأسعار ثابتة.
+<br>
+👶 لا يوجد أطفال، باستثناء الرضع.
+<br>
+🚫 يمنع الازدحام داخل غرفة المكياج.
+<br>
+💵 يتم تأكيد الحجز بعد دفع عربون 5 ر.ع.
+</div>
+
+</div>
 
 </main>
-
 
 <!-- LOGIN MODAL -->
 
@@ -634,32 +536,20 @@ href="tel:94888701">
 
 <button class="close" onclick="closeLogin()">×</button>
 
-<h2>🔐 تسجيل الدخول</h2>
+<h2>تسجيل الدخول 🔐</h2>
 
-<input
-id="username"
-class="login-input"
-type="text"
-placeholder="اسم المستخدم">
+<label>اسم المستخدم</label>
+<input id="adminUser">
 
-<input
-id="password"
-class="login-input"
-type="password"
-placeholder="كلمة المرور">
+<label>كلمة المرور</label>
+<input id="adminPass" type="password">
 
-<button
-class="submit"
-onclick="login()">
-
+<button class="submit" onclick="adminLogin()">
 دخول
-
 </button>
 
 </div>
-
 </div>
-
 
 <!-- BOOKINGS MODAL -->
 
@@ -669,26 +559,29 @@ onclick="login()">
 
 <button class="close" onclick="closeBookings()">×</button>
 
-<h2>📋 الحجوزات</h2>
+<h2>الحجوزات 📋</h2>
 
-<div id="bookingsList" class="loading">
+<div id="bookingsList">
 جاري تحميل الحجوزات...
 </div>
 
 </div>
-
 </div>
-
 
 <script>
 
-/* =====================================================
+/* ==================================================
    SUPABASE
-===================================================== */
+================================================== */
 
 const SUPABASE_URL =
 "https://ezbimmtscfmmmbzroph.supabase.co";
 
+
+/*
+   ضع هنا Publishable Key الذي نسخته من Supabase.
+   لا تضع Secret Key.
+*/
 
 const SUPABASE_ANON_KEY =
 "sb_publishable_yvMOXjtPdh8sZ4JivimsTg_piRTGRNA";
@@ -708,49 +601,59 @@ if(
       SUPABASE_URL,
       SUPABASE_ANON_KEY
     );
-
 }
 
 
-/* =====================================================
+/* ==================================================
    ALERT
-===================================================== */
+================================================== */
 
-function showAlert(message){
+function showAlert(message,type="error"){
 
   const el =
     document.getElementById("alert");
 
-  el.innerHTML = message;
+  el.textContent = message;
 
-  el.classList.add("show");
+  el.className =
+    "alert show " + type;
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
-
 }
 
 
 function hideAlert(){
 
-  document
-    .getElementById("alert")
-    .classList.remove("show");
+  const el =
+    document.getElementById("alert");
 
+  el.className="alert";
 }
 
 
-/* =====================================================
+/* ==================================================
+   DATE
+================================================== */
+
+const today =
+  new Date().toISOString().split("T")[0];
+
+document.getElementById("date").min =
+  today;
+
+
+/* ==================================================
    RECEIPT PREVIEW
-===================================================== */
+================================================== */
 
 document
 .getElementById("receipt")
 .addEventListener("change",function(){
 
-  const file = this.files[0];
+  const file=this.files[0];
 
   const preview =
     document.getElementById("receiptPreview");
@@ -758,84 +661,111 @@ document
   if(!file){
 
     preview.style.display="none";
-    preview.src="";
-    return;
 
+    return;
   }
 
-  if(!file.type.startsWith("image/")){
+  if(file.size > 5 * 1024 * 1024){
 
-    showAlert("❌ يجب رفع صورة للإيصال.");
+    showAlert(
+      "حجم صورة الإيصال يجب أن يكون أقل من 5MB"
+    );
 
     this.value="";
 
+    preview.style.display="none";
+
     return;
   }
 
-  preview.src =
-    URL.createObjectURL(file);
+  const reader =
+    new FileReader();
 
-  preview.style.display="block";
+  reader.onload=function(e){
 
+    preview.src=e.target.result;
+
+    preview.style.display="block";
+  };
+
+  reader.readAsDataURL(file);
 });
 
 
-/* =====================================================
-   DATE
-===================================================== */
+/* ==================================================
+   SAVE BOOKING
+================================================== */
 
-document
-.getElementById("date")
-.min =
-new Date().toISOString().split("T")[0];
-
-
-/* =====================================================
-   UPLOAD RECEIPT
-===================================================== */
-
-async function uploadReceipt(file){
+async function saveBooking(){
 
   if(!supabaseClient){
 
     throw new Error(
-      "Supabase غير مربوط. تأكد من وضع Publishable Key."
+      "Supabase غير مفعّل. تأكد من وضع Publishable Key."
     );
-
   }
+
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const service =
+    document.getElementById("service").value;
+
+  const date =
+    document.getElementById("date").value;
+
+  const time =
+    document.getElementById("time").value;
+
+  const people =
+    document.getElementById("people").value;
+
+  const notes =
+    document.getElementById("notes").value.trim();
+
+  const receiptInput =
+    document.getElementById("receipt");
+
+  const file =
+    receiptInput.files[0];
+
 
   if(!file){
 
     throw new Error(
-      "لم يتم اختيار صورة الإيصال."
+      "يجب رفع صورة إيصال العربون."
     );
-
   }
 
 
+  /*
+    اسم فريد للصورة
+  */
+
   const extension =
-    file.name.split(".").pop().toLowerCase();
-
-
-  const safeExtension =
-    extension || "jpg";
-
+    file.name.split(".").pop();
 
   const fileName =
     Date.now() +
-    "_" +
-    Math.random()
-      .toString(36)
-      .substring(2) +
+    "-" +
+    Math.random().toString(36).substring(2) +
     "." +
-    safeExtension;
+    extension;
 
 
   const filePath =
-    "receipts/" + fileName;
+    "booking-" + fileName;
 
 
-  const {error:uploadError} =
+  /* -----------------------------------------------
+     رفع الإيصال إلى Storage
+  ------------------------------------------------ */
+
+  const uploadResult =
     await supabaseClient
       .storage
       .from("receipts")
@@ -850,131 +780,76 @@ async function uploadReceipt(file){
       );
 
 
-  if(uploadError){
+  if(uploadResult.error){
 
     throw new Error(
       "فشل رفع الإيصال: " +
-      uploadError.message
+      uploadResult.error.message
     );
-
   }
 
 
-  const {data} =
+  /* -----------------------------------------------
+     رابط الإيصال
+  ------------------------------------------------ */
+
+  const publicUrlResult =
     supabaseClient
       .storage
       .from("receipts")
       .getPublicUrl(filePath);
 
 
-  if(!data || !data.publicUrl){
-
-    throw new Error(
-      "تم رفع الإيصال ولكن تعذر الحصول على الرابط."
-    );
-
-  }
+  const receiptUrl =
+    publicUrlResult.data.publicUrl;
 
 
-  return {
-    url:data.publicUrl,
-    path:filePath,
-    name:file.name
-  };
+  /* -----------------------------------------------
+     حفظ الحجز في جدول bookings
+  ------------------------------------------------ */
 
-}
-
-
-/* =====================================================
-   SAVE BOOKING
-===================================================== */
-
-async function saveBooking(){
-
-  if(!supabaseClient){
-
-    throw new Error(
-      "Supabase غير مربوط. تأكد من Publishable Key."
-    );
-
-  }
-
-
-  const file =
-    document.getElementById("receipt").files[0];
-
-
-  if(!file){
-
-    throw new Error(
-      "يجب رفع صورة إيصال العربون."
-    );
-
-  }
-
-
-  const receipt =
-    await uploadReceipt(file);
-
-
-  const booking = {
-
-    name:
-      document.getElementById("name").value.trim(),
-
-    phone:
-      document.getElementById("phone").value.trim(),
-
-    service:
-      document.getElementById("service").value,
-
-    date:
-      document.getElementById("date").value,
-
-    time:
-      document.getElementById("time").value,
-
-    people:
-      Number(
-        document.getElementById("people").value
-      ),
-
-    notes:
-      document.getElementById("notes").value.trim(),
-
-    receipt_url:
-      receipt.url,
-
-    receipt_name:
-      receipt.name
-
-  };
-
-
-  const {error} =
+  const insertResult =
     await supabaseClient
       .from("bookings")
-      .insert([booking]);
+      .insert([
+        {
+          name:name,
+          phone:phone,
+          service:service,
+          date:date,
+          time:time,
+          people:Number(people),
+          notes:notes,
+          receipt_url:receiptUrl,
+          receipt_name:file.name
+        }
+      ]);
 
 
-  if(error){
+  if(insertResult.error){
+
+    /*
+      إذا فشل حفظ الحجز نحاول حذف الصورة
+      حتى لا تبقى صورة بدون حجز.
+    */
+
+    await supabaseClient
+      .storage
+      .from("receipts")
+      .remove([filePath]);
 
     throw new Error(
-      "تم رفع الإيصال لكن فشل حفظ الحجز: " +
-      error.message
+      "فشل حفظ الحجز: " +
+      insertResult.error.message
     );
-
   }
-
-
-  return booking;
 
 }
 
 
-/* =====================================================
-   BOOKING FORM
-===================================================== */
+/* ==================================================
+   SUBMIT FORM
+================================================== */
 
 document
 .getElementById("bookingForm")
@@ -1001,7 +876,8 @@ document
 
 
     showAlert(
-      "✅ تم تأكيد الحجز بنجاح. سيتم التواصل معك قريباً."
+      "تم تأكيد الحجز بنجاح ✅ سيتم التواصل معك قريباً.",
+      "success"
     );
 
 
@@ -1018,19 +894,13 @@ document
       .style.display="none";
 
 
-    document
-      .getElementById("receiptPreview")
-      .src="";
-
-
   }catch(error){
 
     console.error(error);
 
-
     showAlert(
-      "تعذر حفظ الحجز: " +
-      error.message
+      error.message ||
+      "حدث خطأ غير معروف."
     );
 
   }finally{
@@ -1045,16 +915,15 @@ document
 });
 
 
-/* =====================================================
+/* ==================================================
    LOGIN
-===================================================== */
+================================================== */
 
 function openLogin(){
 
   document
     .getElementById("loginModal")
     .classList.add("show");
-
 }
 
 
@@ -1063,28 +932,19 @@ function closeLogin(){
   document
     .getElementById("loginModal")
     .classList.remove("show");
-
 }
 
 
-function login(){
+function adminLogin(){
 
-  const username =
-    document.getElementById("username").value;
+  const user =
+    document.getElementById("adminUser").value;
 
-  const password =
-    document.getElementById("password").value;
+  const pass =
+    document.getElementById("adminPass").value;
 
 
-  if(
-    username==="admin" &&
-    password==="12345"
-  ){
-
-    localStorage.setItem(
-      "raghad_admin",
-      "1"
-    );
+  if(user==="admin" && pass==="12345"){
 
     closeLogin();
 
@@ -1092,40 +952,23 @@ function login(){
 
   }else{
 
-    alert(
-      "❌ اسم المستخدم أو كلمة المرور غير صحيحة"
-    );
+    alert("بيانات الدخول غير صحيحة");
 
   }
-
 }
 
 
-/* =====================================================
+/* ==================================================
    BOOKINGS
-===================================================== */
+================================================== */
 
 function openBookings(){
-
-  const logged =
-    localStorage.getItem("raghad_admin");
-
-  if(logged!=="1"){
-
-    openLogin();
-
-    return;
-
-  }
-
 
   document
     .getElementById("bookingsModal")
     .classList.add("show");
 
-
   loadBookings();
-
 }
 
 
@@ -1134,7 +977,6 @@ function closeBookings(){
   document
     .getElementById("bookingsModal")
     .classList.remove("show");
-
 }
 
 
@@ -1143,143 +985,115 @@ async function loadBookings(){
   const list =
     document.getElementById("bookingsList");
 
-
-  list.innerHTML =
+  list.innerHTML=
     "جاري تحميل الحجوزات...";
 
 
   if(!supabaseClient){
 
-    list.innerHTML =
-      "❌ Supabase غير مربوط.";
+    list.innerHTML=
+      "Supabase غير مفعّل.";
 
     return;
-
   }
 
 
-  const {data,error} =
+  const result =
     await supabaseClient
       .from("bookings")
       .select("*")
-      .order(
-        "created_at",
-        {ascending:false}
-      );
+      .order("created_at",{ascending:false});
 
 
-  if(error){
+  if(result.error){
 
-    list.innerHTML =
-      "❌ فشل تحميل الحجوزات:<br>" +
-      error.message;
+    list.innerHTML=
+      "تعذر تحميل الحجوزات:<br>" +
+      result.error.message;
 
     return;
-
   }
 
 
-  if(!data || data.length===0){
+  if(!result.data || result.data.length===0){
 
-    list.innerHTML =
+    list.innerHTML=
       "لا توجد حجوزات حالياً.";
 
     return;
-
   }
 
 
   list.innerHTML="";
 
 
-  data.forEach(function(b){
+  result.data.forEach(function(item){
 
-    const item =
+    const div =
       document.createElement("div");
 
-    item.className=
-      "booking-item";
+    div.className="booking";
 
 
-    item.innerHTML=`
+    div.innerHTML=`
 
-      <div>
-        <b>👤 الاسم:</b>
-        ${escapeHTML(b.name || "")}
-      </div>
+      <strong>
+        ${escapeHtml(item.name || "")}
+      </strong>
 
-      <div>
-        <b>📞 الهاتف:</b>
-        ${escapeHTML(b.phone || "")}
-      </div>
+      <br>
 
-      <div>
-        <b>💄 الخدمة:</b>
-        ${escapeHTML(b.service || "")}
-      </div>
+      📞 ${escapeHtml(item.phone || "")}
 
-      <div>
-        <b>📅 التاريخ:</b>
-        ${escapeHTML(b.date || "")}
-      </div>
+      <br>
 
-      <div>
-        <b>⏰ الوقت:</b>
-        ${escapeHTML(b.time || "")}
-      </div>
+      💄 ${escapeHtml(item.service || "")}
 
-      <div>
-        <b>👥 الأشخاص:</b>
-        ${escapeHTML(String(b.people || ""))}
-      </div>
+      <br>
 
-      ${
-        b.notes
-        ?
-        `<div>
-          <b>📝 الملاحظات:</b>
-          ${escapeHTML(b.notes)}
-        </div>`
-        :
-        ""
-      }
+      📅 ${escapeHtml(item.date || "")}
+
+      <br>
+
+      ⏰ ${escapeHtml(item.time || "")}
+
+      <br>
+
+      👥 ${escapeHtml(String(item.people || ""))}
+
+      <br>
+
+      📝 ${escapeHtml(item.notes || "لا توجد ملاحظات")}
+
+      <br><br>
 
       ${
-        b.receipt_url
+        item.receipt_url
         ?
-        `<div style="margin-top:12px">
-          <a
-            href="${b.receipt_url}"
-            target="_blank"
-            style="color:#964e63;font-weight:bold">
-            📷 فتح إيصال العربون
-          </a>
-        </div>`
+        `<a href="${item.receipt_url}" target="_blank">
+          📎 فتح إيصال العربون
+        </a>`
         :
-        ""
+        "لا يوجد إيصال"
       }
-
-      <div class="small" style="margin-top:10px">
-        رقم الحجز: ${escapeHTML(String(b.id || ""))}
-      </div>
 
     `;
 
 
-    list.appendChild(item);
+    list.appendChild(div);
 
   });
 
 }
 
 
-/* =====================================================
-   SECURITY HTML
-===================================================== */
+/* ==================================================
+   PROTECT HTML
+================================================== */
 
-function escapeHTML(text){
+function escapeHtml(value){
 
-  return String(text)
+  return String(value)
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;")
@@ -1289,28 +1103,19 @@ function escapeHTML(text){
 }
 
 
-/* =====================================================
+/* ==================================================
    CLOSE MODALS OUTSIDE
-===================================================== */
+================================================== */
 
-document
-.getElementById("loginModal")
-.addEventListener("click",function(e){
+window.addEventListener("click",function(e){
 
-  if(e.target===this){
+  if(e.target.id==="loginModal"){
 
     closeLogin();
 
   }
 
-});
-
-
-document
-.getElementById("bookingsModal")
-.addEventListener("click",function(e){
-
-  if(e.target===this){
+  if(e.target.id==="bookingsModal"){
 
     closeBookings();
 
