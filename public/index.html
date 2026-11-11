@@ -2,7 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>رغد ميكب | Raghad Makeup</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -10,38 +11,46 @@
 <style>
 *{
   box-sizing:border-box;
-  font-family:Arial,Tahoma,sans-serif;
 }
 
 body{
   margin:0;
+  font-family:Arial,Tahoma,sans-serif;
   background:linear-gradient(180deg,#fff,#fff5f7);
-  color:#4b2630;
+  color:#4a2630;
 }
 
-header{
-  background:white;
-  padding:28px 25px 20px;
+button,input,select,textarea{
+  font-family:inherit;
+}
+
+.header{
+  background:#fff;
+  padding:25px 20px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #f1e1e5;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.logo{
-  text-align:right;
+.brand{
+  text-align:center;
 }
 
-.logo-title{
+.brand-title{
+  color:#964c60;
   font-size:32px;
   font-weight:bold;
-  color:#934d5d;
 }
 
-.logo-sub{
+.brand-sub{
   color:#777;
   font-size:18px;
+  margin-top:3px;
   direction:ltr;
 }
 
@@ -50,95 +59,92 @@ header{
   gap:12px;
 }
 
-button{
+.btn{
   border:0;
+  border-radius:22px;
+  padding:13px 22px;
+  font-size:16px;
   cursor:pointer;
 }
 
-.header-btn{
-  background:#934d5d;
+.btn-main{
+  background:#984e63;
   color:white;
-  padding:15px 22px;
-  border-radius:22px;
-  font-size:17px;
 }
 
-.header-btn.login{
-  background:#f7e8ec;
-  color:#934d5d;
+.btn-soft{
+  background:#f8e7eb;
+  color:#6d3647;
 }
 
 .container{
-  max-width:900px;
+  max-width:850px;
   margin:auto;
-  padding:30px 20px 60px;
+  padding:30px 18px 70px;
 }
 
-h1{
+.page-title{
   text-align:center;
-  color:#934d5d;
-  font-size:38px;
-  margin:10px 0 30px;
+  color:#934d61;
+  font-size:42px;
+  margin:15px 0 30px;
 }
 
 .card{
-  background:white;
-  border-radius:25px;
-  padding:25px;
+  background:#fff;
+  border-radius:30px;
+  padding:24px;
   margin-bottom:25px;
-  box-shadow:0 5px 25px rgba(100,40,60,.08);
+  box-shadow:0 8px 30px rgba(130,70,90,.08);
 }
 
-.section-title{
-  color:#934d5d;
-  font-size:25px;
-  font-weight:bold;
-  margin-bottom:18px;
-}
-
-.services{
-  display:grid;
-  gap:10px;
+.card h2{
+  color:#934d61;
+  margin-top:0;
+  font-size:28px;
 }
 
 .service{
-  background:#fff6f8;
-  border:1px solid #ead0d7;
-  border-radius:15px;
-  padding:15px;
   display:flex;
   justify-content:space-between;
-  gap:10px;
-}
-
-.service-name{
-  font-weight:bold;
+  align-items:center;
+  border:2px solid #ecd3da;
+  background:#fff8fa;
+  border-radius:20px;
+  padding:17px;
+  margin:13px 0;
+  font-size:17px;
 }
 
 .price{
-  color:#934d5d;
+  color:#934d61;
   font-weight:bold;
+  white-space:nowrap;
+}
+
+.form-group{
+  margin-bottom:20px;
 }
 
 label{
   display:block;
   font-weight:bold;
-  margin:18px 0 8px;
   font-size:17px;
+  margin-bottom:8px;
 }
 
 input,select,textarea{
   width:100%;
   padding:16px;
-  border:2px solid #ead0d7;
-  border-radius:15px;
-  outline:none;
+  border:2px solid #e8ccd4;
+  border-radius:18px;
+  background:#fff;
   font-size:16px;
-  background:white;
+  outline:none;
 }
 
 input:focus,select:focus,textarea:focus{
-  border-color:#934d5d;
+  border-color:#a8586e;
 }
 
 textarea{
@@ -147,73 +153,56 @@ textarea{
 }
 
 .required{
-  color:#b00020;
+  color:#b10000;
 }
 
 .receipt-box{
-  border:2px dashed #d6aab6;
-  border-radius:18px;
+  border:2px dashed #c98b9c;
+  border-radius:20px;
   padding:20px;
   text-align:center;
   background:#fff8fa;
 }
 
 .receipt-preview{
+  display:none;
   max-width:100%;
   max-height:300px;
-  margin-top:15px;
+  margin:15px auto 0;
   border-radius:15px;
-  display:none;
 }
 
 .submit{
   width:100%;
-  background:#934d5d;
-  color:white;
+  border:0;
+  background:#964e63;
+  color:#fff;
   padding:18px;
-  border-radius:18px;
-  font-size:20px;
+  border-radius:20px;
+  font-size:19px;
   font-weight:bold;
-  margin-top:25px;
+  cursor:pointer;
 }
 
 .submit:disabled{
   opacity:.6;
-}
-
-.whatsapp{
-  display:block;
-  text-align:center;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  padding:15px;
-  border-radius:16px;
-  margin-top:15px;
-  font-weight:bold;
+  cursor:not-allowed;
 }
 
 .alert{
   display:none;
+  background:#fff0f2;
+  color:#a32121;
+  border-radius:18px;
   padding:18px;
-  border-radius:16px;
-  margin-bottom:20px;
-  font-weight:bold;
+  margin-bottom:25px;
   text-align:center;
+  font-size:17px;
+  font-weight:bold;
 }
 
 .alert.show{
   display:block;
-}
-
-.alert.error{
-  background:#fff0f0;
-  color:#a00000;
-}
-
-.alert.success{
-  background:#edfff2;
-  color:#16723a;
 }
 
 .terms{
@@ -221,91 +210,105 @@ textarea{
   font-size:16px;
 }
 
+.whatsapp{
+  display:block;
+  text-decoration:none;
+  text-align:center;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:18px;
+  margin-top:15px;
+  font-weight:bold;
+}
+
 .modal{
   display:none;
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.55);
-  z-index:1000;
-  padding:25px;
+  z-index:100;
+  padding:20px;
   overflow:auto;
 }
 
 .modal.show{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.modal-content{
+.modal-box{
   background:white;
-  max-width:800px;
-  margin:40px auto;
+  width:100%;
+  max-width:650px;
   border-radius:25px;
   padding:25px;
+  max-height:90vh;
+  overflow:auto;
 }
 
 .close{
   float:left;
-  background:#eee;
+  border:0;
+  background:#f5e4e8;
+  border-radius:50%;
   width:40px;
   height:40px;
-  border-radius:50%;
   font-size:20px;
+  cursor:pointer;
 }
 
-.booking{
-  border:1px solid #ead0d7;
-  border-radius:15px;
-  padding:15px;
+.booking-item{
+  border:1px solid #ead4da;
+  border-radius:18px;
+  padding:16px;
   margin:12px 0;
   background:#fff9fa;
 }
 
-.booking img{
-  max-width:200px;
-  border-radius:10px;
-  margin-top:10px;
+.login-input{
+  margin-bottom:12px;
 }
 
-.empty{
-  text-align:center;
-  padding:30px;
+.small{
   color:#777;
+  font-size:13px;
 }
 
-footer{
+.loading{
   text-align:center;
-  padding:30px;
-  color:#888;
+  padding:20px;
 }
 
 @media(max-width:600px){
-  header{
-    padding:20px 15px;
+  .header{
+    padding:20px 12px;
   }
 
-  .logo-title{
+  .brand-title{
     font-size:25px;
   }
 
-  .logo-sub{
+  .brand-sub{
     font-size:14px;
   }
 
-  .header-btn{
-    padding:11px 13px;
+  .btn{
+    padding:11px 14px;
     font-size:14px;
   }
 
-  h1{
-    font-size:30px;
-  }
-
-  .container{
-    padding:20px 12px 50px;
+  .page-title{
+    font-size:34px;
   }
 
   .card{
     padding:18px;
+  }
+
+  .service{
+    font-size:15px;
   }
 }
 </style>
@@ -313,64 +316,65 @@ footer{
 
 <body>
 
-<header>
-
-  <div class="logo">
-    <div class="logo-title">رغد ميكب</div>
-    <div class="logo-sub">Raghad Makeup</div>
-  </div>
+<header class="header">
 
   <div class="header-buttons">
-    <button class="header-btn login" onclick="openLogin()">
-      🔐 تسجيل دخول
-    </button>
-
-    <button class="header-btn" onclick="openBookings()">
+    <button class="btn btn-main" onclick="openBookings()">
       📋 الحجوزات
     </button>
+
+    <button class="btn btn-soft" onclick="openLogin()">
+      🔐 تسجيل دخول
+    </button>
+  </div>
+
+  <div class="brand">
+    <div class="brand-title">رغد ميكب</div>
+    <div class="brand-sub">Raghad Makeup</div>
   </div>
 
 </header>
 
-<div class="container">
 
-<h1>حجز موعد 📅</h1>
+<main class="container">
+
+<h1 class="page-title">
+📅 حجز موعد
+</h1>
 
 <div id="alert" class="alert"></div>
 
-<div class="card">
 
-<div class="section-title">ميكب حضور ✨</div>
+<section class="card">
 
-<div class="services">
+<h2>ميكب حضور ✨</h2>
+
 <div class="service">
-<span class="service-name">الهادي (العادي) - بدون رموش</span>
+<span>الهادي (العادي) - بدون رموش</span>
 <span class="price">15 ر.ع</span>
 </div>
 
 <div class="service">
-<span class="service-name">الميكب الناعم - مع/بدون رموش</span>
+<span>الميكب الناعم - مع/بدون رموش</span>
 <span class="price">18 ر.ع</span>
 </div>
 
 <div class="service">
-<span class="service-name">السبيشل الثقيل - مع/بدون رموش</span>
+<span>السبيشل الثقيل - مع/بدون رموش</span>
 <span class="price">20 ر.ع</span>
 </div>
 
 <div class="service">
-<span class="service-name">العدسات - مع العلبة</span>
+<span>العدسات - مع العلبة</span>
 <span class="price">4 ر.ع</span>
 </div>
-</div>
 
-</div>
+</section>
 
-<div class="card">
 
-<div class="section-title">ميكب العرايس 👰🏻‍♀️</div>
+<section class="card">
 
-<div class="services">
+<h2>ميكب العرائس 👰🏻‍♀️</h2>
 
 <div class="service">
 <span>عقد القران</span>
@@ -397,37 +401,41 @@ footer{
 <span class="price">25 ر.ع</span>
 </div>
 
-</div>
+</section>
 
-</div>
 
-<div class="card">
+<section class="card">
 
-<div class="section-title">ميكب تخرج 👩🏻‍🎓</div>
+<h2>ميكب تخرج 👩🏻‍🎓</h2>
 
 <div class="service">
 <span>ميكب تخرج - مع/بدون رموش</span>
 <span class="price">18 ر.ع</span>
 </div>
 
-</div>
+</section>
 
-<div class="card">
 
-<div class="section-title">بيانات الحجز</div>
+<section class="card">
+
+<h2>الحجز</h2>
 
 <form id="bookingForm">
 
+<div class="form-group">
 <label>
 الاسم الكامل <span class="required">*</span>
 </label>
 
 <input
-id="fullName"
+id="name"
 type="text"
 required
 placeholder="اكتب الاسم الكامل">
+</div>
 
+
+<div class="form-group">
 <label>
 رقم الهاتف <span class="required">*</span>
 </label>
@@ -436,8 +444,11 @@ placeholder="اكتب الاسم الكامل">
 id="phone"
 type="tel"
 required
-placeholder="مثال: 99XXXXXX">
+placeholder="مثال: 99653342">
+</div>
 
+
+<div class="form-group">
 <label>
 الخدمة <span class="required">*</span>
 </label>
@@ -446,20 +457,20 @@ placeholder="مثال: 99XXXXXX">
 
 <option value="">اختر الخدمة</option>
 
-<option value="الهادي (العادي) - 15 ر.ع">
-الهادي (العادي) - 15 ر.ع
+<option value="الهادي (العادي) - بدون رموش - 15 ر.ع">
+الهادي (العادي) - بدون رموش - 15 ر.ع
 </option>
 
-<option value="الميكب الناعم - 18 ر.ع">
-الميكب الناعم - 18 ر.ع
+<option value="الميكب الناعم - مع/بدون رموش - 18 ر.ع">
+الميكب الناعم - مع/بدون رموش - 18 ر.ع
 </option>
 
-<option value="السبيشل الثقيل - 20 ر.ع">
-السبيشل الثقيل - 20 ر.ع
+<option value="السبيشل الثقيل - مع/بدون رموش - 20 ر.ع">
+السبيشل الثقيل - مع/بدون رموش - 20 ر.ع
 </option>
 
-<option value="العدسات - 4 ر.ع">
-العدسات - 4 ر.ع
+<option value="العدسات - مع العلبة - 4 ر.ع">
+العدسات - مع العلبة - 4 ر.ع
 </option>
 
 <option value="عقد القران - 20 ر.ع">
@@ -482,12 +493,15 @@ placeholder="مثال: 99XXXXXX">
 ميكب عروس حفل حناء - 25 ر.ع
 </option>
 
-<option value="ميكب تخرج - 18 ر.ع">
-ميكب تخرج - 18 ر.ع
+<option value="ميكب تخرج - مع/بدون رموش - 18 ر.ع">
+ميكب تخرج - مع/بدون رموش - 18 ر.ع
 </option>
 
 </select>
+</div>
 
+
+<div class="form-group">
 <label>
 التاريخ <span class="required">*</span>
 </label>
@@ -496,7 +510,10 @@ placeholder="مثال: 99XXXXXX">
 id="date"
 type="date"
 required>
+</div>
 
+
+<div class="form-group">
 <label>
 الوقت <span class="required">*</span>
 </label>
@@ -505,7 +522,10 @@ required>
 id="time"
 type="time"
 required>
+</div>
 
+
+<div class="form-group">
 <label>
 عدد الأشخاص <span class="required">*</span>
 </label>
@@ -516,24 +536,28 @@ type="number"
 min="1"
 value="1"
 required>
+</div>
 
+
+<div class="form-group">
 <label>
-ملاحظات إضافية
+ملاحظات
 </label>
 
 <textarea
 id="notes"
-placeholder="اكتب أي ملاحظات هنا..."></textarea>
+placeholder="أي ملاحظات إضافية..."></textarea>
+</div>
+
+
+<div class="form-group">
 
 <label>
-صورة إيصال العربون <span class="required">*</span>
+إيصال العربون 5 ر.ع
+<span class="required">*</span>
 </label>
 
 <div class="receipt-box">
-
-<p>
-يجب رفع صورة إيصال العربون بقيمة <strong>5 ر.ع</strong>
-</p>
 
 <input
 id="receipt"
@@ -541,11 +565,18 @@ type="file"
 accept="image/*"
 required>
 
+<p>
+📷 ارفع صورة إيصال تحويل العربون
+</p>
+
 <img
 id="receiptPreview"
 class="receipt-preview">
 
 </div>
+
+</div>
+
 
 <button
 id="submitBtn"
@@ -558,76 +589,68 @@ type="submit">
 
 </form>
 
-<a
-class="whatsapp"
-href="https://wa.me/96879345991"
-target="_blank">
+</section>
 
-💬 التواصل عبر واتساب
 
-</a>
+<section class="card">
 
-</div>
-
-<div class="card">
-
-<div class="section-title">الشروط 📌</div>
+<h2>شروط الحجز</h2>
 
 <div class="terms">
 
-❌ ممنوع الصبر بتاتاً.<br>
-👶 لا يوجد أطفال، باستثناء الرضع.<br>
-💰 الأسعار ثابتة.<br>
-⏰ التأخر أكثر من 15 دقيقة يلغي الحجز.<br>
-🚫 يمنع الازدحام داخل غرفة المكياج.<br>
-💵 تأكيد الحجز يكون بدفع عربون 5 ر.ع.<br>
+<p>💰 تأكيد الحجز يكون بعد دفع عربون 5 ر.ع.</p>
 
-</div>
+<p>⏰ التأخير أكثر من 15 دقيقة يلغي الحجز.</p>
 
-<br>
+<p>❌ ممنوع الصبر بتاتاً.</p>
 
-<div class="section-title">
-الاستفسارات عن الشعر
+<p>👶 ممنوع الأطفال إلا الرضع.</p>
+
+<p>💵 الأسعار ثابتة.</p>
+
+<p>🚫 يمنع الازدحام داخل غرفة المكياج.</p>
+
+<p>💇🏻‍♀️ للاستفسارات عن الشعر اضغط الزر أدناه.</p>
+
 </div>
 
 <a
 class="whatsapp"
 href="tel:94888701">
 
-💇🏻‍♀️ الاتصال للاستفسار عن الشعر: 94888701
-
+💇🏻‍♀️ الاستفسارات عن الشعر
 </a>
 
-</div>
+</section>
 
-</div>
-
-<footer>
-Raghad Makeup © 2026
-</footer>
+</main>
 
 
 <!-- LOGIN MODAL -->
 
 <div id="loginModal" class="modal">
 
-<div class="modal-content">
+<div class="modal-box">
 
 <button class="close" onclick="closeLogin()">×</button>
 
 <h2>🔐 تسجيل الدخول</h2>
 
-<label>اسم المستخدم</label>
+<input
+id="username"
+class="login-input"
+type="text"
+placeholder="اسم المستخدم">
 
-<input id="adminUser" type="text">
-
-<label>كلمة المرور</label>
-
-<input id="adminPass" type="password">
+<input
+id="password"
+class="login-input"
+type="password"
+placeholder="كلمة المرور">
 
 <button
 class="submit"
-onclick="loginAdmin()">
+onclick="login()">
 
 دخول
 
@@ -642,14 +665,14 @@ onclick="loginAdmin()">
 
 <div id="bookingsModal" class="modal">
 
-<div class="modal-content">
+<div class="modal-box">
 
 <button class="close" onclick="closeBookings()">×</button>
 
 <h2>📋 الحجوزات</h2>
 
-<div id="bookingsList">
-<div class="empty">جاري تحميل الحجوزات...</div>
+<div id="bookingsList" class="loading">
+جاري تحميل الحجوزات...
 </div>
 
 </div>
@@ -659,17 +682,13 @@ onclick="loginAdmin()">
 
 <script>
 
-/* ==================================================
-   SUPABASE SETTINGS
-================================================== */
+/* =====================================================
+   SUPABASE
+===================================================== */
 
 const SUPABASE_URL =
 "https://ezbimmtscfmmmbzroph.supabase.co";
 
-/*
-   ضع هنا Publishable Key الذي نسخته من Supabase
-   لا تضع Secret Key
-*/
 
 const SUPABASE_ANON_KEY =
 "sb_publishable_yvMOXjtPdh8sZ4JivimsTg_piRTGRNA";
@@ -677,82 +696,285 @@ const SUPABASE_ANON_KEY =
 
 let supabaseClient = null;
 
+
 if(
   SUPABASE_URL &&
   SUPABASE_ANON_KEY &&
-  !SUPABASE_ANON_KEY.includes("ضع_")
+  !SUPABASE_ANON_KEY.includes("ضع-")
 ){
+
   supabaseClient =
     window.supabase.createClient(
       SUPABASE_URL,
       SUPABASE_ANON_KEY
     );
+
 }
 
 
-/* ==================================================
+/* =====================================================
    ALERT
-================================================== */
+===================================================== */
 
-function showAlert(message,type="error"){
+function showAlert(message){
 
-  const el=document.getElementById("alert");
+  const el =
+    document.getElementById("alert");
 
-  el.textContent=message;
+  el.innerHTML = message;
 
-  el.className="alert show "+type;
+  el.classList.add("show");
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
 
-  setTimeout(()=>{
-    el.classList.remove("show");
-  },6000);
 }
 
 
-/* ==================================================
+function hideAlert(){
+
+  document
+    .getElementById("alert")
+    .classList.remove("show");
+
+}
+
+
+/* =====================================================
    RECEIPT PREVIEW
-================================================== */
+===================================================== */
 
 document
 .getElementById("receipt")
 .addEventListener("change",function(){
 
-  const file=this.files[0];
+  const file = this.files[0];
 
-  const preview=
+  const preview =
     document.getElementById("receiptPreview");
 
-  if(file){
-
-    const reader=
-      new FileReader();
-
-    reader.onload=function(e){
-
-      preview.src=e.target.result;
-
-      preview.style.display="block";
-
-    };
-
-    reader.readAsDataURL(file);
-
-  }else{
+  if(!file){
 
     preview.style.display="none";
+    preview.src="";
+    return;
 
   }
+
+  if(!file.type.startsWith("image/")){
+
+    showAlert("❌ يجب رفع صورة للإيصال.");
+
+    this.value="";
+
+    return;
+  }
+
+  preview.src =
+    URL.createObjectURL(file);
+
+  preview.style.display="block";
 
 });
 
 
-/* ==================================================
+/* =====================================================
+   DATE
+===================================================== */
+
+document
+.getElementById("date")
+.min =
+new Date().toISOString().split("T")[0];
+
+
+/* =====================================================
+   UPLOAD RECEIPT
+===================================================== */
+
+async function uploadReceipt(file){
+
+  if(!supabaseClient){
+
+    throw new Error(
+      "Supabase غير مربوط. تأكد من وضع Publishable Key."
+    );
+
+  }
+
+  if(!file){
+
+    throw new Error(
+      "لم يتم اختيار صورة الإيصال."
+    );
+
+  }
+
+
+  const extension =
+    file.name.split(".").pop().toLowerCase();
+
+
+  const safeExtension =
+    extension || "jpg";
+
+
+  const fileName =
+    Date.now() +
+    "_" +
+    Math.random()
+      .toString(36)
+      .substring(2) +
+    "." +
+    safeExtension;
+
+
+  const filePath =
+    "receipts/" + fileName;
+
+
+  const {error:uploadError} =
+    await supabaseClient
+      .storage
+      .from("receipts")
+      .upload(
+        filePath,
+        file,
+        {
+          cacheControl:"3600",
+          upsert:false,
+          contentType:file.type
+        }
+      );
+
+
+  if(uploadError){
+
+    throw new Error(
+      "فشل رفع الإيصال: " +
+      uploadError.message
+    );
+
+  }
+
+
+  const {data} =
+    supabaseClient
+      .storage
+      .from("receipts")
+      .getPublicUrl(filePath);
+
+
+  if(!data || !data.publicUrl){
+
+    throw new Error(
+      "تم رفع الإيصال ولكن تعذر الحصول على الرابط."
+    );
+
+  }
+
+
+  return {
+    url:data.publicUrl,
+    path:filePath,
+    name:file.name
+  };
+
+}
+
+
+/* =====================================================
    SAVE BOOKING
-================================================== */
+===================================================== */
+
+async function saveBooking(){
+
+  if(!supabaseClient){
+
+    throw new Error(
+      "Supabase غير مربوط. تأكد من Publishable Key."
+    );
+
+  }
+
+
+  const file =
+    document.getElementById("receipt").files[0];
+
+
+  if(!file){
+
+    throw new Error(
+      "يجب رفع صورة إيصال العربون."
+    );
+
+  }
+
+
+  const receipt =
+    await uploadReceipt(file);
+
+
+  const booking = {
+
+    name:
+      document.getElementById("name").value.trim(),
+
+    phone:
+      document.getElementById("phone").value.trim(),
+
+    service:
+      document.getElementById("service").value,
+
+    date:
+      document.getElementById("date").value,
+
+    time:
+      document.getElementById("time").value,
+
+    people:
+      Number(
+        document.getElementById("people").value
+      ),
+
+    notes:
+      document.getElementById("notes").value.trim(),
+
+    receipt_url:
+      receipt.url,
+
+    receipt_name:
+      receipt.name
+
+  };
+
+
+  const {error} =
+    await supabaseClient
+      .from("bookings")
+      .insert([booking]);
+
+
+  if(error){
+
+    throw new Error(
+      "تم رفع الإيصال لكن فشل حفظ الحجز: " +
+      error.message
+    );
+
+  }
+
+
+  return booking;
+
+}
+
+
+/* =====================================================
+   BOOKING FORM
+===================================================== */
 
 document
 .getElementById("bookingForm")
@@ -760,245 +982,109 @@ document
 
   e.preventDefault();
 
-  const submitBtn=
+  hideAlert();
+
+
+  const submitBtn =
     document.getElementById("submitBtn");
+
 
   submitBtn.disabled=true;
 
-  submitBtn.textContent="جاري حفظ الحجز...";
+  submitBtn.textContent=
+    "جاري حفظ الحجز...";
+
 
   try{
 
-    if(!supabaseClient){
-
-      throw new Error(
-        "Supabase غير مهيأ. تأكد من وضع Publishable Key الصحيح."
-      );
-
-    }
-
-    const name=
-      document.getElementById("fullName").value.trim();
-
-    const phone=
-      document.getElementById("phone").value.trim();
-
-    const service=
-      document.getElementById("service").value;
-
-    const date=
-      document.getElementById("date").value;
-
-    const time=
-      document.getElementById("time").value;
-
-    const people=
-      Number(document.getElementById("people").value);
-
-    const notes=
-      document.getElementById("notes").value.trim();
-
-    const receiptInput=
-      document.getElementById("receipt");
-
-    const receiptFile=
-      receiptInput.files[0];
-
-
-    if(!receiptFile){
-
-      throw new Error(
-        "يجب رفع صورة إيصال العربون."
-      );
-
-    }
-
-
-    if(
-      !name ||
-      !phone ||
-      !service ||
-      !date ||
-      !time ||
-      !people
-    ){
-
-      throw new Error(
-        "تأكد من تعبئة جميع البيانات المطلوبة."
-      );
-
-    }
-
-
-    /* ------------------------------------------
-       UPLOAD RECEIPT
-    ------------------------------------------ */
-
-    const extension =
-      receiptFile.name
-      .split(".")
-      .pop();
-
-    const fileName =
-      Date.now()+"-"+Math.random()
-      .toString(36)
-      .substring(2)
-      +"."+extension;
-
-
-    const filePath =
-      "booking-receipts/"+fileName;
-
-
-    const uploadResult =
-      await supabaseClient
-      .storage
-      .from("receipts")
-      .upload(
-        filePath,
-        receiptFile,
-        {
-          cacheControl:"3600",
-          upsert:false
-        }
-      );
-
-
-    if(uploadResult.error){
-
-      throw new Error(
-        "فشل رفع الإيصال: "+
-        uploadResult.error.message
-      );
-
-    }
-
-
-    /* ------------------------------------------
-       GET PUBLIC RECEIPT URL
-    ------------------------------------------ */
-
-    const publicUrl =
-      supabaseClient
-      .storage
-      .from("receipts")
-      .getPublicUrl(filePath);
-
-
-    const receiptUrl =
-      publicUrl.data.publicUrl;
-
-
-    /* ------------------------------------------
-       INSERT BOOKING
-    ------------------------------------------ */
-
-    const bookingResult =
-      await supabaseClient
-      .from("bookings")
-      .insert([{
-
-        name:name,
-
-        phone:phone,
-
-        service:service,
-
-        date:date,
-
-        time:time,
-
-        people:people,
-
-        notes:notes,
-
-        receipt_url:receiptUrl,
-
-        receipt_name:receiptFile.name
-
-      }]);
-
-
-    if(bookingResult.error){
-
-      throw new Error(
-        "فشل حفظ الحجز: "+
-        bookingResult.error.message
-      );
-
-    }
+    await saveBooking();
 
 
     showAlert(
-      "تم تأكيد الحجز بنجاح ✅",
-      "success"
+      "✅ تم تأكيد الحجز بنجاح. سيتم التواصل معك قريباً."
     );
 
 
-    document
-    .getElementById("bookingForm")
-    .reset();
+    this.reset();
 
 
     document
-    .getElementById("receiptPreview")
-    .style.display="none";
+      .getElementById("people")
+      .value="1";
+
+
+    document
+      .getElementById("receiptPreview")
+      .style.display="none";
+
+
+    document
+      .getElementById("receiptPreview")
+      .src="";
 
 
   }catch(error){
 
     console.error(error);
 
+
     showAlert(
-      "تعذر حفظ الحجز: "+
-      (error.message || "خطأ غير معروف"),
-      "error"
+      "تعذر حفظ الحجز: " +
+      error.message
     );
 
   }finally{
 
     submitBtn.disabled=false;
 
-    submitBtn.textContent="تأكيد الحجز";
+    submitBtn.textContent=
+      "تأكيد الحجز";
 
   }
 
 });
 
 
-/* ==================================================
+/* =====================================================
    LOGIN
-================================================== */
+===================================================== */
 
 function openLogin(){
 
   document
-  .getElementById("loginModal")
-  .classList.add("show");
+    .getElementById("loginModal")
+    .classList.add("show");
 
 }
+
 
 function closeLogin(){
 
   document
-  .getElementById("loginModal")
-  .classList.remove("show");
+    .getElementById("loginModal")
+    .classList.remove("show");
 
 }
 
-function loginAdmin(){
 
-  const user=
-    document.getElementById("adminUser").value;
+function login(){
 
-  const pass=
-    document.getElementById("adminPass").value;
+  const username =
+    document.getElementById("username").value;
+
+  const password =
+    document.getElementById("password").value;
 
 
   if(
-    user==="admin" &&
-    pass==="12345"
+    username==="admin" &&
+    password==="12345"
   ){
+
+    localStorage.setItem(
+      "raghad_admin",
+      "1"
+    );
 
     closeLogin();
 
@@ -1006,224 +1092,231 @@ function loginAdmin(){
 
   }else{
 
-    alert("بيانات الدخول غير صحيحة");
+    alert(
+      "❌ اسم المستخدم أو كلمة المرور غير صحيحة"
+    );
 
   }
 
 }
 
 
-/* ==================================================
+/* =====================================================
    BOOKINGS
-================================================== */
+===================================================== */
 
-async function openBookings(){
+function openBookings(){
 
-  document
-  .getElementById("bookingsModal")
-  .classList.add("show");
+  const logged =
+    localStorage.getItem("raghad_admin");
 
-  await loadBookings();
+  if(logged!=="1"){
 
-}
-
-function closeBookings(){
-
-  document
-  .getElementById("bookingsModal")
-  .classList.remove("show");
-
-}
-
-
-async function loadBookings(){
-
-  const list=
-    document.getElementById("bookingsList");
-
-  list.innerHTML=
-    '<div class="empty">جاري تحميل الحجوزات...</div>';
-
-
-  if(!supabaseClient){
-
-    list.innerHTML=
-      '<div class="empty">Supabase غير مهيأ.</div>';
+    openLogin();
 
     return;
 
   }
 
 
-  try{
+  document
+    .getElementById("bookingsModal")
+    .classList.add("show");
 
-    const result =
-      await supabaseClient
+
+  loadBookings();
+
+}
+
+
+function closeBookings(){
+
+  document
+    .getElementById("bookingsModal")
+    .classList.remove("show");
+
+}
+
+
+async function loadBookings(){
+
+  const list =
+    document.getElementById("bookingsList");
+
+
+  list.innerHTML =
+    "جاري تحميل الحجوزات...";
+
+
+  if(!supabaseClient){
+
+    list.innerHTML =
+      "❌ Supabase غير مربوط.";
+
+    return;
+
+  }
+
+
+  const {data,error} =
+    await supabaseClient
       .from("bookings")
       .select("*")
-      .order("created_at",{ascending:false});
+      .order(
+        "created_at",
+        {ascending:false}
+      );
 
 
-    if(result.error){
+  if(error){
 
-      throw result.error;
+    list.innerHTML =
+      "❌ فشل تحميل الحجوزات:<br>" +
+      error.message;
 
-    }
+    return;
 
-
-    const bookings=
-      result.data || [];
-
-
-    if(bookings.length===0){
-
-      list.innerHTML=
-        '<div class="empty">لا توجد حجوزات حتى الآن.</div>';
-
-      return;
-
-    }
+  }
 
 
-    list.innerHTML="";
+  if(!data || data.length===0){
+
+    list.innerHTML =
+      "لا توجد حجوزات حالياً.";
+
+    return;
+
+  }
 
 
-    bookings.forEach((booking)=>{
-
-      const div=
-        document.createElement("div");
-
-      div.className="booking";
+  list.innerHTML="";
 
 
-      div.innerHTML=`
+  data.forEach(function(b){
 
-        <strong>👤 الاسم:</strong>
-        ${escapeHtml(booking.name || "")}
-        <br><br>
+    const item =
+      document.createElement("div");
 
-        <strong>📱 الهاتف:</strong>
-        ${escapeHtml(booking.phone || "")}
-        <br><br>
-
-        <strong>💄 الخدمة:</strong>
-        ${escapeHtml(booking.service || "")}
-        <br><br>
-
-        <strong>📅 التاريخ:</strong>
-        ${escapeHtml(booking.date || "")}
-        <br><br>
-
-        <strong>⏰ الوقت:</strong>
-        ${escapeHtml(booking.time || "")}
-        <br><br>
-
-        <strong>👥 الأشخاص:</strong>
-        ${booking.people || 1}
-        <br><br>
-
-        <strong>📝 الملاحظات:</strong>
-        ${escapeHtml(booking.notes || "لا توجد")}
-        <br><br>
-
-        ${
-          booking.receipt_url
-          ?
-          `<a href="${booking.receipt_url}" target="_blank">
-             📄 فتح إيصال العربون
-           </a>`
-          :
-          ""
-        }
-
-      `;
-
-      list.appendChild(div);
-
-    });
+    item.className=
+      "booking-item";
 
 
-  }catch(error){
+    item.innerHTML=`
 
-    console.error(error);
+      <div>
+        <b>👤 الاسم:</b>
+        ${escapeHTML(b.name || "")}
+      </div>
 
-    list.innerHTML=`
+      <div>
+        <b>📞 الهاتف:</b>
+        ${escapeHTML(b.phone || "")}
+      </div>
 
-      <div class="alert show error">
+      <div>
+        <b>💄 الخدمة:</b>
+        ${escapeHTML(b.service || "")}
+      </div>
 
-      تعذر تحميل الحجوزات:<br>
+      <div>
+        <b>📅 التاريخ:</b>
+        ${escapeHTML(b.date || "")}
+      </div>
 
-      ${escapeHtml(error.message || "")}
+      <div>
+        <b>⏰ الوقت:</b>
+        ${escapeHTML(b.time || "")}
+      </div>
 
+      <div>
+        <b>👥 الأشخاص:</b>
+        ${escapeHTML(String(b.people || ""))}
+      </div>
+
+      ${
+        b.notes
+        ?
+        `<div>
+          <b>📝 الملاحظات:</b>
+          ${escapeHTML(b.notes)}
+        </div>`
+        :
+        ""
+      }
+
+      ${
+        b.receipt_url
+        ?
+        `<div style="margin-top:12px">
+          <a
+            href="${b.receipt_url}"
+            target="_blank"
+            style="color:#964e63;font-weight:bold">
+            📷 فتح إيصال العربون
+          </a>
+        </div>`
+        :
+        ""
+      }
+
+      <div class="small" style="margin-top:10px">
+        رقم الحجز: ${escapeHTML(String(b.id || ""))}
       </div>
 
     `;
 
-  }
+
+    list.appendChild(item);
+
+  });
 
 }
 
 
-/* ==================================================
-   HTML ESCAPE
-================================================== */
+/* =====================================================
+   SECURITY HTML
+===================================================== */
 
-function escapeHtml(value){
+function escapeHTML(text){
 
-  return String(value)
-  .replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;")
-  .replace(/"/g,"&quot;")
-  .replace(/'/g,"&#039;");
+  return String(text)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 
 }
 
 
-/* ==================================================
-   CLOSE MODAL OUTSIDE
-================================================== */
+/* =====================================================
+   CLOSE MODALS OUTSIDE
+===================================================== */
 
-window.addEventListener("click",function(e){
+document
+.getElementById("loginModal")
+.addEventListener("click",function(e){
 
-  const login=
-    document.getElementById("loginModal");
-
-  const bookings=
-    document.getElementById("bookingsModal");
-
-
-  if(e.target===login){
+  if(e.target===this){
 
     closeLogin();
-
-  }
-
-  if(e.target===bookings){
-
-    closeBookings();
 
   }
 
 });
 
 
-/* ==================================================
-   MIN DATE = TODAY
-================================================== */
+document
+.getElementById("bookingsModal")
+.addEventListener("click",function(e){
 
-(function(){
+  if(e.target===this){
 
-  const today=
-    new Date()
-    .toISOString()
-    .split("T")[0];
+    closeBookings();
 
-  document
-  .getElementById("date")
-  .setAttribute("min",today);
+  }
 
-})();
+});
 
 </script>
 
