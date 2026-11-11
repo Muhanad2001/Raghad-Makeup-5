@@ -20,16 +20,16 @@ color:#3d292e;
 }
 
 header{
-background:white;
-padding:15px 20px;
+background:#fff;
+padding:14px 18px;
 position:sticky;
 top:0;
-z-index:10;
+z-index:100;
 box-shadow:0 2px 15px #00000012;
 }
 
 .nav{
-max-width:1000px;
+max-width:1050px;
 margin:auto;
 display:flex;
 align-items:center;
@@ -44,16 +44,16 @@ gap:10px;
 }
 
 .logo img{
-width:55px;
-height:55px;
+width:58px;
+height:58px;
 object-fit:contain;
-border-radius:10px;
+border-radius:12px;
 }
 
 .logo-text{
 font-weight:bold;
-color:#8e4b59;
 font-size:20px;
+color:#8e4b59;
 }
 
 .buttons{
@@ -62,12 +62,12 @@ gap:8px;
 }
 
 button,
-.button{
+.btn{
 border:0;
 padding:11px 15px;
 border-radius:12px;
-font-weight:bold;
 font-family:inherit;
+font-weight:bold;
 cursor:pointer;
 }
 
@@ -83,25 +83,27 @@ color:white;
 
 .hero{
 text-align:center;
-padding:80px 20px;
+padding:85px 20px;
 background:
-linear-gradient(#fff8f9dd,#fff8f9dd),
+linear-gradient(#fff8f9e8,#fff8f9e8),
 url("logo.jpg") center/contain no-repeat;
 }
 
 .hero h1{
-font-size:50px;
+font-size:58px;
+font-family:Georgia,serif;
+font-style:italic;
 color:#8e4b59;
-margin-bottom:10px;
+margin-bottom:5px;
 }
 
 .hero h2{
-font-size:24px;
+font-size:25px;
 margin-bottom:15px;
 }
 
 .hero p{
-max-width:650px;
+max-width:680px;
 margin:auto;
 line-height:2;
 color:#75666a;
@@ -118,6 +120,8 @@ flex-wrap:wrap;
 .whatsapp{
 background:#25d366;
 color:white;
+text-decoration:none;
+display:inline-block;
 }
 
 section{
@@ -125,13 +129,13 @@ padding:60px 20px;
 }
 
 .container{
-max-width:1000px;
+max-width:1050px;
 margin:auto;
 }
 
 .title{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:32px;
 }
 
 .title h2{
@@ -173,7 +177,8 @@ font-size:14px;
 color:#b48a57;
 font-size:22px;
 font-weight:bold;
-margin-top:15px;
+margin-top:14px;
+margin-bottom:12px;
 }
 
 .terms{
@@ -184,12 +189,12 @@ background:#f7e8eb;
 background:white;
 padding:25px;
 border-radius:20px;
-max-width:800px;
+max-width:850px;
 margin:auto;
 }
 
 .terms-box p{
-padding:10px 0;
+padding:11px 0;
 border-bottom:1px solid #eee;
 }
 
@@ -201,9 +206,10 @@ background:white;
 max-width:850px;
 margin:auto;
 background:#fff8f9;
-padding:25px;
+padding:27px;
 border-radius:25px;
 border:1px solid #efdde1;
+box-shadow:0 10px 30px #6d394410;
 }
 
 .form-grid{
@@ -235,11 +241,19 @@ border:1px solid #e5d1d6;
 border-radius:10px;
 font-family:inherit;
 background:white;
+font-size:14px;
 }
 
 textarea{
 height:100px;
 resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#8e4b59;
 }
 
 .payment{
@@ -248,7 +262,7 @@ border:1px dashed #8e4b59;
 padding:18px;
 border-radius:15px;
 line-height:2;
-margin:15px 0;
+margin:15px 0 20px;
 }
 
 .payment strong{
@@ -257,9 +271,11 @@ color:#8e4b59;
 
 .preview{
 display:none;
-max-width:200px;
+max-width:220px;
+max-height:250px;
 margin-top:10px;
 border-radius:12px;
+object-fit:contain;
 }
 
 .send{
@@ -268,6 +284,15 @@ background:#25d366;
 color:white;
 font-size:17px;
 padding:15px;
+border:0;
+border-radius:13px;
+font-family:inherit;
+font-weight:bold;
+cursor:pointer;
+}
+
+.send:active{
+transform:scale(.99);
 }
 
 .hair{
@@ -281,6 +306,7 @@ background:#8e4b59;
 color:white;
 padding:12px 20px;
 border-radius:12px;
+text-decoration:none;
 }
 
 footer{
@@ -307,6 +333,7 @@ background:#25d366;
 color:white;
 padding:11px 20px;
 border-radius:12px;
+text-decoration:none;
 }
 
 .modal{
@@ -314,7 +341,7 @@ display:none;
 position:fixed;
 inset:0;
 background:#0009;
-z-index:100;
+z-index:500;
 align-items:center;
 justify-content:center;
 padding:20px;
@@ -326,10 +353,12 @@ display:flex;
 
 .modal-box{
 background:white;
-width:min(500px,100%);
+width:min(520px,100%);
 padding:25px;
 border-radius:20px;
 position:relative;
+max-height:90vh;
+overflow:auto;
 }
 
 .close{
@@ -340,7 +369,10 @@ background:#f7e8eb;
 color:#8e4b59;
 width:35px;
 height:35px;
+border:0;
 border-radius:50%;
+font-size:20px;
+cursor:pointer;
 }
 
 .admin-price{
@@ -352,6 +384,13 @@ align-items:center;
 
 .admin-price input{
 width:120px;
+}
+
+.admin-save{
+width:100%;
+margin-top:20px;
+background:#8e4b59;
+color:white;
 }
 
 @media(max-width:700px){
@@ -368,8 +407,17 @@ grid-template-columns:1fr;
 grid-column:auto;
 }
 
+.hero{
+padding:65px 20px;
+}
+
 .hero h1{
-font-size:40px;
+font-size:45px;
+}
+
+.logo img{
+width:48px;
+height:48px;
 }
 
 .logo-text{
@@ -395,9 +443,7 @@ font-size:11px;
 
 <img
 src="logo.jpg"
-alt="Raghad Makeup"
-onerror="this.style.display='none'"
->
+alt="Raghad Makeup">
 
 <div class="logo-text">
 رغد ميكب
@@ -438,7 +484,7 @@ onclick="goBooking()">
 جمالك يبدأ من هنا ✨
 <br>
 ميكب احترافي للحضور والعرايس والتخرج
-بلمسة أنثوية راقية.
+بلمسة أنثوية راقية تناسب مناسبتك.
 </p>
 
 <div class="hero-buttons">
@@ -450,7 +496,7 @@ onclick="goBooking()">
 </button>
 
 <a
-class="button whatsapp"
+class="btn whatsapp"
 href="https://wa.me/96879345991"
 target="_blank">
 💬 تواصل واتساب
@@ -471,20 +517,15 @@ target="_blank">
 
 <h2>خدماتنا 💄</h2>
 
-<p>
-اختاري الخدمة المناسبة لك
-</p>
+<p>اختاري الخدمة المناسبة لك</p>
 
 </div>
-
 
 <div class="cards">
 
 <div class="card">
 
-<h3>
-ميكب حضور ✨
-</h3>
+<h3>ميكب حضور ✨</h3>
 
 <p>
 الهادي (العادي) — بدون رموش<br>
@@ -502,16 +543,14 @@ target="_blank">
 
 <div class="card">
 
-<h3>
-ميكب العرايس 👰🏻‍♀️
-</h3>
+<h3>ميكب العرايس 👰🏻‍♀️</h3>
 
 <p>
 عقد القران<br>
 ملكة (خطوبة 💍)<br>
 عروس (زفه)<br>
-صباحية / مسائية<br>
-حفل حناء
+ميكب عروس صباحية / مسائية<br>
+ميكب عروس حفل حناء
 </p>
 
 <div class="price">
@@ -523,9 +562,7 @@ target="_blank">
 
 <div class="card">
 
-<h3>
-ميكب تخرج 👩🏻‍🎓
-</h3>
+<h3>ميكب تخرج 👩🏻‍🎓</h3>
 
 <p>
 ميكب تخرج احترافي<br>
@@ -550,7 +587,9 @@ target="_blank">
 <div class="container">
 
 <div class="title">
+
 <h2>قائمة الأسعار 💰</h2>
+
 </div>
 
 <div class="cards">
@@ -622,7 +661,9 @@ target="_blank">
 <div class="container">
 
 <div class="title">
+
 <h2>شروط الحجز 📌</h2>
+
 </div>
 
 <div class="terms-box">
@@ -637,7 +678,7 @@ target="_blank">
 
 <p>✓ ممنوع الازدحام داخل غرفة الميكب.</p>
 
-<p>✓ تأكيد الحجز بدفع عربون 5 ريالات عمانية.</p>
+<p>✓ تأكيد الحجز يكون بدفع عربون 5 ريالات عمانية.</p>
 
 <p>✓ يجب إرفاق صورة إيصال التحويل.</p>
 
@@ -656,9 +697,7 @@ id="booking">
 
 <div class="title">
 
-<h2>
-حجز موعد 📋
-</h2>
+<h2>حجز موعد 📋</h2>
 
 <p>
 املئي البيانات ثم أرسلي الحجز عبر واتساب
@@ -671,15 +710,12 @@ id="booking">
 class="form"
 id="bookingForm">
 
-
 <div class="form-grid">
 
 
 <div class="field">
 
-<label>
-الاسم الكامل *
-</label>
+<label>الاسم الكامل *</label>
 
 <input
 id="name"
@@ -691,9 +727,7 @@ placeholder="اكتبي اسمك">
 
 <div class="field">
 
-<label>
-رقم الهاتف *
-</label>
+<label>رقم الهاتف *</label>
 
 <input
 id="phone"
@@ -706,9 +740,7 @@ placeholder="9xxxxxxx">
 
 <div class="field full">
 
-<label>
-نوع الخدمة *
-</label>
+<label>نوع الخدمة *</label>
 
 <select
 id="service"
@@ -765,9 +797,7 @@ required>
 
 <div class="field">
 
-<label>
-التاريخ *
-</label>
+<label>التاريخ *</label>
 
 <input
 id="date"
@@ -779,9 +809,7 @@ required>
 
 <div class="field">
 
-<label>
-الوقت *
-</label>
+<label>الوقت *</label>
 
 <input
 id="time"
@@ -793,9 +821,7 @@ required>
 
 <div class="field">
 
-<label>
-عدد الأشخاص *
-</label>
+<label>عدد الأشخاص *</label>
 
 <input
 id="people"
@@ -809,23 +835,18 @@ required>
 
 <div class="field full">
 
-<label>
-ملاحظات إضافية
-</label>
+<label>ملاحظات إضافية</label>
 
 <textarea
 id="notes"
-placeholder="أي ملاحظات...">
-</textarea>
+placeholder="أي ملاحظات أو طلبات خاصة..."></textarea>
 
 </div>
 
 
 <div class="field full">
 
-<label>
-صورة إيصال التحويل *
-</label>
+<label>صورة إيصال التحويل *</label>
 
 <input
 id="receipt"
@@ -850,16 +871,12 @@ class="preview">
 
 رقم التحويل:
 
-<strong>
-79345991
-</strong>
+<strong>79345991</strong>
 
 <br>
 
 بعد التحويل، أرفقي صورة الإيصال ثم اضغطي
-<strong>
-إرسال الحجز عبر واتساب
-</strong>.
+<strong>إرسال الحجز عبر واتساب 💬</strong>.
 
 </div>
 
@@ -885,13 +902,9 @@ type="submit">
 
 <div class="title">
 
-<h2>
-استفسارات الشعر 💇🏻‍♀️
-</h2>
+<h2>استفسارات الشعر 💇🏻‍♀️</h2>
 
-<p>
-للاستفسارات والتنسيق
-</p>
+<p>للاستفسارات والتنسيق</p>
 
 <a href="tel:94888701">
 📞 94888701
@@ -906,17 +919,11 @@ type="submit">
 
 <footer>
 
-<h2>
-رغد ميكب
-</h2>
+<h2>رغد ميكب</h2>
 
-<p>
-جمالك... لمستنا ✨
-</p>
+<p>جمالك... لمستنا ✨</p>
 
-<p>
-للحجز والاستفسار
-</p>
+<p>للحجز والاستفسار</p>
 
 <a
 href="https://wa.me/96879345991"
@@ -945,9 +952,7 @@ onclick="closeLogin()">
 🔐 تسجيل الدخول
 </h2>
 
-<label>
-اسم المستخدم
-</label>
+<label>اسم المستخدم</label>
 
 <input
 id="username"
@@ -955,9 +960,7 @@ value="admin">
 
 <br><br>
 
-<label>
-كلمة المرور
-</label>
+<label>كلمة المرور</label>
 
 <input
 id="password"
@@ -1006,8 +1009,7 @@ onclick="closeAdmin()">
 <div id="priceEditor"></div>
 
 <button
-class="booking-btn"
-style="width:100%;margin-top:20px"
+class="admin-save"
 onclick="savePrices()">
 
 حفظ الأسعار
@@ -1021,12 +1023,17 @@ onclick="savePrices()">
 
 <script>
 
-/* رقم الواتساب */
-const WHATSAPP = "96879345991";
+/* ==================================================
+   إعدادات واتساب
+================================================== */
 
-/* رقم التحويل */
-const TRANSFER = "79345991";
+const WHATSAPP_NUMBER = "96879345991";
+const TRANSFER_NUMBER = "79345991";
 
+
+/* ==================================================
+   الانتقال للحجز
+================================================== */
 
 function goBooking(){
 
@@ -1039,7 +1046,9 @@ behavior:"smooth"
 }
 
 
-/* معاينة الإيصال */
+/* ==================================================
+   معاينة صورة الإيصال
+================================================== */
 
 document
 .getElementById("receipt")
@@ -1051,9 +1060,9 @@ if(!file){
 return;
 }
 
-if(file.size > 8*1024*1024){
+if(file.size > 8 * 1024 * 1024){
 
-alert("حجم صورة الإيصال يجب ألا يتجاوز 8MB");
+alert("حجم صورة الإيصال يجب ألا يتجاوز 8MB.");
 
 this.value="";
 
@@ -1065,11 +1074,12 @@ const reader=new FileReader();
 
 reader.onload=function(e){
 
-const img=document.getElementById("preview");
+const preview=
+document.getElementById("preview");
 
-img.src=e.target.result;
+preview.src=e.target.result;
 
-img.style.display="block";
+preview.style.display="block";
 
 };
 
@@ -1078,53 +1088,48 @@ reader.readAsDataURL(file);
 });
 
 
-/* إرسال الحجز */
+/* ==================================================
+   إرسال الحجز
+   يفتح واتساب مباشرة
+================================================== */
 
 document
 .getElementById("bookingForm")
-.addEventListener("submit",async function(e){
+.addEventListener("submit",function(e){
 
 e.preventDefault();
 
 
 const name=
-document.getElementById("name")
-.value.trim();
+document.getElementById("name").value.trim();
 
 
 const phone=
-document.getElementById("phone")
-.value.trim();
+document.getElementById("phone").value.trim();
 
 
 const service=
-document.getElementById("service")
-.value;
+document.getElementById("service").value;
 
 
 const date=
-document.getElementById("date")
-.value;
+document.getElementById("date").value;
 
 
 const time=
-document.getElementById("time")
-.value;
+document.getElementById("time").value;
 
 
 const people=
-document.getElementById("people")
-.value;
+document.getElementById("people").value;
 
 
 const notes=
-document.getElementById("notes")
-.value.trim();
+document.getElementById("notes").value.trim();
 
 
 const receipt=
-document.getElementById("receipt")
-.files[0];
+document.getElementById("receipt").files[0];
 
 
 if(
@@ -1137,7 +1142,7 @@ if(
 ){
 
 alert(
-"يرجى تعبئة جميع البيانات وإرفاق صورة إيصال التحويل."
+"يرجى تعبئة جميع البيانات المطلوبة وإرفاق صورة إيصال التحويل."
 );
 
 return;
@@ -1145,24 +1150,26 @@ return;
 }
 
 
-const option=
+const selectedOption=
 document.querySelector(
 "#service option:checked"
 );
 
 
 const price=
-option.dataset.price;
+selectedOption.dataset.price;
 
 
 const formattedDate=
-new Date(date+"T00:00:00")
+new Date(
+date+"T00:00:00"
+)
 .toLocaleDateString("ar-OM");
 
 
-const message=`
+const message=
 
-💄 طلب حجز - رغد ميكب
+`💄 طلب حجز - رغد ميكب
 
 👤 الاسم:
 ${name}
@@ -1192,76 +1199,81 @@ ${notes || "لا توجد"}
 5 ريالات عمانية
 
 🏦 رقم التحويل:
-${TRANSFER}
+${TRANSFER_NUMBER}
 
 📎 تم إرفاق إيصال التحويل.
 
-أرجو تأكيد الحجز.
-`;
+أرجو تأكيد الحجز.`;
+
+
+const encodedMessage=
+encodeURIComponent(message);
 
 
 /*
-فتح واتساب مباشرة على الرقم:
-+968 79345991
+   هذا الرابط يفتح واتساب مباشرة
+   على الرقم 79345991
 */
 
-const whatsappURL=
+const whatsappAppUrl=
+"whatsapp://send?phone="
++WHATSAPP_NUMBER
++"&text="
++encodedMessage;
+
+
+/*
+   هذا رابط واتساب الاحتياطي
+*/
+
+const whatsappWebUrl=
 "https://wa.me/"
-+WHATSAPP
++WHATSAPP_NUMBER
 +"?text="
-+encodeURIComponent(message);
++encodedMessage;
 
 
 /*
-إذا كان الجهاز يدعم مشاركة الملفات،
-نحاول مشاركة الإيصال مع الرسالة.
-*/
-
-try{
-
-if(
-navigator.share &&
-navigator.canShare &&
-navigator.canShare({
-files:[receipt]
-})
-){
-
-await navigator.share({
-
-title:"حجز رغد ميكب",
-
-text:message,
-
-files:[receipt]
-
-});
-
-return;
-
-}
-
-}catch(error){
-
-if(error.name==="AbortError"){
-return;
-}
-
-}
-
-
-/*
-إذا لم يدعم الجهاز مشاركة الملف،
-يفتح واتساب مباشرة.
+   فتح تطبيق واتساب مباشرة
 */
 
 window.location.href=
-whatsappURL;
+whatsappAppUrl;
+
+
+/*
+   إذا لم يفتح التطبيق،
+   نعطي المستخدم خيار فتح واتساب بالمتصفح.
+*/
+
+setTimeout(function(){
+
+if(
+document.visibilityState === "visible"
+){
+
+const openWeb=
+confirm(
+"لم يتم فتح تطبيق واتساب. هل تريد فتح واتساب عبر المتصفح؟"
+);
+
+if(openWeb){
+
+window.location.href=
+whatsappWebUrl;
+
+}
+
+}
+
+},1800);
 
 });
 
 
-/* LOGIN */
+/* ==================================================
+   تسجيل الدخول
+================================================== */
 
 function openLogin(){
 
@@ -1283,18 +1295,21 @@ document
 
 function login(){
 
-const user=
-document.getElementById("username")
+const username=
+document
+.getElementById("username")
 .value;
 
-const pass=
-document.getElementById("password")
+
+const password=
+document
+.getElementById("password")
 .value;
 
 
 if(
-user==="admin" &&
-pass==="12345"
+username==="admin" &&
+password==="12345"
 ){
 
 closeLogin();
@@ -1312,7 +1327,9 @@ document
 }
 
 
-/* ADMIN */
+/* ==================================================
+   إدارة الأسعار
+================================================== */
 
 const defaultPrices={
 
@@ -1394,9 +1411,7 @@ document
 function savePrices(){
 
 document
-.querySelectorAll(
-"#priceEditor input"
-)
+.querySelectorAll("#priceEditor input")
 .forEach(function(input){
 
 prices[
@@ -1432,7 +1447,7 @@ document
 const service=
 option.value;
 
-if(prices[service]!==undefined){
+if(prices[service] !== undefined){
 
 option.dataset.price=
 prices[service];
@@ -1453,7 +1468,9 @@ prices[service]+
 updatePrices();
 
 
-/* منع اختيار تاريخ قديم */
+/* ==================================================
+   منع اختيار تاريخ سابق
+================================================== */
 
 document
 .getElementById("date")
