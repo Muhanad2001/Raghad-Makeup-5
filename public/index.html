@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raghad Makeup | رغد ميكب</title>
-<meta name="description" content="حجوزات رغد ميكب">
+<meta name="description" content="حجوزات رغد ميكب - ميكب حضور، عرايس، وتخرج">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@500;600&display=swap');
 
 *{box-sizing:border-box}
 
@@ -18,18 +18,21 @@ color:#251b1d;
 font-family:Cairo,Arial,sans-serif
 }
 
-a{text-decoration:none;color:inherit}
+:root{
+--rose:#8e4b59;
+--pink:#f7e8eb;
+--gold:#b48a57;
+--dark:#281b1e
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
 
 .container{
 width:min(1120px,92%);
 margin:auto
-}
-
-:root{
---r:#8e4b59;
---p:#f7e8eb;
---g:#b48a57;
---d:#281b1e
 }
 
 /* HEADER */
@@ -37,8 +40,8 @@ margin:auto
 header{
 position:sticky;
 top:0;
-z-index:20;
-background:#fffafaf2;
+z-index:10;
+background:rgba(255,250,250,.96);
 backdrop-filter:blur(10px);
 border-bottom:1px solid #f0dfe2
 }
@@ -47,17 +50,20 @@ border-bottom:1px solid #f0dfe2
 min-height:78px;
 display:flex;
 align-items:center;
-gap:18px
+gap:15px
 }
 
 .logo{
-width:72px;
-height:72px;
-object-fit:cover;
+height:68px;
+width:68px;
 border-radius:50%;
-margin-right:0;
+object-fit:contain;
+object-position:center;
+background:#fffafa;
 border:1px solid #eadde1;
-background:#fff
+padding:3px;
+display:block;
+flex:none
 }
 
 .brand{
@@ -66,123 +72,142 @@ margin-right:auto
 
 .brand b{
 display:block;
-color:var(--r);
-font-size:24px
+font-size:23px;
+color:var(--rose)
 }
 
 .brand span{
 display:block;
-color:#967b82;
-font-size:12px;
+font-size:11px;
+color:#92777e;
 letter-spacing:2px
 }
 
 .navlinks{
 display:flex;
-gap:20px;
+gap:22px;
 font-weight:700;
-font-size:14px
+font-size:13px
 }
 
 .navlinks a:hover{
-color:var(--r)
+color:var(--rose)
+}
+
+.admin-actions{
+display:flex;
+align-items:center;
+gap:7px
 }
 
 .admin-login{
-font-size:13px;
+font-size:12px;
 font-weight:800;
-color:var(--r);
+color:var(--rose);
 background:#fff;
 border:1px solid #e5cdd1;
 border-radius:999px;
-padding:8px 13px
+padding:8px 13px;
+white-space:nowrap;
+cursor:pointer;
+font-family:inherit
 }
 
+.admin-login:hover{
+background:var(--pink)
+}
 
 /* HERO */
 
 .hero{
-padding:42px 0 28px
+padding:42px 0 30px
 }
 
-.hero-box{
-background:linear-gradient(135deg,#f8e9ee,#fff);
-border:1px solid #ead9df;
+.hero-card{
+background:linear-gradient(135deg,#fff,#f7e7e9);
+border:1px solid #efdde0;
 border-radius:30px;
-padding:46px 24px;
-text-align:center
+padding:38px 30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:25px;
+box-shadow:0 18px 55px rgba(92,48,57,.08)
 }
 
-.badge{
-display:inline-block;
-background:#fff;
-border:1px solid #edd7dc;
-color:var(--r);
-border-radius:999px;
-padding:7px 13px;
-font-size:12px;
-font-weight:800
+.hero-content{
+text-align:right
 }
 
 .hero h1{
-font-size:clamp(34px,7vw,58px);
-color:#704554;
-margin:15px 0 7px
+font-size:clamp(38px,6vw,68px);
+margin:0 0 10px;
+color:var(--rose);
+font-family:"Playfair Display",serif
 }
 
 .hero p{
-font-size:18px;
-color:#806f75;
+font-size:19px;
 line-height:2;
+color:#665457;
 margin:0
 }
 
 .btn{
 display:inline-block;
-background:var(--r);
+background:var(--rose);
 color:#fff;
-padding:12px 20px;
+padding:13px 24px;
 border-radius:999px;
 font-weight:800;
-margin-top:17px
+border:0;
+cursor:pointer;
+font-family:inherit
 }
 
 .btn.light{
 background:#fff;
-color:var(--r);
-border:1px solid #e5cdd1
+color:var(--rose);
+border:1px solid #e7cfd3
 }
 
+.hero-img{
+width:100%;
+height:320px;
+object-fit:contain;
+object-position:center;
+background:transparent
+}
 
 /* SECTIONS */
 
 .section{
-padding:28px 0
+padding:48px 0
 }
 
 .section-title{
-text-align:center
+text-align:center;
+margin-bottom:28px
 }
 
 .section-title h2{
-color:#75495a;
 font-size:32px;
-margin:0 0 5px
+margin:0;
+color:var(--dark)
 }
 
 .section-title p{
-color:#907d83;
-margin:0 0 7px
+color:#806e71;
+margin:6px 0
 }
 
-.offer{
-text-align:center;
-color:#9b5269;
+.national-offer{
+display:inline-block;
+margin-top:8px;
+color:var(--rose);
 font-size:20px;
-font-weight:900;
-margin:5px 0 25px
+font-weight:900
 }
-
 
 /* SERVICES */
 
@@ -194,291 +219,376 @@ gap:18px
 
 .card{
 background:#fff;
-border:1px solid #eadde1;
+border:1px solid #efdfe2;
 border-radius:22px;
-padding:25px 18px;
-text-align:center;
-box-shadow:0 7px 25px #8e4b590d
+padding:24px;
+box-shadow:0 10px 35px rgba(70,35,40,.06)
 }
 
 .card h3{
-color:#714555;
-font-size:21px;
-margin:5px 0 8px
+margin:0 0 8px;
+color:var(--rose);
+font-size:20px
 }
 
 .card p{
-color:#8d7b81;
-line-height:1.9;
-margin:0
+color:#806e71;
+line-height:1.8
 }
 
 .price{
-color:var(--r);
-font-size:22px;
+font-size:25px;
 font-weight:900;
-margin-top:14px
+margin:10px 0;
+color:var(--dark)
 }
 
 .note{
-color:#a38f94;
-font-size:12px;
-margin-top:5px
+font-size:13px;
+color:#806e71
 }
 
-.icon{
-width:58px;
-height:58px;
-margin:auto;
-border-radius:50%;
-background:var(--p);
-display:grid;
-place-items:center;
-font-size:27px
+.center-card{
+max-width:420px;
+margin:18px auto 0;
+text-align:center
 }
-
 
 /* BOOKING */
 
-.booking{
-padding:25px 0 65px
+.booking-section{
+padding:35px 0 55px
 }
 
-.box{
-max-width:850px;
-margin:auto;
+.booking-form{
 background:#fff;
-border:1px solid #eadde1;
-border-radius:25px;
-padding:28px 22px;
-box-shadow:0 10px 35px #8e4b590f
+border:1px solid #efdfe2;
+border-radius:26px;
+padding:28px;
+box-shadow:0 12px 40px rgba(70,35,40,.06)
 }
 
-.box h2{
+.booking-form h2{
 text-align:center;
-color:#75495a;
-margin:0 0 6px
+color:var(--rose);
+margin-top:0
 }
 
-.desc{
+.booking-desc{
 text-align:center;
-color:#8c7a80;
+color:#806e71;
 font-size:13px;
-margin:0 0 24px
+margin-bottom:25px
 }
 
-.form{
+.form-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px
+grid-template-columns:repeat(2,1fr);
+gap:16px
 }
 
 .field{
-display:flex;
-flex-direction:column;
-gap:6px
+margin:0
+}
+
+.field label{
+display:block;
+font-size:13px;
+font-weight:800;
+color:#684450;
+margin-bottom:6px
+}
+
+.field input,
+.field select,
+.field textarea{
+width:100%;
+padding:12px;
+border:1px solid #e6cfd3;
+border-radius:12px;
+font-family:inherit;
+background:#fffafa;
+outline:none
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+border-color:#b98294;
+box-shadow:0 0 0 3px #b9829420
+}
+
+.field textarea{
+min-height:100px;
+resize:vertical
 }
 
 .full{
 grid-column:1/-1
 }
 
-label{
-font-weight:800;
-font-size:13px;
-color:#684450
-}
-
-input,
-select,
-textarea{
+.submit-booking{
 width:100%;
-border:1px solid #dfcfd5;
-background:#fffafb;
-border-radius:12px;
-padding:12px 13px;
-outline:0;
-font:inherit;
-color:#49373d
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-border-color:#b98294;
-box-shadow:0 0 0 3px #b982941f
-}
-
-textarea{
-min-height:95px;
-resize:vertical
-}
-
-.submit{
-width:100%;
-border:0;
-border-radius:13px;
-padding:15px;
-background:linear-gradient(135deg,#8d5368,#b4778d);
-color:#fff;
-font:800 16px Cairo;
-margin-top:18px;
-cursor:pointer
+margin-top:20px;
+font-size:16px
 }
 
 .wa-note{
 text-align:center;
-color:#8d7b81;
 font-size:12px;
-line-height:1.9;
+color:#806e71;
+line-height:2;
 margin-top:10px
 }
 
+.wa-note b{
+color:var(--rose)
+}
 
 /* INFO */
 
 .info{
-max-width:850px;
-margin:0 auto 45px;
 background:#fff;
-border:1px solid #eadde1;
-border-radius:20px;
-padding:22px;
-text-align:center
+border:1px solid #efdfe2;
+border-radius:24px;
+padding:25px;
+text-align:center;
+max-width:850px;
+margin:0 auto
 }
 
 .info h3{
-color:#75495a
+color:var(--rose)
 }
 
 .info p{
-color:#8d7b81
+color:#806e71
 }
-
-
-/* ADMIN */
-
-.admin{
-display:none;
-position:fixed;
-inset:0;
-background:#190e10a6;
-z-index:100;
-padding:18px;
-overflow:auto
-}
-
-.admin.open{
-display:flex;
-align-items:center;
-justify-content:center
-}
-
-.panel{
-width:min(900px,100%);
-max-height:94vh;
-overflow:auto;
-background:#fff;
-border-radius:22px;
-padding:22px
-}
-
-.panel h2,
-.panel h3{
-color:#75495a
-}
-
-.login{
-max-width:420px;
-margin:auto
-}
-
-.close{
-float:left;
-border:0;
-background:transparent;
-font-size:25px;
-color:#8d727a;
-cursor:pointer
-}
-
-.row{
-display:flex;
-gap:10px;
-align-items:center;
-justify-content:space-between;
-background:#fffafa;
-border:1px solid #efdfe2;
-border-radius:13px;
-padding:11px;
-margin:8px 0
-}
-
-.row input{
-width:100px
-}
-
-.save,
-.logout{
-border:0;
-border-radius:9px;
-padding:9px 14px;
-background:var(--r);
-color:#fff;
-font-weight:800;
-cursor:pointer
-}
-
-.logout{
-background:#fff0f2;
-color:#a53d51
-}
-
-.table{
-width:100%;
-border-collapse:collapse;
-font-size:12px
-}
-
-.table th,
-.table td{
-border:1px solid #eadde1;
-padding:8px;
-text-align:right;
-vertical-align:top
-}
-
-.empty{
-text-align:center;
-color:#8d7b81;
-padding:20px
-}
-
 
 /* FOOTER */
 
 footer{
 text-align:center;
-border-top:1px solid #eadde1;
-padding:25px;
-color:#8d7b81;
-font-size:12px
+padding:30px;
+color:#806e71;
+border-top:1px solid #f0dfe2;
+margin-top:30px
 }
 
+/* ADMIN */
+
+.admin-panel{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(25,14,16,.65);
+z-index:100;
+padding:18px;
+align-items:center;
+justify-content:center
+}
+
+.admin-panel.show{
+display:flex
+}
+
+.admin-box{
+width:min(900px,100%);
+max-height:90vh;
+overflow:auto;
+background:#fffafa;
+border-radius:24px;
+padding:25px;
+position:relative;
+border:1px solid #efdfe2
+}
+
+.admin-box h2,
+.admin-box h3{
+color:var(--rose)
+}
+
+.admin-close{
+position:absolute;
+left:15px;
+top:10px;
+border:0;
+background:none;
+font-size:30px;
+cursor:pointer;
+color:#806e71
+}
+
+.login-form{
+max-width:400px;
+margin:35px auto
+}
+
+.login-form label{
+display:block;
+font-weight:800;
+font-size:13px;
+color:#684450;
+margin-top:12px
+}
+
+.login-form input{
+width:100%;
+padding:12px;
+border:1px solid #e6cfd3;
+border-radius:12px;
+font-family:inherit;
+margin-top:6px
+}
+
+.login-btn{
+width:100%;
+margin-top:18px
+}
+
+.price-editor{
+background:#fff;
+border:1px solid #efdfe2;
+border-radius:18px;
+padding:18px;
+margin-top:18px
+}
+
+.price-row{
+display:grid;
+grid-template-columns:1fr 120px;
+gap:10px;
+align-items:center;
+padding:10px 0;
+border-bottom:1px solid #f0dfe2
+}
+
+.price-row:last-child{
+border-bottom:0
+}
+
+.price-row input{
+width:100%;
+padding:10px;
+border:1px solid #e6cfd3;
+border-radius:10px;
+font-family:inherit
+}
+
+.save-btn{
+margin-top:15px
+}
+
+.bookings{
+margin-top:25px
+}
+
+.booking-card{
+background:#fff;
+border:1px solid #efdfe2;
+border-radius:15px;
+padding:15px;
+margin:10px 0
+}
+
+.booking-card div{
+margin:5px 0;
+font-size:13px
+}
+
+.booking-card strong{
+color:var(--rose)
+}
+
+.logout{
+background:#fff;
+border:1px solid #e6cfd3;
+color:var(--rose);
+padding:8px 15px;
+border-radius:999px;
+font-family:inherit;
+font-weight:800;
+cursor:pointer
+}
+
+.empty{
+padding:25px;
+text-align:center;
+color:#806e71;
+background:#fff;
+border-radius:16px
+}
 
 /* MOBILE */
 
-@media(max-width:750px){
+@media(max-width:800px){
+
+.nav{
+min-height:72px;
+gap:7px
+}
+
+.logo{
+width:62px;
+height:62px
+}
+
+.brand b{
+font-size:19px
+}
+
+.brand span{
+font-size:9px
+}
 
 .navlinks{
 display:none
+}
+
+.admin-login{
+font-size:11px;
+padding:7px 9px
+}
+
+.hero{
+padding-top:25px
+}
+
+.hero-card{
+grid-template-columns:1fr;
+text-align:center;
+padding:25px 18px
+}
+
+.hero-content{
+text-align:center
+}
+
+.hero h1{
+font-size:48px
+}
+
+.hero p{
+font-size:16px
+}
+
+.hero-img{
+height:260px
+}
+
+.section{
+padding:35px 0
+}
+
+.section-title h2{
+font-size:28px
 }
 
 .grid{
 grid-template-columns:1fr
 }
 
-.form{
+.form-grid{
 grid-template-columns:1fr
 }
 
@@ -486,119 +596,118 @@ grid-template-columns:1fr
 grid-column:auto
 }
 
-.brand b{
-font-size:20px
+.booking-form{
+padding:20px 16px
 }
 
-.logo{
-width:64px;
-height:64px
-}
-
-.hero{
-padding-top:28px
-}
-
-.hero-box{
-padding:35px 17px
-}
-
-.section-title h2{
-font-size:27px
-}
-
-.panel{
-padding:18px
-}
-
-.row{
-flex-wrap:wrap
-}
-
-.row input{
-width:100%
+.price-row{
+grid-template-columns:1fr 100px
 }
 
 }
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-HEADER
-========================= -->
-
 <header>
-
 <div class="container nav">
 
-<!-- الشعار الأصلي مدمج داخل الموقع -->
 <img
 class="logo"
 src="data:image/webp;base64,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"
-alt="Raghad Makeup">
+alt="شعار رغد ميكب">
 
 <div class="brand">
 <b>رغد ميكب</b>
 <span>RAGHAD MAKEUP</span>
 </div>
 
-<nav class="navlinks">
-<a href="#home">الرئيسية</a>
-<a href="#services">الخدمات</a>
-<a href="#bridal">العرايس</a>
-<a href="#graduation">التخرج</a>
-<a href="#rules">الشروط</a>
-</nav>
+<div class="admin-actions">
+<button class="admin-login" onclick="openAdmin()">تسجيل دخول</button>
+</div>
 
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-card">
+
+<div class="hero-content">
+<h1>رغد ميكب</h1>
+
+<p>
+لأن جمالك يستحق إطلالة مميزة ✨
+</p>
+
+<p>
+احجزي موعدك الآن واختاري الإطلالة التي تناسبك
+</p>
+
+<a class="btn" href="#services">
+اختاري خدمتك
+</a>
+</div>
+
+<img
+class="hero-img"
+src="data:image/webp;base64,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"
+alt="شعار رغد ميكب">
+
+<div class="brand">
+<b>رغد ميكب</b>
+<span>RAGHAD MAKEUP</span>
+</div>
+
+<div class="admin-actions">
 <button class="admin-login" onclick="openAdmin()">
 تسجيل دخول
 </button>
+</div>
 
 </div>
 </header>
 
 
+<main>
 
-<main id="home">
-
-
-<!-- HERO -->
-
-<section class="hero">
-
+<section class="hero" id="home">
 <div class="container">
 
-<div class="hero-box">
+<div class="hero-card">
 
-<div class="badge">
-RAGHAD MAKEUP ✨
-</div>
+<div class="hero-content">
 
 <h1>
 رغد ميكب
 </h1>
 
 <p>
-ميكب حضور، عرايس وتخرج بإطلالة أنيقة تناسبك 💗
+لأن جمالك يستحق إطلالة مميزة ✨
+</p>
+
+<p>
+احجزي موعدك الآن واختاري الإطلالة التي تناسبك
 </p>
 
 <a class="btn" href="#services">
-شاهدي الخدمات والأسعار
+اختاري خدمتك
 </a>
 
 </div>
 
+<img
+class="hero-img"
+src="data:image/webp;base64,UklGRv4OAABXRUJQVlA4IPIOAAAQTgCdASrhAJABPmEwlEgkIyIhIfLpEIAMCWlu4XMxxj/Ub+v9nX9Q/Kr+qeo/4j8o/g/yg5H8Rr4v9pPy/9s/dL8wPgjvB+Gn9r6gX4l/Jf8Z+af9t4W2ynoBeyX0r/c/m1zC/ZH2AP5t/Y/+R5XPgRUA/07/4fZM/nP/V/mv9F+5Xti/NP8Z/5/8r8Av8u/rf/J/wH74f5zwM+jAI0+MvaPm173zvlFL2j5tXOtEt9qudaJb7Vc60S55Xwu/OYhouB03pXGdaJb7Vc60S32q51olvtVx9zEMz5/4oM8J71Qb3kFl/d/vtHzauOtpybzg+Rs4XZYQdcoyUEz0F3ogsBKYLWXJb7Vc4zY8xsLrLBvc+TvE+k4xZQjBmYE5JAcQZ8bzfjYglQlvtVc/+WS/TDd//0JuT7PML8zODOjrdCuysaWujWJwampadg+qA0fNLCMrrsQ1eY3iH5VgfJAJJeMgYwlGvayt0A3KKXsSqLgPiR39kzhw8esE+o0JbGSWJzOtEtoty5+hGNoS8MvQa0IDRi0S2m5YrNjT2LEVabYmqoD/aRnaley/+ONtMhG7w5RuhjIpnmj5qgQNZhmH76NiAheNNQPp6MzGo4K1EyjbG3Y9kCQz+1NL9tt3tYQVXgo08HIzAnmwZi8DMMqmQ2JPJYs7MG7ZCohCZu1fRkPgZp0/Y3FQ1BzeHPFBRg0uE+toVVowaM+0d56Nd8kktP4dl9Uvgp1q0JDR82h8MLmgew5cWeJQNExiZBrZ+d8opfImFh+0f1UOjJuxWJ/UR5nhXKxWq7CXW8D60S32q51olvtVzrRLfarnWiW+1XOtEt9qudaJSAAA/v+RLXlLTUluyOIUD2n/gAAG34mGPUyPN18qW3MAABRFX4WQePtRXw0DYkHv83zQvQ1M6F00hsKtdIz8TS0szxP+QbkQJuujQqJEOLO51ndmIeSxN+wpoPo35wi9/+AJWZyF4VG47ZZyv07IoE6Gr6ziL4nEy7rQ4/3yAFcgNtNeErf9tBD9RHGW7HX3OQGH2hUcUoT2fdTE6yr8nln9mZ7X1KJjnbVNYkimUqDUNJgvawUMZNx1BJUf4gLNr11kYpXwOu1hzQGmgO9rBtUXDazYfDW4/e86HgFTnQ+QwZF/c+0dJoHfCtNF3yoTKdLz1g9ZiCzSXtibI0WyPhmUXd/RHByS6ciTxTE8MFrNMd5NglLCrZ3Pb1iEi+U4XUXgfuYro7ikGbiHLFjvYmDmQIzevBupr0EmiPzRT58efrxRFTVI8SXRTBWt/20i672sTiImIqDVaGBwac/LOAmI2pqiiCfFV5Ro1DssmR/K/T7GjP52sHRw6IjTxSHSGKmfTOn5T7KIze8S8UYxfiOT9JErY+azszYYX8ZY9Kup2re22sfEZLYrNK794bNPtH2qiH/ARY8Y7SYHQGD2UkHbXzWDJkEO2AQivSouR2Ta8jwzQcC6xGLT5nYMA9GIPBTPuGf4HPp94XTNn/GLnrTnvs1M9RMjnilyEZJTHpTbyKzsdVHlFFaZnorB8nMhcmyvATbJ/Hpd1pnr26PZmWdBYiDoPbHmfPYzy+tqc9sNw17ObwfHbiOwaEBrPvvL4DSwUCZGMd4gpP3CK/AWmWg96CDL4vLFS/49fQMm5/rIA3d+cOpEBX95KanMPYF1mJFrsz8J7u9ZVZHEbHQjbtTJtQTASzcw9tgElZchGiBUfVWUsuO/Adbhaq2aTrb7IsmnYCr7JkohWzNiicuqPSGElzf864TnlognsP6sUXyZLSwFjHlv85Bto3JeGJU4ZT7M3IQDWulmMiF480q0pYjHki9FpJkPs7BpXUb58Zs/zfJTG71v6K4wGnWhFchlgau8aVW4rRbi8DkEAJR9Ppv7KlVEdJCtdf11Z2IyWzhXxt+6xi02lztyI8giYQIgIfIzALhu8XBbE9PXcfYBKthSk1EGyvsdYV8MFvoZCOp6KDR6ygK7jAqBBEFk6VzeFX4Xr4p32CJMDC0NEUVaL5gdL+nYMK8LeRPcHAa0s2nP5sclnVj3al8f1gQHfd4fJ7zZ9vD/2QJkGXNGloZEI15EzXxG5CbMZh4Hq79UiHNbZvZBCkDksSx0NA1gZQlCEuoM+CnYcg9WptntaFPJBAWcvmiJVuCTkYR7BVqs1o6EDvZACMYfBE7y6ilJDj9VAhTOf510sdMVvFFxXt5hhUDGIUe/2BRX1PTnntPB9VXuCvyapFTzLb4mm4xtF9+5JpvPr9aP0yH+n1gSBUvT5OkWLbPT+JILk8k8uXcPv96NPNuKnc1dxrT1C7ptQlhNqLe+0qSejftNEpJBoa//HimfCELC79OlwNrN0lC6OheQB0Hu0UA4x5bZdI3UcvrIDOnpbHplzZ0faQlcn8sadFaJuvTjN3fmkuf0vD6FRaaDo56ARO+hbvL0mjpMFTEuoL0m09M1JsprdOH8l977+4UkvVWKYUxIPb6b2DF52cN3Nuus9HLKCLloL5fv2JeSBS48kuP5ooO7YkK0wBH/9Ax8kHLgQc1cYEACZjwrK7nzSlwg3M2XQmhhZCAvicemNydRxKUe/OSX0jnTiSn/yhYD3Q9PON7H4EScyQsFPQyFteZm4xYEDEhvzo8G4ypyxVa1ChlTQAAcxPAz8n/4UJ+7eY5pCzqqN2yuSV6KmpxBoo7ET3zdtoAr/Hsk9daeExS7kuyk7i0bBJjwQSCro9nPJAqVG6B5W41UhI1/9iT5AzO5lC1NhsbT4oxfOROwmdVE9bLvS77FYrEP+CWdBIwWVOpsg81S+0UFPr9EOcjjvJYTWqqIwQ44IS5TJttR5HdtnABa+tptR6Uz4tzPW9/gpiNh/918qwPfBtUTCAy88rXmgWsh6SXBff8D995lFeyllE8GDfvDZchcblkGsqS+kGEc3uaQmGfGObYKWIqonLdyf86fuRn4slpEkvOG6+mHC6QtntakxOdPkuJxSJGDQbiF6IBd6FYtnBRSPoPsoEcqnsAdpNROGVuQOdbvZSQugj6Z9BHNrc7GI6Yc9hDly8Yfv9JioNM2578vk8J/SMGf//3DNaw05xDwFDB490e3//qNEq6Ec3B7emdlgg34jVfUkOHqmUgmzrX5xC+K24nvZLJl32j1FjURWpI+Glvo0WkR/gdlpfe64ULcZBPbwQHVwPerjCM31BUcS3Gc4K+9/OAXdNAdVYAIWXUbq0T3PTw1Z6uvQ2FSwxWIrxoe7Y9DJr28e9H4upSU3mvE8/s5i7t+TAKxT72NzxX+JKAX4YLwonATSu0e6Z5oenE6dLeJUqnyCIJv8KiGfx6JTIjQymfpsAuajWxBJEOxLtNQcfL/JOz7ydwEJCiJB9Zosye0l2amBjF7y+6DvH2VrOg/iYg5H8AyKV/N+H480ThRtv2YKCLhtYW2zG98Ug7sFy0/utJh97yGhFst9V03vF8U3vqe+LX1jKNrqOT1+pCqXyJXyVQB8DcPfPrPyzfTOnacQZfHdZGeUauLqANrBUkzekbcCZu3pJAiW7CnmtGLY9wB4Ez7ptY9pxeJcZFJnqPgN3UzicXabZd7YRLMLiyoO1G+CxeUr/f9ChpQ+/N3bauG7cWAQJXfKMWYuE7gBZhMA5pPvlKL74P5U82lXmbHInL3A8pftg1mN8g5h4N01mtT3EfIPcnC439c1ZyhusJeWWJshSfUYhg7cHGu4zywLAkfPoqv+Cjo5G0e9F0HWci7QKLkFaRuQp1+dcNNzwssvdMzVKM7I6S3Rh8m0roAE3bmpjo2JZcQXj8mlqx0H8PDRLNv+BFIV4PV5CjKirGK1qnYo9XuhxUhuv3jMhK5IHbETIUwIrkpxfv/PAl6ii7Owi/tNVmcaUT92xdQ3KVbJMax4es60YJhUcyP4chj1osavksNmvyjwYQQqrhrpiv/YqPwJCAdE5NH2inxm0F4LYPxpia8hVBMpZlYeuHzapc1+OLmQuAxNupI/dEvFEp7p5vs04h7m9QQfclRSyyA4Rt7w4PP0N/KWAA4982tC8sT16CIuNXlCePkgQuD54jKGiik9P41ooUyf9qmYsQ2Wk+wSoI/TMpx5KNdph5qHOHaHWbcKDvzaD+mrzOAptrZuVtOm8kWeS4SA2udqUqwMRj6u45VU6mSEdratpQinHzXy1WgXfW2WYbZvh9Xgdig8/utmyMAq2/HzaZtXEYd2jGjhbFDhxKvXZXj+XgEUoljUtV8LasBOd2CN5wOAMmW0CDDu2EJ/OkdRIBT/vu+SoPqwAxb8yn1y1zy5yAnVBuLIiTt7Ll9kRHawXN71rxYwtE9uLms9c1B3U5cC3WMI0UwS/Wz4LtNx2rm7Ak38uui+mAJ6O2NNGuVDgRag+gkGFwvCd+mzFrZUyauuSrINN9fCWNIFgF09jamrDK+UT5XZ7A6RA/+chd1TRwuqd5RaZNxlYrDWSF5+5KMhY1ss4sFhUuLg92PTLzdwdFmm15OUlzzQx0mUfzNnOoHZoHh5nrYuypIA/oCpvfRTWF5Skm/WBquP8n/W0fTPGPX1yK1USD47ZcxJzSEYTAfXZbu8Y0dabQGCnc0X1D1Ybx6NA0QY44y70+PI8QBkwTsJw2F6MbU1KKG5vRXvkf9oiuRuvvHMgAbbPYKuVcjOKM2EbRqKfuvBDWoshxoLF2U7PDy91oRaXguyHWbQvacfyw2kJerL0LtTKRyw/DDJsrSxhekh/Kiz4jFdTF3NyqfPUv2bJyJWR07CMr2tA82BykPcNA/3+Ajz60V0jJh0zpYz2tciHcunrv3S7tVrEzUz/0EO6DYIufrhT/QHdq4YyCEglyAo/kV4yn8D0I0502Nac9RRi58USB7tVbBlsyWHXcfjRAqpxrK3Br0E5TZzBKacgi/xOLJzp8gSxk5I/uxccvCrRJxQlmyCoMJFsocrDtG8kxtgaV4xTF52cGmQXKdgx5dYMrHoTxeZIOuj0n2tpPGyNOm2nOPRpPrg1X3yhdclqTPkbYEzaPQ6w5DN4UT/DbLweWpDzT/g6tBFNiPjVGt5AoUA+p7yUddQbLKnOSTrOH2fDEtSLnEo3B3LDHbhjtJlevJWOTK9WAYhAAAAAA1hwAAA"
+alt="رغد ميكب">
 </div>
 
+</div>
 </section>
 
-
-
-<!-- SERVICES -->
 
 <section class="section" id="services">
 
@@ -614,113 +723,48 @@ RAGHAD MAKEUP ✨
 خدمات مكياج احترافية تناسب مناسبتك
 </p>
 
+<div class="national-offer">
+عرض العيد الوطني 🎉
 </div>
 
-<div class="offer">
-عرض العيد الوطني 🎉
 </div>
 
 
 <div class="grid">
 
-
 <div class="card">
-
-<div class="icon">
-💄
+<h3>الهادي (العادي)</h3>
+<p>إطلالة ناعمة وبسيطة</p>
+<div class="price" data-price="الهادي (العادي)">15 ر.ع</div>
+<div class="note">بدون رموش</div>
 </div>
-
-<h3>
-الهادي (العادي)
-</h3>
-
-<p>
-إطلالة ناعمة وبسيطة
-</p>
-
-<div
-class="price"
-data-price="الهادي (العادي)"
->
-15 ر.ع
-</div>
-
-<div class="note">
-بدون رموش
-</div>
-
-</div>
-
 
 
 <div class="card">
-
-<div class="icon">
-💋
+<h3>الميكب الناعم</h3>
+<p>إطلالة ناعمة ومرتبة</p>
+<div class="price" data-price="الميكب الناعم">18 ر.ع</div>
+<div class="note">مع أو بدون رموش</div>
 </div>
-
-<h3>
-الميكب الناعم
-</h3>
-
-<p>
-إطلالة ناعمة وأنيقة
-</p>
-
-<div
-class="price"
-data-price="الميكب الناعم"
->
-18 ر.ع
-</div>
-
-</div>
-
 
 
 <div class="card">
-
-<div class="icon">
-✨
-</div>
-
-<h3>
-السبيشل الثقيل
-</h3>
-
-<p>
-إطلالة فخمة ومميزة
-</p>
-
-<div
-class="price"
-data-price="السبيشل الثقيل"
->
-20 ر.ع
-</div>
-
-<div class="note">
-مع أو بدون رموش
+<h3>السبيشل الثقيل</h3>
+<p>إطلالة فخمة ومميزة</p>
+<div class="price" data-price="السبيشل الثقيل">20 ر.ع</div>
+<div class="note">مع أو بدون رموش</div>
 </div>
 
 </div>
 
 
-
-<div class="card">
-
-<div class="icon">
-👁️
-</div>
+<div class="card center-card">
 
 <h3>
 العدسات 💗
 </h3>
 
-<div
-class="price"
-data-price="عدسات"
->
+<div class="price" data-price="عدسات">
 4 ر.ع
 </div>
 
@@ -730,18 +774,11 @@ data-price="عدسات"
 
 </div>
 
-
 </div>
-
-</div>
-
 </section>
 
 
-
-<!-- BRIDAL -->
-
-<section class="section" id="bridal">
+<section class="section">
 
 <div class="container">
 
@@ -760,105 +797,47 @@ data-price="عدسات"
 
 <div class="grid">
 
-
 <div class="card">
-
-<h3>
-عقد القران
-</h3>
-
-<div
-class="price"
-data-price="عقد القران"
->
-20 ر.ع
+<h3>عقد القران</h3>
+<p>إطلالة أنيقة ليوم عقد القران</p>
+<div class="price" data-price="عقد القران">20 ر.ع</div>
 </div>
-
-</div>
-
 
 
 <div class="card">
-
-<h3>
-ملكة (خطوبة 💍)
-</h3>
-
-<div
-class="price"
-data-price="ملكة (خطوبة)"
->
-40 ر.ع
+<h3>ملكة (خطوبة 💍)</h3>
+<p>إطلالة مميزة للمناسبة</p>
+<div class="price" data-price="ملكة (خطوبة)">40 ر.ع</div>
 </div>
-
-</div>
-
 
 
 <div class="card">
-
-<h3>
-عروس (زفه)
-</h3>
-
-<div
-class="price"
-data-price="عروس (زفه)"
->
-80 ر.ع
+<h3>عروس (زفه)</h3>
+<p>إطلالة فخمة ليوم الزفاف</p>
+<div class="price" data-price="عروس (زفه)">80 ر.ع</div>
 </div>
-
-</div>
-
 
 
 <div class="card">
-
-<h3>
-ميكب عروس (صباحية / مسائية)
-</h3>
-
-<div
-class="price"
-data-price="ميكب عروس (صباحية / مسائية)"
->
-25 ر.ع
+<h3>ميكب عروس (صباحية / مسائية)</h3>
+<p>إطلالة خاصة للعروس</p>
+<div class="price" data-price="ميكب عروس (صباحية / مسائية)">25 ر.ع</div>
 </div>
-
-</div>
-
 
 
 <div class="card">
-
-<h3>
-ميكب عروس حفل حناء
-</h3>
-
-<div
-class="price"
-data-price="ميكب عروس حفل حناء"
->
-25 ر.ع
+<h3>ميكب عروس حفل حناء</h3>
+<p>إطلالة مناسبة لحفل الحناء</p>
+<div class="price" data-price="ميكب عروس حفل حناء">25 ر.ع</div>
 </div>
 
 </div>
 
-
 </div>
-
-</div>
-
 </section>
 
 
-
-<!-- GRADUATION -->
-
-<section
-class="section"
-id="graduation"
->
+<section class="section">
 
 <div class="container">
 
@@ -875,19 +854,17 @@ id="graduation"
 </div>
 
 
-<div
-class="card"
-style="max-width:420px;margin:auto"
->
+<div class="card center-card">
 
 <h3>
 ميكب تخرج
 </h3>
 
-<div
-class="price"
-data-price="ميكب تخرج"
->
+<p>
+إطلالة جميلة ومناسبة لحفل التخرج
+</p>
+
+<div class="price" data-price="ميكب تخرج">
 18 ر.ع
 </div>
 
@@ -898,34 +875,25 @@ data-price="ميكب تخرج"
 </div>
 
 </div>
-
 </section>
 
 
-
-<!-- BOOKING -->
-
-<section
-class="section"
-id="booking"
->
+<section class="booking-section" id="booking">
 
 <div class="container">
 
-<div class="box">
+<form class="booking-form" id="bookingForm">
 
 <h2>
-احجزي موعدك
+احجزي موعدك 💗
 </h2>
 
-<p class="desc">
+<p class="booking-desc">
 أدخلي بياناتك وسيتم تحويلك مباشرة إلى واتساب لإرسال طلب الحجز.
 </p>
 
 
-<form id="bookingForm">
-
-<div class="form">
+<div class="form-grid">
 
 
 <div class="field">
@@ -941,7 +909,6 @@ placeholder="اكتبي اسمك"
 >
 
 </div>
-
 
 
 <div class="field">
@@ -960,7 +927,6 @@ placeholder="مثال: 91234567"
 </div>
 
 
-
 <div class="field">
 
 <label>
@@ -976,50 +942,49 @@ required
 اختاري الخدمة
 </option>
 
-<option>
+<option value="الهادي (العادي)">
 الهادي (العادي) - 15 ر.ع
 </option>
 
-<option>
+<option value="الميكب الناعم">
 الميكب الناعم - 18 ر.ع
 </option>
 
-<option>
+<option value="السبيشل الثقيل">
 السبيشل الثقيل - 20 ر.ع
 </option>
 
-<option>
+<option value="عدسات">
 العدسات - 4 ر.ع
 </option>
 
-<option>
+<option value="عقد القران">
 عقد القران - 20 ر.ع
 </option>
 
-<option>
+<option value="ملكة (خطوبة)">
 ملكة (خطوبة) - 40 ر.ع
 </option>
 
-<option>
+<option value="عروس (زفه)">
 عروس (زفه) - 80 ر.ع
 </option>
 
-<option>
+<option value="ميكب عروس (صباحية / مسائية)">
 ميكب عروس (صباحية / مسائية) - 25 ر.ع
 </option>
 
-<option>
+<option value="ميكب عروس حفل حناء">
 ميكب عروس حفل حناء - 25 ر.ع
 </option>
 
-<option>
+<option value="ميكب تخرج">
 ميكب تخرج - 18 ر.ع
 </option>
 
 </select>
 
 </div>
-
 
 
 <div class="field">
@@ -1042,7 +1007,6 @@ required
 </div>
 
 
-
 <div class="field">
 
 <label>
@@ -1056,7 +1020,6 @@ required
 >
 
 </div>
-
 
 
 <div class="field">
@@ -1074,7 +1037,6 @@ required
 </div>
 
 
-
 <div class="field full">
 
 <label>
@@ -1088,13 +1050,12 @@ placeholder="اكتبي أي ملاحظات أو طلبات خاصة..."
 
 </div>
 
-
 </div>
 
 
 <button
-class="submit"
 type="submit"
+class="btn submit-booking"
 >
 إرسال طلب الحجز عبر واتساب
 </button>
@@ -1102,7 +1063,7 @@ type="submit"
 
 <div class="wa-note">
 
-بعد الضغط سيتم فتح واتساب على الرقم
+سيتم فتح واتساب على الرقم
 <b>79345991</b>
 
 <br>
@@ -1111,45 +1072,36 @@ type="submit"
 
 </div>
 
-
 </form>
-
-</div>
 
 </div>
 
 </section>
 
 
-
-<!-- RULES / HAIR -->
-
-<section
-class="section"
-id="rules"
->
+<section class="section">
 
 <div class="container">
 
 <div class="info">
 
 <h3>
-استفسارات عن الشعر 💇🏻‍♀️
+استفسارات الشعر 💇🏻‍♀️
 </h3>
 
 <p>
-للاستفسار عن خدمات الشعر اضغطي على الزر:
+للاستفسار عن خدمات الشعر:
 </p>
 
 <a
 class="btn light"
 href="tel:94888701"
 >
-الاستفسارات عن الشعر
+التواصل عن خدمات الشعر
 </a>
 
 <p>
-رقم التواصل: 94888701
+94888701
 </p>
 
 </div>
@@ -1158,75 +1110,64 @@ href="tel:94888701"
 
 </section>
 
-
 </main>
 
 
-
-<!-- FOOTER -->
-
 <footer>
-
 © 2026 رغد ميكب — جميع الحقوق محفوظة
-
 </footer>
 
 
-
-<!-- ADMIN -->
+<!-- ADMIN PANEL -->
 
 <div
-class="admin"
-id="admin"
+class="admin-panel"
+id="adminPanel"
 >
 
-<div class="panel">
+<div class="admin-box">
 
 <button
-class="close"
+class="admin-close"
 onclick="closeAdmin()"
 >
 ×
 </button>
 
 
-<!-- LOGIN -->
-
 <div id="loginView">
 
-<div class="login">
+<div class="login-form">
 
 <h2>
 تسجيل دخول الإدارة
 </h2>
-
 
 <label>
 اسم المستخدم
 </label>
 
 <input
-id="user"
+id="adminUser"
+type="text"
 autocomplete="username"
-style="margin:7px 0 13px"
+placeholder="اسم المستخدم"
 >
-
 
 <label>
 الرمز
 </label>
 
 <input
-id="pass"
+id="adminPass"
 type="password"
 autocomplete="current-password"
-style="margin:7px 0 13px"
+placeholder="الرمز"
 >
 
-
 <button
-class="submit"
-onclick="login()"
+class="btn login-btn"
+onclick="loginAdmin()"
 >
 دخول
 </button>
@@ -1236,223 +1177,150 @@ onclick="login()"
 </div>
 
 
-
-<!-- ADMIN VIEW -->
-
-<div
-id="adminView"
-style="display:none"
->
+<div id="adminView" style="display:none">
 
 <h2>
 لوحة تحكم رغد ميكب
 </h2>
 
-
 <button
 class="logout"
-onclick="logout()"
+onclick="logoutAdmin()"
 >
 تسجيل خروج
 </button>
 
 
+<div class="price-editor">
+
 <h3>
-تعديل الأسعار
+تعديل أسعار الخدمات
 </h3>
 
-
-<div id="prices"></div>
-
+<div id="priceEditor"></div>
 
 <button
-class="save"
+class="btn save-btn"
 onclick="savePrices()"
 >
 حفظ الأسعار
 </button>
 
+<div
+id="priceMsg"
+class="price-msg"
+></div>
+
+</div>
+
+
+<div class="bookings">
 
 <h3>
 الحجوزات
 </h3>
 
-
-<div id="bookings"></div>
-
-</div>
-
+<div id="bookingList"></div>
 
 </div>
 
 </div>
 
+</div>
+</div>
 
 
 <script>
 
-/* =========================
-   إعدادات الموقع
-========================= */
+const WHATSAPP_NUMBER = "96879345991";
 
-const WA = '96879345991';
+const ADMIN_USERNAME = "raghad";
 
-const USER = 'raghad';
-
-const PASS = 'r21383303';
+const ADMIN_PASSWORD = "r21383303";
 
 
+const DEFAULT_PRICES = {
 
-/* =========================
-   الأسعار
-========================= */
+"الهادي (العادي)":15,
 
-const defaults = {
+"الميكب الناعم":18,
 
-'الهادي (العادي)':15,
+"السبيشل الثقيل":20,
 
-'الميكب الناعم':18,
+"عدسات":4,
 
-'السبيشل الثقيل':20,
+"عقد القران":20,
 
-'عدسات':4,
+"ملكة (خطوبة)":40,
 
-'عقد القران':20,
+"عروس (زفه)":80,
 
-'ملكة (خطوبة)':40,
+"ميكب عروس (صباحية / مسائية)":25,
 
-'عروس (زفه)':80,
+"ميكب عروس حفل حناء":25,
 
-'ميكب عروس (صباحية / مسائية)':25,
-
-'ميكب عروس حفل حناء':25,
-
-'ميكب تخرج':18
+"ميكب تخرج":18
 
 };
 
 
-
-/* =========================
-   اختصار
-========================= */
-
-const $ = s =>
-document.querySelector(s);
-
-
-
-/* =========================
-   الأسعار
-========================= */
-
-function prices(){
+function getPrices(){
 
 try{
 
 return {
 
-...defaults,
+...DEFAULT_PRICES,
 
 ...JSON.parse(
-localStorage.getItem(
-'raghadPrices'
-) || '{}'
+localStorage.getItem("raghadPrices") || "{}"
 )
 
 };
 
-}
+}catch(e){
 
-catch(e){
-
-return {
-...defaults
-};
+return {...DEFAULT_PRICES};
 
 }
 
 }
 
 
+function updatePricesOnPage(){
 
-/* =========================
-   حماية HTML
-========================= */
-
-function esc(x){
-
-return String(x)
-
-.replace(
-/[&<>"']/g,
-
-m => ({
-
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'"':'&quot;',
-"'":'&#039;'
-
-}[m])
-
-);
-
-}
-
-
-
-/* =========================
-   تطبيق الأسعار
-========================= */
-
-function apply(){
-
-let p = prices();
+const prices=getPrices();
 
 
 document
-.querySelectorAll('[data-price]')
-.forEach(e => {
+.querySelectorAll("[data-price]")
+.forEach(el=>{
 
-let k =
-e.dataset.price;
+const key=el.dataset.price;
 
-if(p[k] != null){
+if(prices[key] !== undefined){
 
-e.textContent =
-p[k] + ' ر.ع';
+el.textContent =
+prices[key]+" ر.ع";
 
 }
 
 });
 
 
+document
+.querySelectorAll("#service option")
+.forEach(option=>{
 
-$('#service')
-.querySelectorAll('option')
-.forEach(o => {
+const key=option.value;
 
-if(!o.value)
-return;
+if(
+key &&
+prices[key] !== undefined
+){
 
-
-let k =
-o.textContent
-.replace(
-/\s*-\s*[\d.]+\s*ر\.ع/,
-''
-)
-.trim();
-
-
-if(p[k] != null){
-
-o.textContent =
-k + ' - ' +
-p[k] +
-' ر.ع';
+option.textContent =
+key+" - "+prices[key]+" ر.ع";
 
 }
 
@@ -1460,109 +1328,100 @@ p[k] +
 
 }
 
-
-
-/* =========================
-   فتح الإدارة
-========================= */
 
 function openAdmin(){
 
-$('#admin')
+document
+.getElementById("adminPanel")
 .classList
-.add('open');
-
-
-$('#loginView')
-.style
-.display='block';
-
-
-$('#adminView')
-.style
-.display =
-sessionStorage.getItem(
-'raghadAdmin'
-)==='1'
-?
-'block'
-:
-'none';
-
+.add("show");
 
 if(
-$('#adminView')
-.style.display ===
-'block'
+sessionStorage.getItem("raghadAdmin")
+==="1"
 ){
 
-render();
+showAdmin();
+
+}else{
+
+showLogin();
 
 }
 
 }
 
-
-
-/* =========================
-   إغلاق الإدارة
-========================= */
 
 function closeAdmin(){
 
-$('#admin')
+document
+.getElementById("adminPanel")
 .classList
-.remove('open');
+.remove("show");
 
 }
 
 
+function showLogin(){
 
-/* =========================
-   تسجيل الدخول
-========================= */
+document
+.getElementById("loginView")
+.style.display="block";
 
-function login(){
+document
+.getElementById("adminView")
+.style.display="none";
+
+}
+
+
+function showAdmin(){
+
+document
+.getElementById("loginView")
+.style.display="none";
+
+document
+.getElementById("adminView")
+.style.display="block";
+
+renderPriceEditor();
+
+renderBookings();
+
+}
+
+
+function loginAdmin(){
+
+const username =
+document
+.getElementById("adminUser")
+.value
+.trim();
+
+const password =
+document
+.getElementById("adminPass")
+.value;
+
 
 if(
-
-$('#user')
-.value
-.trim()
-=== USER
-
-&&
-
-$('#pass')
-.value
-=== PASS
-
+username === ADMIN_USERNAME &&
+password === ADMIN_PASSWORD
 ){
 
 sessionStorage.setItem(
-'raghadAdmin',
-'1'
+"raghadAdmin",
+"1"
 );
 
+showAdmin();
 
-$('#loginView')
-.style
-.display='none';
-
-
-$('#adminView')
-.style
-.display='block';
-
-
-render();
-
-}
-
-else{
+}else{
 
 alert(
-'اسم المستخدم أو الرمز غير صحيح.'
+"اسم المستخدم أو الرمز غير صحيح."
 );
 
 }
@@ -1570,351 +1429,355 @@ alert(
 }
 
 
-
-/* =========================
-   تسجيل الخروج
-========================= */
-
-function logout(){
+function logoutAdmin(){
 
 sessionStorage.removeItem(
-'raghadAdmin'
+"raghadAdmin"
 );
 
-$('#adminView')
-.style
-.display='none';
-
-$('#loginView')
-.style
-.display='block';
+showLogin();
 
 }
 
 
+function renderPriceEditor(){
 
-/* =========================
-   لوحة الأسعار والحجوزات
-========================= */
+const prices=getPrices();
 
-function render(){
+const box=
+document.getElementById("priceEditor");
 
-let p = prices();
+box.innerHTML="";
 
 
-$('#prices')
-.innerHTML =
 Object
-.entries(p)
-.map(([k,v]) => `
+.entries(prices)
+.forEach(([name,price])=>{
 
-<div class="row">
+const row=
+document.createElement("div");
 
-<b>
-${esc(k)}
-</b>
+row.className="price-row";
 
-<input
-class="pi"
-data-k="${esc(k)}"
-type="number"
-min="1"
-value="${v}"
->
+row.innerHTML=`
 
-<span>
-ر.ع
-</span>
-
+<div>
+<strong>${escapeHtml(name)}</strong>
 </div>
 
-`)
-.join('');
-
-
-
-let b =
-JSON.parse(
-localStorage.getItem(
-'raghadBookings'
-) || '[]'
-);
-
-
-if(b.length){
-
-$('#bookings')
-.innerHTML = `
-
-<table class="table">
-
-<tr>
-
-<th>
-العميل
-</th>
-
-<th>
-الخدمة
-</th>
-
-<th>
-التاريخ
-</th>
-
-<th>
-الوقت
-</th>
-
-<th>
-الهاتف
-</th>
-
-<th>
-ملاحظات
-</th>
-
-</tr>
-
-
-${b.map(x => `
-
-<tr>
-
-<td>
-${esc(x.name)}
-</td>
-
-<td>
-${esc(x.service)}
-</td>
-
-<td>
-${esc(x.date)}
-</td>
-
-<td>
-${esc(x.time)}
-</td>
-
-<td>
-${esc(x.phone)}
-</td>
-
-<td>
-${esc(x.notes || '')}
-</td>
-
-</tr>
-
-`).join('')}
-
-</table>
+<div>
+<input
+type="number"
+min="0"
+step="0.5"
+data-price-key="${escapeHtml(name)}"
+value="${price}"
+>
+</div>
 
 `;
 
-}
-
-else{
-
-$('#bookings')
-.innerHTML =
-'<div class="empty">لا توجد حجوزات حالياً.</div>';
-
-}
-
-}
-
-
-
-/* =========================
-   حفظ الأسعار
-========================= */
-
-function savePrices(){
-
-let p = {};
-
-
-document
-.querySelectorAll('.pi')
-.forEach(i => {
-
-p[i.dataset.k] =
-Number(i.value);
+box.appendChild(row);
 
 });
 
+}
+
+
+function savePrices(){
+
+const newPrices={};
+
+document
+.querySelectorAll("[data-price-key]")
+.forEach(input=>{
+
+newPrices[
+input.dataset.priceKey
+]=Number(input.value);
+
+});
 
 localStorage.setItem(
-'raghadPrices',
-JSON.stringify(p)
+"raghadPrices",
+JSON.stringify(newPrices)
 );
 
+updatePricesOnPage();
 
-apply();
+renderPriceEditor();
 
-render();
+document
+.getElementById("priceMsg")
+.textContent=
+"تم حفظ الأسعار بنجاح ✅";
 
+setTimeout(()=>{
 
-alert(
-'تم حفظ الأسعار بنجاح ✅'
-);
+document
+.getElementById("priceMsg")
+.textContent="";
+
+},2500);
 
 }
 
 
+function escapeHtml(value){
 
-/* =========================
-   إرسال الحجز
-========================= */
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
-$('#bookingForm')
+}
+
+
+function renderBookings(){
+
+const list=
+document.getElementById("bookingList");
+
+const bookings=
+JSON.parse(
+localStorage.getItem("raghadBookings") || "[]"
+);
+
+
+if(!bookings.length){
+
+list.innerHTML=
+'<div class="empty">لا توجد حجوزات حالياً.</div>';
+
+return;
+
+}
+
+
+list.innerHTML="";
+
+
+bookings
+.slice()
+.reverse()
+.forEach(item=>{
+
+const card=
+document.createElement("div");
+
+card.className="booking-card";
+
+card.innerHTML=`
+
+<div>
+<strong>الاسم:</strong>
+${escapeHtml(item.name)}
+</div>
+
+<div>
+<strong>الهاتف:</strong>
+${escapeHtml(item.phone)}
+</div>
+
+<div>
+<strong>الخدمة:</strong>
+${escapeHtml(item.service)}
+</div>
+
+<div>
+<strong>السعر:</strong>
+${escapeHtml(item.price)} ر.ع
+</div>
+
+<div>
+<strong>عدد الأشخاص:</strong>
+${escapeHtml(item.people)}
+</div>
+
+<div>
+<strong>التاريخ:</strong>
+${escapeHtml(item.date)}
+</div>
+
+<div>
+<strong>الوقت:</strong>
+${escapeHtml(item.time)}
+</div>
+
+<div>
+<strong>الملاحظات:</strong>
+${escapeHtml(item.notes || "لا توجد")}
+</div>
+
+`;
+
+list.appendChild(card);
+
+});
+
+}
+
+
+document
+.getElementById("bookingForm")
 .addEventListener(
-'submit',
-e => {
+"submit",
+function(e){
 
 e.preventDefault();
 
 
-let service =
-$('#service')
+const name=
+document
+.getElementById("name")
 .value
-.replace(
-/\s*-\s*[\d.]+\s*ر\.ع/,
-''
-)
 .trim();
 
 
-let p =
-prices()[service] || 0;
+const phone=
+document
+.getElementById("phone")
+.value
+.trim();
 
 
-let b = {
+const service=
+document
+.getElementById("service")
+.value;
+
+
+const people=
+document
+.getElementById("people")
+.value;
+
+
+const date=
+document
+.getElementById("date")
+.value;
+
+
+const time=
+document
+.getElementById("time")
+.value;
+
+
+const notes=
+document
+.getElementById("notes")
+.value
+.trim();
+
+
+const prices=
+getPrices();
+
+
+const price=
+prices[service] || 0;
+
+
+const booking={
 
 id:Date.now(),
 
-name:
-$('#name')
-.value
-.trim(),
+name:name,
 
-phone:
-$('#phone')
-.value
-.trim(),
+phone:phone,
 
-service:
+service:service,
 
-service,
+price:price,
 
-price:p,
+people:people,
 
-people:
-$('#people')
-.value,
+date:date,
 
-date:
-$('#date')
-.value,
+time:time,
 
-time:
-$('#time')
-.value,
-
-notes:
-$('#notes')
-.value
-.trim(),
+notes:notes,
 
 createdAt:
 new Date()
-.toLocaleString('ar-OM')
+.toLocaleString("ar-OM")
 
 };
 
 
-let a =
+const oldBookings=
 JSON.parse(
-localStorage.getItem(
-'raghadBookings'
-) || '[]'
+localStorage.getItem("raghadBookings") || "[]"
 );
 
 
-a.push(b);
+oldBookings.push(booking);
 
 
 localStorage.setItem(
-'raghadBookings',
-JSON.stringify(a)
+"raghadBookings",
+JSON.stringify(oldBookings)
 );
 
 
+const message=
 
-/* رسالة واتساب */
-
-let msg =
-
-`🌸 *طلب حجز - رغد ميكب* 🌸
+`🌸 طلب حجز - رغد ميكب 🌸
 
 👤 الاسم:
-${b.name}
+${name}
 
-📞 الهاتف:
-${b.phone}
+📞 رقم الهاتف:
+${phone}
 
 💄 الخدمة:
-${b.service}
+${service}
 
 💰 السعر:
-${b.price} ر.ع
+${price} ر.ع
 
-👥 الأشخاص:
-${b.people}
+👥 عدد الأشخاص:
+${people}
 
 📅 التاريخ:
-${b.date}
+${date}
 
 ⏰ الوقت:
-${b.time}
+${time}
 
 📝 الملاحظات:
-${b.notes || 'لا توجد'}
+${notes || "لا توجد"}
 
-📎 *أرفقي صورة إيصال التحويل هنا في واتساب.*`;
+📎 أرفقي صورة إيصال التحويل هنا في واتساب.`;
 
 
-
-/* فتح واتساب */
-
-location.href =
-'https://wa.me/' +
-WA +
-'?text=' +
-encodeURIComponent(msg);
+window.location.href=
+"https://wa.me/"
++
+WHATSAPP_NUMBER
++
+"?text="
++
+encodeURIComponent(message);
 
 });
 
 
-
-/* =========================
-   منع التواريخ السابقة
-========================= */
-
-$('#date').min =
+const today=
 new Date()
 .toISOString()
-.slice(0,10);
+.split("T")[0];
+
+document
+.getElementById("date")
+.min=today;
 
 
-
-/* =========================
-   تطبيق الأسعار عند فتح الصفحة
-========================= */
-
-apply();
+updatePricesOnPage();
 
 </script>
 
