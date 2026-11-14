@@ -3,551 +3,757 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7edf1">
-<title>رغد ميكب | حجز المواعيد</title>
+<meta name="theme-color" content="#f8eef1">
+
+<title>Raghad Makeup | رغد ميكب</title>
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Tahoma,
-    Arial,
-    sans-serif;
-  background:#faf7f8;
-  color:#3f3035;
-  min-height:100vh;
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Tahoma,
+Arial,
+sans-serif;
+
+background:#fffafa;
+color:#3f3035;
+min-height:100vh;
 }
 
 button,
 input,
 select,
 textarea{
-  font-family:inherit;
+font-family:inherit;
 }
 
 button{
-  cursor:pointer;
+cursor:pointer;
 }
 
 .container{
-  width:min(1100px,92%);
-  margin:auto;
+width:min(1100px,92%);
+margin:auto;
 }
 
+
 /* =========================
-   HEADER
+HEADER
 ========================= */
 
 header{
-  padding:18px 0;
-  background:rgba(255,255,255,.94);
-  border-bottom:1px solid #eadde1;
-  position:sticky;
-  top:0;
-  z-index:100;
-  backdrop-filter:blur(10px);
+padding:14px 0;
+background:rgba(255,255,255,.96);
+border-bottom:1px solid #eadde1;
+
+position:sticky;
+top:0;
+z-index:100;
+
+backdrop-filter:blur(12px);
 }
 
 .nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
 }
 
 .logo-area{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;
+align-items:center;
+gap:12px;
 }
 
 .logo{
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  object-fit:contain;
-  background:#fff;
-  border:1px solid #eadde1;
-  padding:5px;
-}
+width:72px;
+height:72px;
 
-.logo-fallback{
-  width:62px;
-  height:62px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#f4dfe7,#fff);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  color:#8f596d;
-  font-size:25px;
-  font-weight:800;
+border-radius:50%;
+
+object-fit:cover;
+
+background:#fff;
+
+border:1px solid #eadde1;
+
+display:block;
 }
 
 .brand{
-  font-size:22px;
-  font-weight:800;
-  color:#7e4d60;
+font-size:21px;
+font-weight:800;
+color:#77485a;
 }
 
 .brand-small{
-  color:#9b7a85;
-  font-size:12px;
-  margin-top:3px;
+font-size:11px;
+color:#9b7a85;
+margin-top:4px;
 }
 
 .login-btn{
-  border:1px solid #d9bdc7;
-  background:#fff;
-  color:#7e4d60;
-  border-radius:999px;
-  padding:10px 18px;
-  font-weight:700;
+border:1px solid #d8bec7;
+background:#fff;
+color:#7e4d60;
+
+border-radius:999px;
+
+padding:10px 18px;
+
+font-weight:700;
+
+transition:.2s;
 }
 
+.login-btn:hover{
+background:#f9eef1;
+}
+
+
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-  padding:55px 0 35px;
+padding:45px 0 30px;
 }
 
 .hero-box{
-  background:linear-gradient(135deg,#f7e8ed,#fff);
-  border:1px solid #ead9df;
-  border-radius:28px;
-  padding:42px 25px;
-  text-align:center;
-  box-shadow:0 10px 40px rgba(110,70,85,.08);
+background:
+linear-gradient(
+135deg,
+#f8e9ee,
+#fff
+);
+
+border:1px solid #ead9df;
+
+border-radius:28px;
+
+padding:42px 22px;
+
+text-align:center;
+
+box-shadow:
+0 10px 40px rgba(110,70,85,.07);
 }
 
 .hero h1{
-  font-size:clamp(28px,6vw,48px);
-  color:#77485a;
-  margin-bottom:12px;
+font-size:clamp(30px,7vw,48px);
+
+color:#77485a;
+
+margin-bottom:12px;
 }
 
 .hero p{
-  color:#806e74;
-  line-height:1.9;
-  font-size:16px;
+color:#806e74;
+
+line-height:2;
+
+font-size:16px;
 }
 
+
 /* =========================
-   SERVICES
+SERVICES
 ========================= */
 
 .services{
-  padding:25px 0 45px;
+padding:20px 0 45px;
 }
 
 .section-title{
-  text-align:center;
-  color:#75495a;
-  font-size:28px;
-  margin-bottom:8px;
+text-align:center;
+
+color:#75495a;
+
+font-size:28px;
+
+margin-bottom:8px;
 }
 
 .section-subtitle{
-  text-align:center;
-  color:#8f7b82;
-  margin-bottom:8px;
+text-align:center;
+
+color:#8f7b82;
+
+margin-bottom:8px;
 }
 
 .national-offer{
-  text-align:center;
-  font-size:18px;
-  font-weight:800;
-  color:#9b5269;
-  margin-bottom:25px;
+text-align:center;
+
+font-size:19px;
+
+font-weight:900;
+
+color:#9b5269;
+
+margin-bottom:25px;
 }
 
 .services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:18px;
 }
 
 .service{
-  background:#fff;
-  border:1px solid #eadde1;
-  border-radius:20px;
-  padding:25px 18px;
-  text-align:center;
-  transition:.25s;
-  box-shadow:0 5px 20px rgba(80,50,60,.04);
+background:#fff;
+
+border:1px solid #eadde1;
+
+border-radius:20px;
+
+padding:25px 18px;
+
+text-align:center;
+
+transition:.25s;
+
+box-shadow:
+0 5px 20px rgba(80,50,60,.04);
 }
 
 .service:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(80,50,60,.09);
+transform:translateY(-4px);
+
+box-shadow:
+0 10px 30px rgba(80,50,60,.10);
 }
 
 .service-icon{
-  width:55px;
-  height:55px;
-  margin:auto;
-  border-radius:50%;
-  background:#f8e9ee;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  margin-bottom:12px;
+width:58px;
+height:58px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#f8e9ee;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:26px;
+
+margin-bottom:12px;
 }
 
 .service h3{
-  color:#714555;
-  margin-bottom:8px;
+color:#714555;
+
+margin-bottom:8px;
 }
 
 .service p{
-  color:#8d7b81;
-  font-size:14px;
-  line-height:1.8;
+color:#8d7b81;
+
+font-size:14px;
+
+line-height:1.8;
 }
 
 .price{
-  color:#9a556b;
-  font-weight:800;
-  margin-top:12px;
-  font-size:18px;
+color:#9a556b;
+
+font-weight:900;
+
+margin-top:12px;
+
+font-size:18px;
 }
 
+
 /* =========================
-   BOOKING
+BOOKING
 ========================= */
 
 .booking{
-  padding:20px 0 70px;
+padding:20px 0 70px;
 }
 
 .booking-box{
-  max-width:850px;
-  margin:auto;
-  background:#fff;
-  border:1px solid #eadde1;
-  border-radius:25px;
-  padding:30px 22px;
-  box-shadow:0 10px 35px rgba(80,50,60,.06);
+max-width:850px;
+
+margin:auto;
+
+background:#fff;
+
+border:1px solid #eadde1;
+
+border-radius:25px;
+
+padding:30px 22px;
+
+box-shadow:
+0 10px 35px rgba(80,50,60,.06);
 }
 
 .booking-title{
-  text-align:center;
-  color:#75495a;
-  font-size:27px;
-  margin-bottom:8px;
+text-align:center;
+
+color:#75495a;
+
+font-size:27px;
+
+margin-bottom:8px;
 }
 
 .booking-desc{
-  text-align:center;
-  color:#8c7a80;
-  font-size:14px;
-  margin-bottom:28px;
+text-align:center;
+
+color:#8c7a80;
+
+font-size:14px;
+
+margin-bottom:28px;
 }
 
 .form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:17px;
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:17px;
 }
 
 .field{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
+display:flex;
+
+flex-direction:column;
+
+gap:7px;
 }
 
 .field.full{
-  grid-column:1/-1;
+grid-column:1/-1;
 }
 
 label{
-  color:#684450;
-  font-weight:700;
-  font-size:14px;
+color:#684450;
+
+font-weight:700;
+
+font-size:14px;
 }
 
 input,
 select,
 textarea{
-  width:100%;
-  border:1px solid #dfcfd5;
-  background:#fffafb;
-  border-radius:13px;
-  padding:13px 14px;
-  outline:none;
-  color:#49373d;
-  font-size:15px;
-  transition:.2s;
+width:100%;
+
+border:1px solid #dfcfd5;
+
+background:#fffafb;
+
+border-radius:13px;
+
+padding:13px 14px;
+
+outline:none;
+
+color:#49373d;
+
+font-size:15px;
+
+transition:.2s;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-  border-color:#b98294;
-  box-shadow:0 0 0 3px rgba(185,130,148,.12);
+border-color:#b98294;
+
+box-shadow:
+0 0 0 3px
+rgba(185,130,148,.12);
 }
 
 textarea{
-  resize:vertical;
-  min-height:100px;
+resize:vertical;
+
+min-height:100px;
 }
 
 .submit-btn{
-  width:100%;
-  margin-top:22px;
-  border:0;
-  border-radius:14px;
-  padding:15px;
-  background:linear-gradient(135deg,#8d5368,#b4778d);
-  color:#fff;
-  font-size:17px;
-  font-weight:800;
-  box-shadow:0 8px 22px rgba(130,75,95,.2);
+width:100%;
+
+margin-top:22px;
+
+border:0;
+
+border-radius:14px;
+
+padding:15px;
+
+background:
+linear-gradient(
+135deg,
+#8d5368,
+#b4778d
+);
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:800;
+
+box-shadow:
+0 8px 22px rgba(130,75,95,.20);
+
+transition:.2s;
 }
 
 .submit-btn:hover{
-  filter:brightness(.96);
-  transform:translateY(-1px);
+transform:translateY(-1px);
+
+filter:brightness(.97);
 }
 
 .whatsapp-note{
-  text-align:center;
-  margin-top:13px;
-  color:#8d7b81;
-  font-size:12px;
-  line-height:1.8;
+text-align:center;
+
+margin-top:13px;
+
+color:#8d7b81;
+
+font-size:12px;
+
+line-height:1.8;
 }
 
+
 /* =========================
-   LOGIN MODAL
+LOGIN
 ========================= */
 
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(40,25,30,.55);
-  z-index:500;
-  padding:20px;
-  align-items:center;
-  justify-content:center;
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(40,25,30,.55);
+
+z-index:500;
+
+padding:20px;
+
+align-items:center;
+
+justify-content:center;
 }
 
 .modal.show{
-  display:flex;
+display:flex;
 }
 
 .modal-box{
-  width:min(430px,100%);
-  background:#fff;
-  border-radius:22px;
-  padding:28px;
-  position:relative;
+width:min(430px,100%);
+
+background:#fff;
+
+border-radius:22px;
+
+padding:28px;
+
+position:relative;
 }
 
 .close{
-  position:absolute;
-  left:15px;
-  top:13px;
-  border:0;
-  background:transparent;
-  font-size:25px;
-  color:#8d727a;
+position:absolute;
+
+left:15px;
+
+top:13px;
+
+border:0;
+
+background:transparent;
+
+font-size:25px;
+
+color:#8d727a;
 }
 
 .modal-title{
-  text-align:center;
-  color:#75495a;
-  margin-bottom:22px;
+text-align:center;
+
+color:#75495a;
+
+margin-bottom:22px;
 }
 
 .login-error{
-  display:none;
-  color:#b33d52;
-  background:#fff0f2;
-  border-radius:10px;
-  padding:10px;
-  margin-top:12px;
-  font-size:13px;
+display:none;
+
+color:#b33d52;
+
+background:#fff0f2;
+
+border-radius:10px;
+
+padding:10px;
+
+margin-top:12px;
+
+font-size:13px;
 }
 
+
 /* =========================
-   ADMIN
+ADMIN
 ========================= */
 
 .admin{
-  display:none;
-  padding:30px 0 70px;
+display:none;
+
+padding:30px 0 70px;
 }
 
 .admin.show{
-  display:block;
+display:block;
 }
 
 .admin-header{
-  background:#fff;
-  border:1px solid #eadde1;
-  border-radius:20px;
-  padding:22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
+background:#fff;
+
+border:1px solid #eadde1;
+
+border-radius:20px;
+
+padding:22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:20px;
 }
 
 .admin-header h2{
-  color:#75495a;
+color:#75495a;
 }
 
 .logout-btn{
-  border:1px solid #dfcbd2;
-  background:#fff;
-  color:#8c5669;
-  padding:9px 16px;
-  border-radius:999px;
-  font-weight:700;
+border:1px solid #dfcbd2;
+
+background:#fff;
+
+color:#8c5669;
+
+padding:9px 16px;
+
+border-radius:999px;
+
+font-weight:700;
 }
 
 .admin-card{
-  background:#fff;
-  border:1px solid #eadde1;
-  border-radius:20px;
-  padding:22px;
-  margin-bottom:20px;
+background:#fff;
+
+border:1px solid #eadde1;
+
+border-radius:20px;
+
+padding:22px;
+
+margin-bottom:20px;
 }
 
 .admin-card h3{
-  color:#75495a;
-  margin-bottom:18px;
+color:#75495a;
+
+margin-bottom:18px;
 }
 
 .price-row{
-  display:grid;
-  grid-template-columns:1fr 150px auto;
-  gap:10px;
-  align-items:center;
-  margin-bottom:12px;
+display:grid;
+
+grid-template-columns:
+1fr 150px auto;
+
+gap:10px;
+
+align-items:center;
+
+margin-bottom:12px;
 }
 
 .price-row input{
-  padding:10px;
+padding:10px;
 }
 
 .save-price{
-  border:0;
-  background:#8d5368;
-  color:#fff;
-  border-radius:10px;
-  padding:10px 15px;
-  font-weight:700;
+border:0;
+
+background:#8d5368;
+
+color:#fff;
+
+border-radius:10px;
+
+padding:10px 15px;
+
+font-weight:700;
 }
 
 .booking-item{
-  border:1px solid #eadde1;
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:12px;
-  background:#fffafb;
+border:1px solid #eadde1;
+
+border-radius:15px;
+
+padding:15px;
+
+margin-bottom:12px;
+
+background:#fffafb;
 }
 
 .booking-item strong{
-  color:#704555;
+color:#704555;
 }
 
 .booking-item div{
-  margin:5px 0;
-  color:#68575d;
-  font-size:14px;
+margin:5px 0;
+
+color:#68575d;
+
+font-size:14px;
 }
 
 .delete-booking{
-  border:0;
-  background:#fff0f2;
-  color:#a53d51;
-  padding:7px 12px;
-  border-radius:8px;
-  margin-top:8px;
+border:0;
+
+background:#fff0f2;
+
+color:#a53d51;
+
+padding:7px 12px;
+
+border-radius:8px;
+
+margin-top:8px;
 }
 
+
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
-  background:#fff;
-  border-top:1px solid #eadde1;
-  text-align:center;
-  padding:25px 15px;
-  color:#8d7b81;
-  font-size:13px;
+background:#fff;
+
+border-top:1px solid #eadde1;
+
+text-align:center;
+
+padding:25px 15px;
+
+color:#8d7b81;
+
+font-size:13px;
 }
 
+
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:700px){
 
-  .services-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .field.full{
-    grid-column:auto;
-  }
-
-  .hero{
-    padding-top:30px;
-  }
-
-  .hero-box{
-    padding:32px 18px;
-  }
-
-  .nav{
-    flex-wrap:wrap;
-  }
-
-  .login-btn{
-    margin-right:auto;
-  }
-
-  .price-row{
-    grid-template-columns:1fr;
-  }
-
-  .admin-header{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .logout-btn{
-    width:100%;
-  }
+.services-grid{
+grid-template-columns:1fr;
 }
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.field.full{
+grid-column:auto;
+}
+
+.hero{
+padding-top:30px;
+}
+
+.hero-box{
+padding:32px 18px;
+}
+
+.nav{
+flex-wrap:wrap;
+}
+
+.login-btn{
+margin-right:auto;
+}
+
+.price-row{
+grid-template-columns:1fr;
+}
+
+.admin-header{
+flex-direction:column;
+
+align-items:stretch;
+}
+
+.logout-btn{
+width:100%;
+}
+
+.logo{
+width:64px;
+height:64px;
+}
+
+.brand{
+font-size:19px;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <!-- =========================
-     HEADER
+HEADER
 ========================= -->
 
 <header>
@@ -556,17 +762,13 @@ footer{
 
 <div class="logo-area">
 
+<!-- شعار رغد ميكب -->
 <img
-src="logo.png"
+src="logo.jpg"
 class="logo"
 id="logoImage"
-alt="رغد ميكب"
-onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex';"
+alt="Raghad Makeup"
 >
-
-<div class="logo-fallback" id="logoFallback">
-RM
-</div>
 
 <div>
 
@@ -575,7 +777,7 @@ RM
 </div>
 
 <div class="brand-small">
-لإطلالة أجمل في يومك المميز
+RAGHAD MAKEUP
 </div>
 
 </div>
@@ -595,11 +797,13 @@ onclick="openLogin()"
 </header>
 
 
+
 <!-- =========================
-     MAIN
+MAIN SITE
 ========================= -->
 
 <main id="mainSite">
+
 
 <section class="hero">
 
@@ -624,8 +828,9 @@ onclick="openLogin()"
 </section>
 
 
+
 <!-- =========================
-     SERVICES
+SERVICES
 ========================= -->
 
 <section class="services">
@@ -647,6 +852,7 @@ onclick="openLogin()"
 
 <div class="services-grid">
 
+
 <div class="service">
 
 <div class="service-icon">
@@ -662,16 +868,20 @@ onclick="openLogin()"
 </p>
 
 <div class="price">
+
 <span
 class="price-value"
 data-service="مكياج ناعم"
 >
 15
 </span>
+
 ريال عماني
+
 </div>
 
 </div>
+
 
 
 <div class="service">
@@ -689,16 +899,20 @@ data-service="مكياج ناعم"
 </p>
 
 <div class="price">
+
 <span
 class="price-value"
 data-service="مكياج سهرة"
 >
 20
 </span>
+
 ريال عماني
+
 </div>
 
 </div>
+
 
 
 <div class="service">
@@ -716,16 +930,20 @@ data-service="مكياج سهرة"
 </p>
 
 <div class="price">
+
 <span
 class="price-value"
 data-service="مكياج عروس"
 >
 35
 </span>
+
 ريال عماني
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -734,8 +952,9 @@ data-service="مكياج عروس"
 </section>
 
 
+
 <!-- =========================
-     BOOKING
+BOOKING
 ========================= -->
 
 <section class="booking">
@@ -754,6 +973,7 @@ data-service="مكياج عروس"
 
 
 <form id="bookingForm">
+
 
 <div class="form-grid">
 
@@ -774,6 +994,7 @@ required
 </div>
 
 
+
 <div class="field">
 
 <label>
@@ -788,6 +1009,7 @@ required
 >
 
 </div>
+
 
 
 <div class="field">
@@ -820,6 +1042,7 @@ required
 </select>
 
 </div>
+
 
 
 <div class="field">
@@ -862,6 +1085,7 @@ required
 </div>
 
 
+
 <div class="field">
 
 <label>
@@ -875,6 +1099,7 @@ required
 >
 
 </div>
+
 
 
 <div class="field">
@@ -892,6 +1117,7 @@ required
 </div>
 
 
+
 <div class="field full">
 
 <label>
@@ -904,6 +1130,7 @@ placeholder="اكتبي أي ملاحظات أو طلبات خاصة..."
 ></textarea>
 
 </div>
+
 
 </div>
 
@@ -919,15 +1146,14 @@ class="submit-btn"
 <div class="whatsapp-note">
 
 بعد الضغط على الزر سيتم فتح واتساب على الرقم
-<strong>
-79345991
-</strong>
+<strong>79345991</strong>
 
 <br>
 
 يمكنك إرفاق صورة إيصال التحويل داخل محادثة واتساب.
 
 </div>
+
 
 </form>
 
@@ -937,11 +1163,13 @@ class="submit-btn"
 
 </section>
 
+
 </main>
 
 
+
 <!-- =========================
-     ADMIN PANEL
+ADMIN PANEL
 ========================= -->
 
 <section
@@ -960,7 +1188,13 @@ id="adminPanel"
 لوحة تحكم رغد ميكب
 </h2>
 
-<p style="color:#8d7b81;font-size:13px;margin-top:5px;">
+<p
+style="
+color:#8d7b81;
+font-size:13px;
+margin-top:5px;
+"
+>
 إدارة الحجوزات والأسعار
 </p>
 
@@ -977,7 +1211,10 @@ onclick="logoutAdmin()"
 </div>
 
 
-<!-- PRICE EDITOR -->
+
+<!-- =========================
+PRICE EDITOR
+========================= -->
 
 <div class="admin-card">
 
@@ -990,7 +1227,10 @@ onclick="logoutAdmin()"
 </div>
 
 
-<!-- BOOKINGS -->
+
+<!-- =========================
+BOOKINGS
+========================= -->
 
 <div class="admin-card">
 
@@ -1002,13 +1242,15 @@ onclick="logoutAdmin()"
 
 </div>
 
+
 </div>
 
 </section>
 
 
+
 <!-- =========================
-     LOGIN
+LOGIN MODAL
 ========================= -->
 
 <div
@@ -1017,6 +1259,7 @@ id="loginModal"
 >
 
 <div class="modal-box">
+
 
 <button
 class="close"
@@ -1045,6 +1288,7 @@ autocomplete="username"
 >
 
 </div>
+
 
 
 <div
@@ -1082,9 +1326,11 @@ id="loginError"
 اسم المستخدم أو كلمة المرور غير صحيحة.
 </div>
 
+
 </div>
 
 </div>
+
 
 
 <footer>
@@ -1094,22 +1340,29 @@ id="loginError"
 </footer>
 
 
+
 <script>
 
-/* =====================================================
-   إعدادات واتساب
-===================================================== */
-
-const WHATSAPP_NUMBER = "96879345991";
-
 
 /* =====================================================
-   بيانات دخول الإدارة
+   رقم واتساب
 ===================================================== */
 
-const ADMIN_USERNAME = "raghad";
+const WHATSAPP_NUMBER =
+"96879345991";
 
-const ADMIN_PASSWORD = "r21383303";
+
+
+/* =====================================================
+   بيانات تسجيل الدخول
+===================================================== */
+
+const ADMIN_USERNAME =
+"raghad";
+
+const ADMIN_PASSWORD =
+"r21383303";
+
 
 
 /* =====================================================
@@ -1118,13 +1371,14 @@ const ADMIN_PASSWORD = "r21383303";
 
 const defaultPrices = {
 
-  "مكياج ناعم": 15,
+"مكياج ناعم":15,
 
-  "مكياج سهرة": 20,
+"مكياج سهرة":20,
 
-  "مكياج عروس": 35
+"مكياج عروس":35
 
 };
+
 
 
 /* =====================================================
@@ -1133,26 +1387,31 @@ const defaultPrices = {
 
 function getPrices(){
 
-  const saved =
-    localStorage.getItem("raghadPrices");
+const saved =
+localStorage.getItem(
+"raghadPrices"
+);
 
-  if(saved){
+if(saved){
 
-    try{
+try{
 
-      return JSON.parse(saved);
-
-    }catch(error){
-
-      return defaultPrices;
-
-    }
-
-  }
-
-  return defaultPrices;
+return JSON.parse(saved);
 
 }
+
+catch(error){
+
+return defaultPrices;
+
+}
+
+}
+
+return defaultPrices;
+
+}
+
 
 
 /* =====================================================
@@ -1161,26 +1420,29 @@ function getPrices(){
 
 function updatePricesOnPage(){
 
-  const prices =
-    getPrices();
+const prices =
+getPrices();
 
-  document
-    .querySelectorAll(".price-value")
-    .forEach(function(el){
+document
+.querySelectorAll(".price-value")
+.forEach(function(el){
 
-      const service =
-        el.dataset.service;
+const service =
+el.dataset.service;
 
-      if(prices[service] !== undefined){
+if(
+prices[service] !== undefined
+){
 
-        el.textContent =
-          prices[service];
-
-      }
-
-    });
+el.textContent =
+prices[service];
 
 }
+
+});
+
+}
+
 
 
 /* =====================================================
@@ -1189,12 +1451,13 @@ function updatePricesOnPage(){
 
 function openLogin(){
 
-  document
-    .getElementById("loginModal")
-    .classList
-    .add("show");
+document
+.getElementById("loginModal")
+.classList
+.add("show");
 
 }
+
 
 
 /* =====================================================
@@ -1203,16 +1466,18 @@ function openLogin(){
 
 function closeLogin(){
 
-  document
-    .getElementById("loginModal")
-    .classList
-    .remove("show");
+document
+.getElementById("loginModal")
+.classList
+.remove("show");
 
-  document
-    .getElementById("loginError")
-    .style.display = "none";
+document
+.getElementById("loginError")
+.style
+.display="none";
 
 }
+
 
 
 /* =====================================================
@@ -1221,42 +1486,46 @@ function closeLogin(){
 
 function loginAdmin(){
 
-  const username =
-    document
-      .getElementById("adminUsername")
-      .value
-      .trim();
+const username =
+document
+.getElementById("adminUsername")
+.value
+.trim();
 
-  const password =
-    document
-      .getElementById("adminPassword")
-      .value
-      .trim();
+const password =
+document
+.getElementById("adminPassword")
+.value
+.trim();
 
 
-  if(
-    username === ADMIN_USERNAME &&
-    password === ADMIN_PASSWORD
-  ){
+if(
+username === ADMIN_USERNAME &&
+password === ADMIN_PASSWORD
+){
 
-    sessionStorage.setItem(
-      "raghadAdminLoggedIn",
-      "true"
-    );
+sessionStorage.setItem(
+"raghadAdminLoggedIn",
+"true"
+);
 
-    closeLogin();
+closeLogin();
 
-    showAdmin();
-
-  }else{
-
-    document
-      .getElementById("loginError")
-      .style.display = "block";
-
-  }
+showAdmin();
 
 }
+
+else{
+
+document
+.getElementById("loginError")
+.style
+.display="block";
+
+}
+
+}
+
 
 
 /* =====================================================
@@ -1265,22 +1534,24 @@ function loginAdmin(){
 
 function showAdmin(){
 
-  document
-    .getElementById("mainSite")
-    .style.display = "none";
+document
+.getElementById("mainSite")
+.style
+.display="none";
 
-  document
-    .getElementById("adminPanel")
-    .classList
-    .add("show");
+document
+.getElementById("adminPanel")
+.classList
+.add("show");
 
-  window.scrollTo(0,0);
+window.scrollTo(0,0);
 
-  renderPriceEditor();
+renderPriceEditor();
 
-  renderBookings();
+renderBookings();
 
 }
+
 
 
 /* =====================================================
@@ -1289,16 +1560,18 @@ function showAdmin(){
 
 function hideAdmin(){
 
-  document
-    .getElementById("mainSite")
-    .style.display = "block";
+document
+.getElementById("mainSite")
+.style
+.display="block";
 
-  document
-    .getElementById("adminPanel")
-    .classList
-    .remove("show");
+document
+.getElementById("adminPanel")
+.classList
+.remove("show");
 
 }
+
 
 
 /* =====================================================
@@ -1307,13 +1580,14 @@ function hideAdmin(){
 
 function logoutAdmin(){
 
-  sessionStorage.removeItem(
-    "raghadAdminLoggedIn"
-  );
+sessionStorage.removeItem(
+"raghadAdminLoggedIn"
+);
 
-  hideAdmin();
+hideAdmin();
 
 }
+
 
 
 /* =====================================================
@@ -1322,59 +1596,65 @@ function logoutAdmin(){
 
 function renderPriceEditor(){
 
-  const prices =
-    getPrices();
+const prices =
+getPrices();
 
-  const editor =
-    document.getElementById("priceEditor");
+const editor =
+document.getElementById(
+"priceEditor"
+);
 
-  editor.innerHTML = "";
-
-
-  Object.keys(prices).forEach(function(service){
-
-    const row =
-      document.createElement("div");
-
-    row.className =
-      "price-row";
+editor.innerHTML="";
 
 
-    row.innerHTML = `
+Object.keys(prices)
+.forEach(function(service){
 
-      <div>
+const row =
+document.createElement("div");
 
-        <strong style="color:#704555;">
-          ${escapeHTML(service)}
-        </strong>
-
-      </div>
-
-
-      <input
-        type="number"
-        min="0"
-        step="0.1"
-        value="${prices[service]}"
-        id="price-${service}"
-      >
+row.className =
+"price-row";
 
 
-      <button
-        class="save-price"
-        onclick="savePrice('${service}')"
-      >
-        حفظ السعر
-      </button>
+row.innerHTML=`
 
-    `;
+<div>
+
+<strong
+style="color:#704555;"
+>
+${escapeHTML(service)}
+</strong>
+
+</div>
 
 
-    editor.appendChild(row);
+<input
+type="number"
+min="0"
+step="0.1"
+value="${prices[service]}"
+id="price-${service}"
+>
 
-  });
+
+<button
+class="save-price"
+onclick="savePrice('${service}')"
+>
+حفظ السعر
+</button>
+
+`;
+
+
+editor.appendChild(row);
+
+});
 
 }
+
 
 
 /* =====================================================
@@ -1383,45 +1663,50 @@ function renderPriceEditor(){
 
 function savePrice(service){
 
-  const prices =
-    getPrices();
+const prices =
+getPrices();
 
-  const input =
-    document.getElementById(
-      "price-" + service
-    );
+const input =
+document.getElementById(
+"price-"+service
+);
 
-  const value =
-    Number(input.value);
-
-
-  if(
-    value < 0 ||
-    isNaN(value)
-  ){
-
-    alert("أدخلي سعر صحيح.");
-
-    return;
-
-  }
+const value =
+Number(input.value);
 
 
-  prices[service] =
-    value;
+if(
+value < 0 ||
+isNaN(value)
+){
 
+alert(
+"أدخلي سعر صحيح."
+);
 
-  localStorage.setItem(
-    "raghadPrices",
-    JSON.stringify(prices)
-  );
-
-
-  updatePricesOnPage();
-
-  alert("تم تحديث السعر بنجاح.");
+return;
 
 }
+
+
+prices[service]=value;
+
+
+localStorage.setItem(
+"raghadPrices",
+JSON.stringify(prices)
+);
+
+
+updatePricesOnPage();
+
+
+alert(
+"تم تحديث السعر بنجاح."
+);
+
+}
+
 
 
 /* =====================================================
@@ -1430,28 +1715,31 @@ function savePrice(service){
 
 function getBookings(){
 
-  const saved =
-    localStorage.getItem(
-      "raghadBookings"
-    );
+const saved =
+localStorage.getItem(
+"raghadBookings"
+);
 
-  if(saved){
+if(saved){
 
-    try{
+try{
 
-      return JSON.parse(saved);
-
-    }catch(error){
-
-      return [];
-
-    }
-
-  }
-
-  return [];
+return JSON.parse(saved);
 
 }
+
+catch(error){
+
+return [];
+
+}
+
+}
+
+return [];
+
+}
+
 
 
 /* =====================================================
@@ -1460,17 +1748,18 @@ function getBookings(){
 
 function saveBooking(booking){
 
-  const bookings =
-    getBookings();
+const bookings =
+getBookings();
 
-  bookings.unshift(booking);
+bookings.unshift(booking);
 
-  localStorage.setItem(
-    "raghadBookings",
-    JSON.stringify(bookings)
-  );
+localStorage.setItem(
+"raghadBookings",
+JSON.stringify(bookings)
+);
 
 }
+
 
 
 /* =====================================================
@@ -1479,108 +1768,128 @@ function saveBooking(booking){
 
 function renderBookings(){
 
-  const list =
-    document.getElementById(
-      "bookingsList"
-    );
+const list =
+document.getElementById(
+"bookingsList"
+);
 
-  const bookings =
-    getBookings();
-
-
-  if(bookings.length === 0){
-
-    list.innerHTML = `
-
-      <div style="
-        text-align:center;
-        color:#8d7b81;
-        padding:20px;
-      ">
-
-        لا توجد حجوزات حالياً.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
+const bookings =
+getBookings();
 
 
-  list.innerHTML = "";
+if(bookings.length===0){
 
+list.innerHTML=`
 
-  bookings.forEach(function(
-    booking,
-    index
-  ){
+<div
+style="
+text-align:center;
+color:#8d7b81;
+padding:20px;
+"
+>
+لا توجد حجوزات حالياً.
+</div>
 
-    const item =
-      document.createElement("div");
+`;
 
-    item.className =
-      "booking-item";
-
-
-    item.innerHTML = `
-
-      <div>
-        <strong>
-          ${escapeHTML(booking.name)}
-        </strong>
-      </div>
-
-      <div>
-        📞 ${escapeHTML(booking.phone)}
-      </div>
-
-      <div>
-        💄 ${escapeHTML(booking.service)}
-      </div>
-
-      <div>
-        💰 ${escapeHTML(String(booking.price))} ريال عماني
-      </div>
-
-      <div>
-        📅 ${escapeHTML(booking.date)}
-      </div>
-
-      <div>
-        ⏰ ${escapeHTML(booking.time)}
-      </div>
-
-      <div>
-        👥 ${escapeHTML(String(booking.people))}
-      </div>
-
-      ${
-        booking.notes
-        ?
-        `<div>
-          📝 ${escapeHTML(booking.notes)}
-        </div>`
-        :
-        ""
-      }
-
-      <button
-        class="delete-booking"
-        onclick="deleteBooking(${index})"
-      >
-        حذف الحجز
-      </button>
-
-    `;
-
-
-    list.appendChild(item);
-
-  });
+return;
 
 }
+
+
+list.innerHTML="";
+
+
+bookings.forEach(function(
+booking,
+index
+){
+
+const item =
+document.createElement("div");
+
+item.className =
+"booking-item";
+
+
+item.innerHTML=`
+
+<div>
+
+<strong>
+${escapeHTML(booking.name)}
+</strong>
+
+</div>
+
+
+<div>
+📞 ${escapeHTML(booking.phone)}
+</div>
+
+
+<div>
+💄 ${escapeHTML(booking.service)}
+</div>
+
+
+<div>
+💰 ${escapeHTML(
+String(booking.price)
+)}
+ ريال عماني
+</div>
+
+
+<div>
+📅 ${escapeHTML(booking.date)}
+</div>
+
+
+<div>
+⏰ ${escapeHTML(booking.time)}
+</div>
+
+
+<div>
+👥 ${escapeHTML(
+String(booking.people)
+)}
+</div>
+
+
+${
+booking.notes
+?
+`
+<div>
+📝 ${escapeHTML(
+booking.notes
+)}
+</div>
+`
+:
+""
+}
+
+
+<button
+class="delete-booking"
+onclick="deleteBooking(${index})"
+>
+حذف الحجز
+</button>
+
+`;
+
+
+list.appendChild(item);
+
+});
+
+}
+
 
 
 /* =====================================================
@@ -1589,35 +1898,36 @@ function renderBookings(){
 
 function deleteBooking(index){
 
-  if(
-    !confirm(
-      "هل تريد حذف هذا الحجز؟"
-    )
-  ){
+if(
+!confirm(
+"هل تريد حذف هذا الحجز؟"
+)
+){
 
-    return;
-
-  }
-
-
-  const bookings =
-    getBookings();
-
-  bookings.splice(
-    index,
-    1
-  );
-
-
-  localStorage.setItem(
-    "raghadBookings",
-    JSON.stringify(bookings)
-  );
-
-
-  renderBookings();
+return;
 
 }
+
+
+const bookings =
+getBookings();
+
+bookings.splice(
+index,
+1
+);
+
+
+localStorage.setItem(
+"raghadBookings",
+JSON.stringify(bookings)
+);
+
+
+renderBookings();
+
+}
+
 
 
 /* =====================================================
@@ -1626,14 +1936,20 @@ function deleteBooking(index){
 
 function escapeHTML(text){
 
-  return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+return String(text)
+
+.replace(/&/g,"&amp;")
+
+.replace(/</g,"&lt;")
+
+.replace(/>/g,"&gt;")
+
+.replace(/"/g,"&quot;")
+
+.replace(/'/g,"&#039;");
 
 }
+
 
 
 /* =====================================================
@@ -1641,105 +1957,116 @@ function escapeHTML(text){
 ===================================================== */
 
 document
-  .getElementById("bookingForm")
-  .addEventListener(
-    "submit",
-    function(event){
+.getElementById("bookingForm")
+.addEventListener(
+"submit",
+function(event){
 
-      event.preventDefault();
-
-
-      const name =
-        document
-          .getElementById("customerName")
-          .value
-          .trim();
-
-      const phone =
-        document
-          .getElementById("customerPhone")
-          .value
-          .trim();
-
-      const service =
-        document
-          .getElementById("service")
-          .value;
-
-      const people =
-        document
-          .getElementById("people")
-          .value;
-
-      const date =
-        document
-          .getElementById("bookingDate")
-          .value;
-
-      const time =
-        document
-          .getElementById("bookingTime")
-          .value;
-
-      const notes =
-        document
-          .getElementById("notes")
-          .value
-          .trim();
+event.preventDefault();
 
 
-      if(
-        !name ||
-        !phone ||
-        !service ||
-        !date ||
-        !time
-      ){
-
-        alert(
-          "يرجى تعبئة جميع البيانات المطلوبة."
-        );
-
-        return;
-
-      }
+const name =
+document
+.getElementById("customerName")
+.value
+.trim();
 
 
-      const prices =
-        getPrices();
-
-      const price =
-        prices[service] || 0;
-
-
-      /* حفظ الحجز */
-
-      saveBooking({
-
-        id: Date.now(),
-
-        name: name,
-
-        phone: phone,
-
-        service: service,
-
-        people: people,
-
-        date: date,
-
-        time: time,
-
-        notes: notes,
-
-        price: price
-
-      });
+const phone =
+document
+.getElementById("customerPhone")
+.value
+.trim();
 
 
-      /* إنشاء رسالة واتساب */
+const service =
+document
+.getElementById("service")
+.value;
 
-      const message = `🌸 *طلب حجز - رغد ميكب* 🌸
+
+const people =
+document
+.getElementById("people")
+.value;
+
+
+const date =
+document
+.getElementById("bookingDate")
+.value;
+
+
+const time =
+document
+.getElementById("bookingTime")
+.value;
+
+
+const notes =
+document
+.getElementById("notes")
+.value
+.trim();
+
+
+if(
+!name ||
+!phone ||
+!service ||
+!date ||
+!time
+){
+
+alert(
+"يرجى تعبئة جميع البيانات المطلوبة."
+);
+
+return;
+
+}
+
+
+const prices =
+getPrices();
+
+
+const price =
+prices[service] || 0;
+
+
+
+/* حفظ الحجز */
+
+saveBooking({
+
+id:Date.now(),
+
+name:name,
+
+phone:phone,
+
+service:service,
+
+people:people,
+
+date:date,
+
+time:time,
+
+notes:notes,
+
+price:price
+
+});
+
+
+
+/* رسالة واتساب */
+
+const message =
+
+`🌸 *طلب حجز - رغد ميكب* 🌸
 
 👤 الاسم:
 ${name}
@@ -1770,22 +2097,30 @@ ${notes || "لا توجد ملاحظات"}
 شكراً لكم 🤍`;
 
 
-      const whatsappURL =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(message);
+
+const whatsappURL =
+
+"https://wa.me/" +
+
+WHATSAPP_NUMBER +
+
+"?text=" +
+
+encodeURIComponent(message);
 
 
-      /*
-        فتح واتساب
-      */
 
-      window.location.href =
-        whatsappURL;
+/*
+فتح واتساب
+*/
 
-    }
-  );
+window.location.href =
+whatsappURL;
+
+}
+
+);
+
 
 
 /* =====================================================
@@ -1794,34 +2129,41 @@ ${notes || "لا توجد ملاحظات"}
 
 (function(){
 
-  const today =
-    new Date();
-
-  const year =
-    today.getFullYear();
-
-  const month =
-    String(
-      today.getMonth() + 1
-    ).padStart(2,"0");
-
-  const day =
-    String(
-      today.getDate()
-    ).padStart(2,"0");
-
-  const todayString =
-    `${year}-${month}-${day}`;
+const today =
+new Date();
 
 
-  document
-    .getElementById("bookingDate")
-    .setAttribute(
-      "min",
-      todayString
-    );
+const year =
+today.getFullYear();
+
+
+const month =
+String(
+today.getMonth()+1
+)
+.padStart(2,"0");
+
+
+const day =
+String(
+today.getDate()
+)
+.padStart(2,"0");
+
+
+const todayString =
+`${year}-${month}-${day}`;
+
+
+document
+.getElementById("bookingDate")
+.setAttribute(
+"min",
+todayString
+);
 
 })();
+
 
 
 /* =====================================================
@@ -1831,39 +2173,60 @@ ${notes || "لا توجد ملاحظات"}
 updatePricesOnPage();
 
 
+
 /* =====================================================
    التحقق من تسجيل الدخول
 ===================================================== */
 
 if(
-  sessionStorage.getItem(
-    "raghadAdminLoggedIn"
-  ) === "true"
+sessionStorage.getItem(
+"raghadAdminLoggedIn"
+)==="true"
 ){
 
-  showAdmin();
+showAdmin();
 
 }
 
 
+
 /* =====================================================
-   إغلاق النافذة عند الضغط خارجها
+   إغلاق نافذة الدخول
 ===================================================== */
 
 document
-  .getElementById("loginModal")
-  .addEventListener(
-    "click",
-    function(e){
+.getElementById("loginModal")
+.addEventListener(
+"click",
+function(e){
 
-      if(e.target === this){
+if(e.target===this){
 
-        closeLogin();
+closeLogin();
 
-      }
+}
 
-    }
-  );
+});
+
+
+
+/* =====================================================
+   Enter لتسجيل الدخول
+===================================================== */
+
+document
+.getElementById("adminPassword")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+
+loginAdmin();
+
+}
+
+});
 
 </script>
 
