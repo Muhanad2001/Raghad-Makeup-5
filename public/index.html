@@ -217,25 +217,6 @@ const dateInput = document.getElementById('date');
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().split('T')[0];
 dateInput.min = localToday;
-document.getElementById('receipt').addEventListener('change', function(){
-  const preview = document.getElementById('receiptPreview');
-  preview.innerHTML = '';
-  const file = this.files && this.files[0];
-  if (!file) return;
-  if (!file.type.startsWith('image/')) {
-    alert('يرجى اختيار صورة للإيصال.');
-    this.value = '';
-    return;
-  }
-  const img = document.createElement('img');
-  img.src = URL.createObjectURL(file);
-  preview.appendChild(img);
-  const ok = document.createElement('span');
-  ok.className = 'receipt-ok';
-  ok.textContent = '✓ تم اختيار الإيصال';
-  preview.appendChild(ok);
-});
-
 
 bookingForm.addEventListener('submit',function(e){
   e.preventDefault();
@@ -272,7 +253,7 @@ bookingForm.addEventListener('submit',function(e){
     localStorage.setItem('raghadBookings',JSON.stringify(bookings));
   }catch(err){}
   const whatsappUrl='https://wa.me/96879345991?text='+encodeURIComponent(message);
-  window.location.href=whatsappUrl;
+  window.location.assign(whatsappUrl);
 });
 
 const adminPanel = document.getElementById('adminPanel');
